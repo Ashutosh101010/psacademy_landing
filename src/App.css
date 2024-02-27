@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap");
+
+.contanier {
+    position: absolute;
+    bottom: 20px;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+}
+
+#speed {
+    font-size: 18px;
+    width: 50px;
+    background: cornflowerblue;
+    border: none;
+    text-align: center;
+    padding: 5px;
+}
+
+#speed:focus {
+    outline: none;
+}
+
+.input-field:focus {
+    box-shadow: 0 0 5px 3px rgb(248, 170, 1);
+    /* x-offset, y-offset, blur-radius, spread-radius, color */
+}
