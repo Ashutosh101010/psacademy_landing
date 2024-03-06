@@ -1,4 +1,4 @@
-import { Box, Card, CardActions, CardContent, CardMedia, Grid, Paper, Typography, useMediaQuery } from '@mui/material'
+import { Alert, Box, Card, CardActions, CardContent, CardMedia, Dialog, Grid, Paper, Stack, Typography, useMediaQuery } from '@mui/material'
 import React, { useState } from 'react';
 import phoneSvg2 from './Images/phoneView2.jpeg'
 import phoneSvg from './Images/phoneView.jpeg'
@@ -8,10 +8,28 @@ import desktopSvg from './Images/desktopSvg.svg'
 import playStoreButton from './Images/playStoreButton.svg'
 import appleStoreButton from './Images/appleStoreButton.svg'
 import windowsStoreButton from './Images/windowsStoreButton.svg'
+import { useSnackbar } from 'notistack';
 
 const ContentSectionOne = () => {
 
     const isMobile = useMediaQuery("(min-width:600px)");
+    const { enqueueSnackbar } = useSnackbar();
+    const [openTabletModal, setOpenTabletModal] = useState(false);
+    const [openDesktopModal, setOpenDesktopModal] = useState(false);
+
+    const handleClickTablet = () => {
+        setOpenTabletModal(true);
+    }
+
+    const handleClickDesktop = () => {
+        setOpenDesktopModal(true);
+    }
+
+    // if (response.errorCode !== 0) {
+    //     enqueueSnackbar(`${response.errorDescription}`, { variant: 'error', autoHideDuration: 3000 })
+    // } else if (response.errorCode === 0) {
+    //     enqueueSnackbar(`${response.message !== undefined ? response.message : ""}`, { variant: 'success', autoHideDuration: 3000 })
+    // }
 
     return (
         <Box sx={{ flexGrow: 1, p: 4 }}>
@@ -54,7 +72,7 @@ const ContentSectionOne = () => {
                         <Grid item xs={12} sm={4} md={4}>
                             <Paper sx={{ p: 2 }}
                             >
-                                <img alt='' width={'50%'} style={{ position: 'relative', left: isMobile ? '35px' : '60px' }} src={androidPhone} />
+                                <img alt='' width={isMobile ? '50%' : '50%'} style={{ position: 'relative', left: isMobile ? '25px' : '60px' }} src={androidPhone} />
                                 <Typography
                                     color={'#14142B'}
                                     fontFamily={'Inter'}
@@ -67,7 +85,7 @@ const ContentSectionOne = () => {
                                 <Typography
                                     color={'#6E7191'}
                                     fontFamily={'Inter'}
-                                    fontSize={'13px'}
+                                    fontSize={'12px'}
                                     fontWeight={'500'}
                                     textAlign={'center'}
                                     lineHeight={'20px'}
@@ -77,22 +95,23 @@ const ContentSectionOne = () => {
                             </Paper>
                         </Grid>
                         <Grid item xs={12} sm={4} md={4}>
-                            <Paper sx={{ p: 2 }}
-                            >
-                                <img alt='' width={'100%'} src={tabletSvg} />
+                            <Paper sx={{ p: 2 }}>
+                                <img alt='' width={isMobile ? '100%' : '88%'} style={{ position: 'relative', top: '8px', left: '7px' }} src={tabletSvg} />
                                 <Typography
                                     color={'#14142B'}
                                     fontFamily={'Inter'}
                                     fontSize={'15px'}
                                     fontWeight={'600'}
                                     textAlign={'center'} pt={'30px'}
+                                    onClick={handleClickTablet}
+                                    sx={{ cursor: 'pointer' }}
                                 >
                                     Tablets
                                 </Typography>
                                 <Typography
                                     color={'#6E7191'}
                                     fontFamily={'Inter'}
-                                    fontSize={'13px'}
+                                    fontSize={'12px'}
                                     fontWeight={'500'}
                                     textAlign={'center'}
                                     lineHeight={'20px'}
@@ -102,8 +121,7 @@ const ContentSectionOne = () => {
                             </Paper>
                         </Grid>
                         <Grid item xs={12} sm={4} md={4}>
-                            <Paper sx={{ p: 2 }}
-                            >
+                            <Paper sx={{ p: 2 }}>
                                 <img alt='' width={'100%'} src={desktopSvg} />
                                 <Typography
                                     color={'#14142B'}
@@ -111,13 +129,15 @@ const ContentSectionOne = () => {
                                     fontSize={'15px'}
                                     fontWeight={'600'}
                                     textAlign={'center'} pt={'14px'}
+                                    onClick={handleClickDesktop}
+                                    sx={{ cursor: 'pointer' }}
                                 >
                                     Desktops
                                 </Typography>
                                 <Typography
                                     color={'#6E7191'}
                                     fontFamily={'Inter'}
-                                    fontSize={'13px'}
+                                    fontSize={'12px'}
                                     fontWeight={'500'}
                                     textAlign={'center'}
                                     lineHeight={'20px'}
@@ -140,6 +160,16 @@ const ContentSectionOne = () => {
                     </Grid>
                 </Grid>
             </Grid>
+            <Dialog open={openTabletModal} onClose={() => setOpenTabletModal(false)}>
+                <Stack sx={{ width: '100%' }} spacing={2}>
+                    <Alert severity="success">Coming Soon</Alert>
+                </Stack>
+            </Dialog>
+            <Dialog open={openDesktopModal} onClose={() => setOpenDesktopModal(false)}>
+                <Stack sx={{ width: '100%' }} spacing={2}>
+                    <Alert severity="success">Coming Soon</Alert>
+                </Stack>
+            </Dialog>
         </Box>
     )
 }

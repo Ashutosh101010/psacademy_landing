@@ -269,7 +269,7 @@ const SectionTwo = () => {
                     Course :
                   </Typography>
                   <FormControl fullWidth>
-                    <select
+                    <Select
                       class="input-field"
                       value={course}
                       onChange={handleChangeCourse}
@@ -277,23 +277,21 @@ const SectionTwo = () => {
                       inputProps={{ 'aria-label': 'Without label' }}
                       style={{ width: '100%', height: mobile ? '45px' : '39px', fontSize: '16px' }}
                     >
-                      <option value="">
+                      <MenuItem value="">
                         <em>Select Your Course</em>
-                      </option>
-                      {coursesData && coursesData
-                        .filter(course => course.tags.some(tag => tag.tag === "MPPSC Courses "))
-                        .map((filteredCourse, index) => {
-                          return (
-                            <option
-                              style={{
-                                margin: '10px'
-                              }}
-                            >
-                              {filteredCourse.title}
-                            </option>
-                          )
-                        })}
-                    </select>
+                      </MenuItem>
+                      {coursesData && coursesData.map((filteredCourse, index) => {
+                        return (
+                          <MenuItem
+                            style={{
+                              margin: '10px'
+                            }}
+                          >
+                            {filteredCourse.title}
+                          </MenuItem>
+                        )
+                      })}
+                    </Select>
                   </FormControl>
                 </Grid>
               </Grid>
