@@ -14,9 +14,9 @@ app.use(cors({
 }));
 
 const con = mysql.createConnection({
-    host: "localhost",
+    host: "172.232.121.148",
     user: "root",
-    password: "",
+    password: "Mysql@123",
     database: "wordpress"
 });
 
@@ -102,7 +102,7 @@ app.get('/getContentById/:id', bodyParser.json(), (req, res) => {
         res.json(results);
     });
 });
- 
+
 
 app.get('/currentAffairList', (req, res) => {
 

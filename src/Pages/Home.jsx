@@ -31,7 +31,7 @@ const Home = () => {
             <CourseSection />
             <SectionTwo />
             <SectionThree />
-            {/* <SectionFourth /> */}
+             <SectionFourth />
             <SectionGellary />
             <SecondFooter />
             <Footer />

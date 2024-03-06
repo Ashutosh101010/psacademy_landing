@@ -36,7 +36,7 @@ const FaqContent = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`http://localhost:5001/getContentById/${id}`);
+                const response = await fetch(`https://api.psacademy.co.in/getContentById/${id}`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch data');
                 }
@@ -65,9 +65,9 @@ const FaqContent = () => {
             {/* <CurrentAffairSection />
     <CalenderSection /> */}
             <FaqContentSectionOne data={data} />
-            <BlogContentSectionTwo />
+            {/*<BlogContentSectionTwo />*/}
             <ContentBannerSection />
-            <SecondBlogSection />
+            {/*<SecondBlogSection />*/}
             <SectionThree />
             {/* <SectionFourth /> */}
             {/* <SectionGellary /> */}

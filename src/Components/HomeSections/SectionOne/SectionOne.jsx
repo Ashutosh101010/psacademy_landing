@@ -39,7 +39,7 @@ const SectionOne = () => {
                 // backgroundRepeat: 'no-repeat',
             }}>
             <Grid container spacing={2}>
-                <hr color='#fff' style={{ height: '14px', position: 'relative', top: mobile ? '575px' : '980px', width: '100%' }} />
+                {/*<hr color='#fff' style={{ height: '14px', position: 'relative', top: mobile ? '575px' : '980px', width: '100%' }} />*/}
                 <Grid item xs={12} sm={6} md={6} mt={4} padding={mobile ? '0px' : '30px'}>
                     <Grid container spacing={2}
                         sx={{
@@ -48,7 +48,7 @@ const SectionOne = () => {
                             alignItems: 'center'
                         }}
                     >
-                        <Grid item xs={12} sm={6} md={6} ml={[2, 0]}>
+                        <Grid item xs={12} sm={6} md={8} ml={[2, 0]}>
                             <Typography>
                                 <Item>🏆 Pioneer in UPSC-MPPSC Preparation</Item>
                             </Typography>

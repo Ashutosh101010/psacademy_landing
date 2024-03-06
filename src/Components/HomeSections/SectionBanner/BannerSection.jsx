@@ -64,7 +64,7 @@ const BannerSection = () => {
                                     // image={Endpoints.mediaBaseUrl + banner?.banner ? bannerImage1 : ""}
                                     image={Endpoints.mediaBaseUrl + banner?.banner}
                                 /> */}
-                                <img alt='' width={'100%'} height={'170px'} src={Endpoints.mediaBaseUrl + banner?.banner} />
+                                <img alt='' width={'100%'} height={'240px'} src={Endpoints.mediaBaseUrl + banner?.banner} />
                             </>
                         )
                     })}

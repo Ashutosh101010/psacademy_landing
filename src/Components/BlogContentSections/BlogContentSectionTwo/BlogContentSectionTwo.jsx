@@ -33,7 +33,7 @@ const BlogContentSectionTwo = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5001/currentAffairList');
+        const response = await fetch('https://api.psacademy.co.in/currentAffairList');
         if (!response.ok) {
           throw new Error('Failed to fetch data');
         }

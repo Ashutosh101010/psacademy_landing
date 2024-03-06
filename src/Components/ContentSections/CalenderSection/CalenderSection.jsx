@@ -57,7 +57,7 @@ const CalenderSection = () => {
 
     const fetchData = async () => {
         try {
-            const response = await axios.post('http://localhost:5001/UPSCblogs', { 'date': value }, {
+            const response = await axios.post('https://api.psacademy.co.in/UPSCblogs', { 'date': value }, {
                 headers: {
                     'Content-Type': 'application/json'
                 }

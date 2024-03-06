@@ -19,7 +19,7 @@ const SecondBlogSection = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('http://localhost:5001/blogs');
+                const response = await fetch('https://api.psacademy.co.in/blogs');
                 if (!response.ok) {
                     throw new Error('Failed to fetch data');
                 }
