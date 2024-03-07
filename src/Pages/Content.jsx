@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../Components/Header'
 import SecondHeader from '../Components/SecondHeader'
 import Navbar from '../Components/Navbar'
@@ -22,11 +22,32 @@ const Content = () => {
         window.open(url, '_blank', 'noreferrer');
     };
 
+    const [isSticky, setIsSticky] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollTop = window.pageYOffset;
+            if (scrollTop > 0) {
+                setIsSticky(true);
+            } else {
+                setIsSticky(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return (
         <div>
             <Header />
             <SecondHeader />
             <Navbar />
+            <div style={{ position: 'fixed', width: '100%', zIndex: 100000, top: isSticky ? '0' : 'auto' }}>
+                {isSticky && <Navbar />}
+            </div>
             <ContentSectionTwo />
             {/* <SectionOne /> */}
             {/* <BannerSection /> */}

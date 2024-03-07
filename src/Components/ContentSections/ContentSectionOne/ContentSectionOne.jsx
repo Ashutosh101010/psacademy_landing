@@ -1,7 +1,8 @@
-import { Alert, Box, Card, CardActions, CardContent, CardMedia, Dialog, Grid, Paper, Stack, Typography, useMediaQuery } from '@mui/material'
+import { Alert, Box, Card, CardActions, CardContent, CardMedia, Dialog, Grid, Paper, Stack, Tooltip, Typography, useMediaQuery } from '@mui/material'
 import React, { useState } from 'react';
-import phoneSvg2 from './Images/phoneView2.jpeg'
-import phoneSvg from './Images/phoneView.jpeg'
+import phoneSvg2 from './Images/psss.png'
+import phoneSvg from './Images/phonecover.svg'
+import phonebg from './Images/phonebg.svg'
 import androidPhone from './Images/androidPhone.svg'
 import tabletSvg from './Images/tabletSvg.svg'
 import desktopSvg from './Images/desktopSvg.svg'
@@ -32,16 +33,24 @@ const ContentSectionOne = () => {
     // }
 
     return (
-        <Box sx={{ flexGrow: 1, p: 4 }}>
-            <Grid container spacing={2}>
-                <Grid item xs={12} sm={6} md={6} display={'flex'} justifyContent={'center'} alignItems={'center'}>
+        <Box sx={{ flexGrow: 1 }}>
+            <Grid container spacing={2} pt={6}>
+                <Grid item xs={12} sm={6} md={6}>
+                    {/* <Grid container spacing={2}>
+                        <Grid item xs={12} sm={6} md={6}>
+                            <img alt='' width={'45%'} style={{ position: 'relative', left: ['70px', '0px'] }} src={phoneSvg} />
+                        </Grid>
+                        <Grid item xs={12} sm={6} md={6}>
+                            <img alt='' width={'45%'} style={{ position: 'relative', left: ['70px', '0px'] }} src={phoneSvg2} />
+                        </Grid>
+                    </Grid> */}
                     <div
                         style={{
                             display: 'flex',
                             justifyContent: 'center'
                         }}
                     >
-                        <img alt='' width={'45%'} style={{ position: 'relative', left: ['70px', '0px'] }} src={phoneSvg} />
+                        <img alt='' width={isMobile ? '100%' : '50%'} style={{ position: 'relative', left: '55px' }} src={phoneSvg} />
                     </div>
                 </Grid>
                 <Grid item xs={12} sm={6} md={6} p={2}>
@@ -96,71 +105,79 @@ const ContentSectionOne = () => {
                         </Grid>
                         <Grid item xs={12} sm={4} md={4}>
                             <Paper sx={{ p: 2 }}>
-                                <img alt='' width={isMobile ? '100%' : '88%'} style={{ position: 'relative', top: '8px', left: '7px' }} src={tabletSvg} />
-                                <Typography
-                                    color={'#14142B'}
-                                    fontFamily={'Inter'}
-                                    fontSize={'15px'}
-                                    fontWeight={'600'}
-                                    textAlign={'center'} pt={'30px'}
-                                    onClick={handleClickTablet}
-                                    sx={{ cursor: 'pointer' }}
-                                >
-                                    Tablets
-                                </Typography>
-                                <Typography
-                                    color={'#6E7191'}
-                                    fontFamily={'Inter'}
-                                    fontSize={'12px'}
-                                    fontWeight={'500'}
-                                    textAlign={'center'}
-                                    lineHeight={'20px'}
-                                >
-                                    Android & iPAD
-                                </Typography>
+                                <Tooltip title="Coming Soon">
+                                    <img alt='' width={isMobile ? '87%' : '88%'} style={{ position: 'relative', top: '8px', left: '4px' }} src={tabletSvg} />
+                                    <Typography
+                                        color={'#14142B'}
+                                        fontFamily={'Inter'}
+                                        fontSize={'15px'}
+                                        fontWeight={'600'}
+                                        textAlign={'center'} pt={'30px'}
+                                        onClick={handleClickTablet}
+                                        sx={{ cursor: 'pointer' }}
+                                    >
+                                        Tablets
+                                    </Typography>
+                                    <Typography
+                                        color={'#6E7191'}
+                                        fontFamily={'Inter'}
+                                        fontSize={'12px'}
+                                        fontWeight={'500'}
+                                        textAlign={'center'}
+                                        lineHeight={'20px'}
+                                    >
+                                        Android & iPAD
+                                    </Typography>
+                                </Tooltip>
                             </Paper>
                         </Grid>
                         <Grid item xs={12} sm={4} md={4}>
                             <Paper sx={{ p: 2 }}>
-                                <img alt='' width={'100%'} src={desktopSvg} />
-                                <Typography
-                                    color={'#14142B'}
-                                    fontFamily={'Inter'}
-                                    fontSize={'15px'}
-                                    fontWeight={'600'}
-                                    textAlign={'center'} pt={'14px'}
-                                    onClick={handleClickDesktop}
-                                    sx={{ cursor: 'pointer' }}
-                                >
-                                    Desktops
-                                </Typography>
-                                <Typography
-                                    color={'#6E7191'}
-                                    fontFamily={'Inter'}
-                                    fontSize={'12px'}
-                                    fontWeight={'500'}
-                                    textAlign={'center'}
-                                    lineHeight={'20px'}
-                                >
-                                    All Browsers
-                                </Typography>
+                                <Tooltip title="Coming Soon">
+                                    <img alt='' width={'100%'} src={desktopSvg} />
+                                    <Typography
+                                        color={'#14142B'}
+                                        fontFamily={'Inter'}
+                                        fontSize={'15px'}
+                                        fontWeight={'600'}
+                                        textAlign={'center'} pt={'14px'}
+                                        onClick={handleClickDesktop}
+                                        sx={{ cursor: 'pointer' }}
+                                    >
+                                        Desktops
+                                    </Typography>
+                                    <Typography
+                                        color={'#6E7191'}
+                                        fontFamily={'Inter'}
+                                        fontSize={'12px'}
+                                        fontWeight={'500'}
+                                        textAlign={'center'}
+                                        lineHeight={'20px'}
+                                    >
+                                        All Browsers
+                                    </Typography>
+                                </Tooltip>
                             </Paper>
                         </Grid>
                     </Grid>
-                    <Grid container spacing={2} mt={3} width={['100%', '60%']}>
-                        <Grid item xs={6} sm={4} md={4}>
+                    <Grid container spacing={2} mt={3} ml={0} display={'flex'} justifyContent={isMobile ? 'start' : 'center'} width={['100%', '60%']}>
+                        <Grid item xs={4} sm={4} md={4}>
                             <img alt='' width={'100%'} src={playStoreButton} />
                         </Grid>
-                        <Grid item xs={6} sm={4} md={4}>
-                            <img alt='' width={'100%'} src={appleStoreButton} />
+                        <Grid item xs={4} sm={4} md={4}>
+                            <Tooltip title="Coming Soon">
+                                <img alt='' width={'100%'} src={appleStoreButton} />
+                            </Tooltip>
                         </Grid>
-                        {/* <Grid item xs={12} sm={4} md={4}>
-                            <img alt='' width={'100%'} src={windowsStoreButton} />
-                        </Grid> */}
+                        <Grid item xs={4} sm={4} md={4}>
+                            <Tooltip title="Coming Soon">
+                                <img alt='' width={'100%'} src={windowsStoreButton} />
+                            </Tooltip>
+                        </Grid>
                     </Grid>
                 </Grid>
             </Grid>
-            <Dialog open={openTabletModal} onClose={() => setOpenTabletModal(false)}>
+            {/* <Dialog open={openTabletModal} onClose={() => setOpenTabletModal(false)}>
                 <Stack sx={{ width: '100%' }} spacing={2}>
                     <Alert severity="success">Coming Soon</Alert>
                 </Stack>
@@ -169,7 +186,7 @@ const ContentSectionOne = () => {
                 <Stack sx={{ width: '100%' }} spacing={2}>
                     <Alert severity="success">Coming Soon</Alert>
                 </Stack>
-            </Dialog>
+            </Dialog> */}
         </Box>
     )
 }

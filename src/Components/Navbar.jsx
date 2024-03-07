@@ -20,6 +20,8 @@ import windowsStore from '../../images/windowsstoresvg.svg'
 import pdf from '../MPPSC_syllabus_23feb.pdf'
 
 const pages = ['Interview Guidance', 'Answer Writing Program', 'Free-Resources', `Topper's Strategy`];
+const ITEM_HEIGHT = 48;
+
 const Navbar = () => {
 
     const instId = '94'
@@ -358,7 +360,7 @@ const Navbar = () => {
                     >
                         <img alt='' src={logo} />
                     </Typography>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                    {/* <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <Menu
                             id="menu-appbar"
                             anchorEl={anchorElNav}
@@ -442,7 +444,7 @@ const Navbar = () => {
                                     </MenuItem>
                                 ))}
                         </Menu>
-                    </Box>
+                    </Box> */}
                     <Box
                         sx={{
                             mr: 2,
@@ -497,46 +499,45 @@ const Navbar = () => {
                             }
                         </IconButton>
                         <Menu
+                            // anchorEl={anchorElM}
+                            // id="account-menu"
+                            // open={openM}
+                            // onClose={handleCloseM}
+                            // onClick={handleCloseM}
+                            // id="basic-menu"
+                            // anchorEl={anchorElM}
+                            // open={openM}
+                            // onClose={handleCloseM}
+                            // onClick={handleCloseM}
+                            // MenuListProps={{
+                            //     'aria-labelledby': 'basic-button',
+                            // }}
+                            transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+                            anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+                            id="long-menu"
+                            MenuListProps={{
+                                'aria-labelledby': 'long-button',
+                            }}
                             anchorEl={anchorElM}
-                            id="account-menu"
                             open={openM}
                             onClose={handleCloseM}
                             onClick={handleCloseM}
                             PaperProps={{
-                                elevation: 0,
-                                sx: {
-                                    overflow: 'visible',
-                                    filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
-                                    mt: 1.5,
-                                    '& .MuiAvatar-root': {
-                                        width: 32,
-                                        height: 32,
-                                        ml: -0.5,
-                                        mr: 1,
-                                    },
-                                    '&::before': {
-                                        content: '""',
-                                        display: 'block',
-                                        position: 'absolute',
-                                        top: 0,
-                                        right: 14,
-                                        width: 10,
-                                        height: 10,
-                                        bgcolor: 'background.paper',
-                                        transform: 'translateY(-50%) rotate(45deg)',
-                                        zIndex: 0,
-                                    },
+                                style: {
+                                    maxHeight: ITEM_HEIGHT * 6.5,
+                                    width: '20%',
+                                    // position: 'relative',
+                                    top: '200px'
                                 },
                             }}
-                            transformOrigin={{ horizontal: 'right', vertical: 'top' }}
-                            anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
                         >
                             {courses && courses.map((filteredCourse, index) => {
                                 return (
                                     <MenuItem
-                                        sx={{
-                                            margin: '5px'
-                                        }}
+                                        key={index}
+                                        // sx={{
+                                        //     margin: '5px'
+                                        // }}
                                         // onClick={handleCloseM}
                                         onClick={() => handleBuyCourse(filteredCourse)}
                                     >

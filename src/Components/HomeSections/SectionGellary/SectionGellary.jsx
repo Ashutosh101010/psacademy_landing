@@ -13,7 +13,6 @@ const SectionGellary = () => {
     const getInstituteList = async () => {
         const response = await CourseNetwrok.fetchInstitute(instId);
         setGalleryList(response?.institute?.gallery);
-        console.log('response?.institute?', response?.institute);
         Endpoints.mediaBaseUrl = response.instituteTechSettingModals.mediaUrl;
     };
 

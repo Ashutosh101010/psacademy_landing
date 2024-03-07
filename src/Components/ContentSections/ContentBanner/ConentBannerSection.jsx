@@ -30,11 +30,7 @@ const ContentBannerSection = () => {
     }, []);
 
     return (
-        <Box p={5}
-            sx={{
-                background: '#FFE8E8'
-            }}
-        >
+        <Box m={'20px'}>
             <Box
                 sx={{
                     mb: 2,
@@ -65,17 +61,39 @@ const ContentBannerSection = () => {
                         return (
                             <>
                                 {/* <CardMedia
-                                    component="img"
-                                    height="230px"
-                                    width={'auto'}
-                                    // image={Endpoints.mediaBaseUrl + banner?.banner ? bannerImage1 : ""}
-                                    image={Endpoints.mediaBaseUrl + banner?.banner}
-                                /> */}
+                                component="img"
+                                height="230px"
+                                width={'auto'}
+                                // image={Endpoints.mediaBaseUrl + banner?.banner ? bannerImage1 : ""}
+                                image={Endpoints.mediaBaseUrl + banner?.banner}
+                            /> */}
                                 <img alt='' width={'100%'} height={'240px'} src={Endpoints.mediaBaseUrl + banner?.banner} />
                             </>
                         )
                     })}
                 </Box>
+            </Box>
+            <Box
+                textAlign={'center'}
+            >
+                <Typography
+                    fontSize={'18px'}
+                    fontWeight={'700'}
+                    fontFamily={'Inter'}
+                    lineHeight={'30px'}
+                    color={'black'}
+                >
+                    A UPSC-MPPSC COACHING THAT WILL HELP YOU CRACK
+                </Typography>
+                <Typography
+                    fontSize={'18px'}
+                    fontWeight={'700'}
+                    fontFamily={'Inter'}
+                    lineHeight={'30px'}
+                    color={'black'}
+                >
+                    YOUR ACADEMICS AND EXPLAINS YOUR GAP YEARS
+                </Typography>
             </Box>
         </Box >
     )

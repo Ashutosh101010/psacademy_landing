@@ -120,7 +120,7 @@ const CalenderSection = () => {
                                     <Grid item xs={6} sm={1.5} md={1.5}>
                                         <img alt='' style={{ marginTop: isMobile ? '70px' : '2px', width: isMobile ? '80%' : '65%' }} src={Ellipse1080} />
                                     </Grid>
-                                    <Grid item xs={12} sm={6} mt={['0px', 2]}>
+                                    <Grid item xs={12} sm={6} mt={['0px', '-20px']}>
                                         <Box position={'relative'} top={'20px'}>
                                             <Typography
                                                 fontFamily={'Inter'}
@@ -200,7 +200,7 @@ const CalenderSection = () => {
                                     <Grid item xs={6} sm={1.5} md={1.5}>
                                         <img alt='' style={{ marginTop: isMobile ? '70px' : '2px', width: isMobile ? '80%' : '65%' }} src={Ellipse1080} />
                                     </Grid>
-                                    <Grid item xs={12} sm={6} mt={['0px', 2]}>
+                                    <Grid item xs={12} sm={6} mt={['0px', '-20px']}>
                                         <Box position={'relative'} top={'20px'}>
                                             <Typography
                                                 fontFamily={'Inter'}
@@ -253,7 +253,7 @@ const CalenderSection = () => {
                         </Box>
                     </Card>
                 </Grid>
-                <Grid display={['none', 'grid']} item xs={12} sm={4} md={4}>
+                {/* <Grid display={['none', 'grid']} item xs={12} sm={4} md={4}>
                     <Card sx={{ maxWidth: 360, height: ['670', 'auto'] }}>
                         <CardContent>
                             <Box
@@ -402,7 +402,7 @@ const CalenderSection = () => {
                             </LocalizationProvider>
                         </CardContent>
                     </Card>
-                </Grid>
+                </Grid> */}
             </Grid>
         </Box >
     )

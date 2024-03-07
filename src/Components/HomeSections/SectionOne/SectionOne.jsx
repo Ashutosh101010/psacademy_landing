@@ -1,6 +1,6 @@
 import { Box, Grid, Typography, useMediaQuery } from '@mui/material'
 import React, { useEffect, useState } from 'react'
-import backgroundImage from './Images/bg1.svg'
+import backgroundImage from './Images/banner-bottom.png'
 import director from './Images/directorsvg.svg'
 import { styled, useTheme } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
@@ -33,150 +33,167 @@ const SectionOne = () => {
                 width: '100%',
                 height: '100%',
                 paddingTop: '5px',
-                pt: '1px',
+                pt: '10px',
                 background: '#9A0000',
                 // backgroundSize: 'cover', // or 'contain' depending on your needs
                 // backgroundRepeat: 'no-repeat',
-            }}>
-            <Grid container spacing={2} pb={mobile ? '40px' : '12px'}>
-                <hr color='#fff' style={{ height: '14px', position: 'relative', top: mobile ? '612px' : '990px', width: '100%' }} />
-                <Grid item xs={12} sm={6} md={6} mt={4} padding={mobile ? '0px' : '30px'}>
-                    <Grid container spacing={2}
-                        sx={{
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center'
-                        }}
-                    >
-                        <Grid item xs={12} sm={6} md={6} ml={[2, 0]}>
-                            <Typography>
-                                <Item>🏆 Pioneer in UPSC-MPPSC Preparation</Item>
-                            </Typography>
-                            <Box mt={3}>
-                                <Typography
+            }}
+        >
+            <Box
+                sx={{
+                    // flexGrow: 1,
+                    backgroundImage: `url(${backgroundImage})`,
+                    backgroundSize: 'cover', // or 'contain' depending on your needs
+                    backgroundRepeat: 'no-repeat',
+                }}
+            >
+                <Grid container spacing={2} mt={'0px'} pb={mobile ? '0px' : '12px'}>
+                    <Grid item xs={12} sm={6} md={6} mt={0} mb={4} padding={mobile ? '0px' : '30px'}>
+                        <Grid container spacing={2}
+                            sx={{
+                                display: 'flex',
+                                justifyContent: 'center',
+                                alignItems: 'center'
+                            }}
+                        >
+                            <Grid item xs={12} sm={12} md={12} ml={[2, 0]} display={'flex'} justifyContent={'flex-end'} alignItems={'center'}>
+                                <Box
                                     sx={{
-                                        fontFamily: 'Inter , sans-serif',
-                                        fontWeight: '700',
-                                        color: '#fff',
-                                        fontSize: mobile ? '35px' : '30px',
+                                        width: mobile ? '70%' : '100%'
                                     }}
                                 >
-                                    Best <Typewriter text="UPSC Coaching" delay={100} />
-                                </Typography>
-                                <Typography
-                                    sx={{
-                                        fontFamily: 'Inter , sans-serif',
-                                        fontWeight: '700',
-                                        color: '#fff',
-                                        fontSize: mobile ? '35px' : '30px',
-                                    }}
-                                >
-                                    Near You.
-                                </Typography>
-                                <Typography
-                                    sx={{
-                                        fontFamily: 'Inter',
-                                        fontWeight: '500',
-                                        color: '#fff',
-                                        fontSize: '17px',
-                                        lineHeight: '36px',
-                                        display: 'flex',
-                                        justifyContent: 'flex-start',
-                                        alignItem: 'center',
-                                        gap: '8px'
-                                    }}
-                                >
-                                    Learning is the process of acquiring new or modifying existing
-                                </Typography>
-                                <Typography
-                                    sx={{
-                                        fontFamily: 'Inter',
-                                        fontWeight: '500',
-                                        color: '#fff',
-                                        fontSize: '17px',
-                                        lineHeight: '36px',
-                                        display: 'flex',
-                                        justifyContent: 'flex-start',
-                                        alignItem: 'center',
-                                        gap: '8px'
-                                    }}
-                                >
-                                    knowledge, behaviours, skills, values or preferences.
-                                </Typography>
-                                <Typography
-                                    sx={{
-                                        fontFamily: 'Inter',
-                                        fontWeight: '500',
-                                        color: '#fff',
-                                        fontSize: '17px',
-                                        lineHeight: '36px',
-                                        display: 'flex',
-                                        justifyContent: 'flex-start',
-                                        alignItem: 'center',
-                                        gap: '8px'
-                                    }}
-                                >
-                                    <img alt='' src={checkBoxsvg} /> Mentorship by Pradeep Srivastava Sir
-                                </Typography>
-                                <Typography
-                                    sx={{
-                                        fontFamily: 'Inter',
-                                        fontWeight: '500',
-                                        color: '#fff',
-                                        fontSize: '17px',
-                                        lineHeight: '36px',
-                                        display: 'flex',
-                                        justifyContent: 'flex-start',
-                                        alignItem: 'center',
-                                        gap: '8px'
-                                    }}
-                                >
-                                    <img alt='' src={checkBoxsvg} /> Daily Current Affairs.
-                                </Typography>
-                                <Typography
-                                    sx={{
-                                        fontFamily: 'Inter',
-                                        fontWeight: '500',
-                                        color: '#fff',
-                                        fontSize: '17px',
-                                        lineHeight: '36px',
-                                        display: 'flex',
-                                        justifyContent: 'flex-start',
-                                        alignItem: 'center',
-                                        gap: '8px'
-                                    }}
-                                >
-                                    <img alt='' src={checkBoxsvg} /> Mock Test Series.
-                                </Typography>
-                                <Typography
-                                    sx={{
-                                        fontFamily: 'Inter',
-                                        fontWeight: '500',
-                                        color: '#fff',
-                                        fontSize: '17px',
-                                        lineHeight: '36px',
-                                        display: 'flex',
-                                        justifyContent: 'flex-start',
-                                        alignItem: 'center',
-                                        gap: '8px'
-                                    }}
-                                >
-                                    <img alt='' src={checkBoxsvg} /> Answer Writing Skill Development Program
-                                </Typography>
-                            </Box>
+                                    <Typography>
+                                        <Item>🏆 Pioneer in UPSC-MPPSC Preparation</Item>
+                                    </Typography>
+                                    <Box mt={3}>
+                                        <Typography
+                                            sx={{
+                                                fontFamily: 'Inter , sans-serif',
+                                                fontWeight: '700',
+                                                color: '#fff',
+                                                fontSize: mobile ? '35px' : '30px',
+                                            }}
+                                        >
+                                            Best <Typewriter text="UPSC Coaching" delay={100} />
+                                        </Typography>
+                                        <Typography
+                                            sx={{
+                                                fontFamily: 'Inter , sans-serif',
+                                                fontWeight: '700',
+                                                color: '#fff',
+                                                fontSize: mobile ? '35px' : '30px',
+                                            }}
+                                        >
+                                            Near You.
+                                        </Typography>
+                                        <Typography
+                                            sx={{
+                                                fontFamily: 'Inter',
+                                                fontWeight: '500',
+                                                color: '#fff',
+                                                fontSize: '17px',
+                                                lineHeight: '36px',
+                                                display: 'flex',
+                                                justifyContent: 'flex-start',
+                                                alignItem: 'center',
+                                                gap: '8px'
+                                            }}
+                                        >
+                                            Learning is the process of acquiring new or modifying existing
+                                        </Typography>
+                                        <Typography
+                                            sx={{
+                                                fontFamily: 'Inter',
+                                                fontWeight: '500',
+                                                color: '#fff',
+                                                fontSize: '17px',
+                                                lineHeight: '36px',
+                                                display: 'flex',
+                                                justifyContent: 'flex-start',
+                                                alignItem: 'center',
+                                                gap: '8px'
+                                            }}
+                                        >
+                                            knowledge, behaviours, skills, values or preferences.
+                                        </Typography>
+                                        <Typography
+                                            sx={{
+                                                fontFamily: 'Inter',
+                                                fontWeight: '500',
+                                                color: '#fff',
+                                                fontSize: '17px',
+                                                lineHeight: '36px',
+                                                display: 'flex',
+                                                justifyContent: 'flex-start',
+                                                alignItem: 'center',
+                                                gap: '8px'
+                                            }}
+                                        >
+                                            <img alt='' src={checkBoxsvg} /> Mentorship by Pradeep Srivastava Sir
+                                        </Typography>
+                                        <Typography
+                                            sx={{
+                                                fontFamily: 'Inter',
+                                                fontWeight: '500',
+                                                color: '#fff',
+                                                fontSize: '17px',
+                                                lineHeight: '36px',
+                                                display: 'flex',
+                                                justifyContent: 'flex-start',
+                                                alignItem: 'center',
+                                                gap: '8px'
+                                            }}
+                                        >
+                                            <img alt='' src={checkBoxsvg} /> Daily Current Affairs.
+                                        </Typography>
+                                        <Typography
+                                            sx={{
+                                                fontFamily: 'Inter',
+                                                fontWeight: '500',
+                                                color: '#fff',
+                                                fontSize: '17px',
+                                                lineHeight: '36px',
+                                                display: 'flex',
+                                                justifyContent: 'flex-start',
+                                                alignItem: 'center',
+                                                gap: '8px'
+                                            }}
+                                        >
+                                            <img alt='' src={checkBoxsvg} /> Mock Test Series.
+                                        </Typography>
+                                        <Typography
+                                            sx={{
+                                                fontFamily: 'Inter',
+                                                fontWeight: '500',
+                                                color: '#fff',
+                                                fontSize: '17px',
+                                                lineHeight: '36px',
+                                                display: 'flex',
+                                                justifyContent: 'flex-start',
+                                                alignItem: 'center',
+                                                gap: '8px'
+                                            }}
+                                        >
+                                            <img alt='' src={checkBoxsvg} /> Answer Writing Skill Development Program
+                                        </Typography>
+                                    </Box>
+                                </Box>
+                            </Grid>
                         </Grid>
                     </Grid>
+                    <Grid
+                        item
+                        xs={12}
+                        sm={6}
+                        md={6}
+                    >
+                        <Box display={'flex'} justifyContent={'start'} alignItems={'center'}>
+                            <img alt='' style={{ position: 'relative', top: mobile ? '-13px' : '12px', width: mobile ? '60%' : '100%', borderBottomRightRadius: '136px' }} src={director} />
+                        </Box>
+                    </Grid>
+                    {/* <hr color='#fff' style={{ height: '14px', position: 'relative', top: mobile ? '612px' : '990px', width: '100%' }} /> */}
                 </Grid>
-                <Grid
-                    item
-                    xs={12}
-                    sm={6}
-                    md={6}
-                >
-                    <img alt='' style={{ position: 'relative', top: mobile ? '158px' : '16px', width: mobile ? '60%' : '100%' }} src={director} />
-                </Grid>
-
-            </Grid>
+            </Box>
         </Box>
     )
 }

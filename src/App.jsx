@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Home from './Pages/Home'
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import Content from './Pages/Content';
 import BlogContent from './Pages/BlogContent';
 import CurrentAffairContent from './Pages/CurrentAffairContent';
@@ -23,6 +23,7 @@ function App() {
           <Route path='/privacyPolicy' element={<PrivacyPolicy />} />
           <Route path='/termCondition' element={<TermCondition />} />
           <Route path='/coursedetail' element={<BuyThisCourse />} />
+          <Route path='*' element={<Navigate to="/" />} />
         </Routes>
       </BrowserRouter>
     </>

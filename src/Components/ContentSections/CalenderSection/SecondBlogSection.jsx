@@ -62,7 +62,7 @@ const SecondBlogSection = () => {
                     <Typography
                         color={'#212529'}
                         fontFamily={'Inter'}
-                        fontSize={['25px','31px']}
+                        fontSize={['25px', '31px']}
                         fontStyle={'normal'}
                         fontWeight={'700'}
                         lineHeight={'38px'}
@@ -135,12 +135,13 @@ const SecondBlogSection = () => {
 
                             return (
                                 <Grid item xs={12} sm={3} md={3} key={data.id}>
-                                    <Card sx={{ maxWidth: 345, height: '100%' }}>
-                                        <CardMedia
+                                    <Card sx={{ width: 'fit-content', height: 'fit-content' }}>
+                                        {/* <CardMedia
                                             sx={{ height: 200 }}
                                             image={imageUrl}
                                         // title="green iguana"
-                                        />
+                                        /> */}
+                                        <img alt='' src={imageUrl} />
                                         <CardContent>
                                             <Typography textAlign={'left'} fontWeight={'bold'} lineHeight={'24px'} fontSize={'20px'}>
                                                 {data?.post_title}
@@ -195,12 +196,13 @@ const SecondBlogSection = () => {
 
                             return (
                                 <Grid item xs={12} sm={3} md={3} key={data.id}>
-                                    <Card sx={{ maxWidth: 345, height: '100%' }}>
-                                        <CardMedia
+                                    <Card sx={{ width: 'fit-content', height: 'fit-content' }}>
+                                        {/* <CardMedia
                                             sx={{ height: 200 }}
                                             image={imageUrl}
                                         // title="green iguana"
-                                        />
+                                        /> */}
+                                        <img alt='' src={imageUrl} />
                                         <CardContent>
                                             <Typography textAlign={'left'} fontWeight={'bold'} lineHeight={'24px'} fontSize={'20px'}>
                                                 {data?.post_title}
