@@ -62,6 +62,12 @@ const CourseSection = () => {
         }
     }, [courses]);
 
+    useEffect(() => {
+        // Filter active courses
+        const activeCourses = courses.filter(course => course.active);
+        setCourses(activeCourses);
+    }, [courses]);
+
     const handlePrevClick = (tagIndex) => {
         setCurrentTagIndices((prevIndices) => {
             const updatedIndices = [...prevIndices];
@@ -82,7 +88,7 @@ const CourseSection = () => {
     return (
         <Box sx={{ flexGrow: 1, m: '20px' }}>
             <Grid container spacing={2}>
-                <Grid item xs={12} sm={12} md={12}>
+                {/* <Grid item xs={12} sm={12} md={12}>
                     <Typography
                         textAlign={'center'}
                         color={'#540000'}
@@ -92,7 +98,7 @@ const CourseSection = () => {
                     >
                         Our Programs
                     </Typography>
-                </Grid>
+                </Grid> */}
                 <Grid item xs={12} sm={12} md={12} textAlign={'center'}>
                     {/* <Box sx={{ flexGrow: 1 }}> */}
                     {/* <Typography
@@ -111,7 +117,7 @@ const CourseSection = () => {
                                     return <Grid item xs={12} sm={12} md={12}>
                                         <div key={i} style={{ position: 'relative', padding: "10px 0px 10px 0px", margin: "10px" }}>
                                             {iframeData?.showHeader === true ?
-                                                <Typography noWrap sx={{ fontWeight: '600', fontSize: '16px', paddingLeft: '0rem', textAlign: 'center', p: 1 }}>
+                                                <Typography noWrap sx={{ fontWeight: '700', fontSize: '40px', paddingLeft: '0rem', textAlign: 'center', p: 1, color: '#540000', lineHeight: '60px' }}>
                                                     {tags.tag}
                                                 </Typography>
                                                 : ""}

@@ -5,9 +5,10 @@ import Content from './Pages/Content';
 import BlogContent from './Pages/BlogContent';
 import CurrentAffairContent from './Pages/CurrentAffairContent';
 import FaqContent from './Pages/FaqContent';
-import PrivacyPolicy from './Pages/PrivacyPolicy';
+import PrivacyPolicy from './Pages/privacypolicy';
 import TermCondition from './Pages/Term&Condition';
 import BuyThisCourse from './Pages/BuyThisCourse';
+import RefundPolicy from './Pages/RefundPolicy';
 
 function App() {
 
@@ -20,8 +21,9 @@ function App() {
           <Route path='/blogContent/:id' element={<BlogContent />} />
           <Route path='/currentAffair/:id' element={<CurrentAffairContent />} />
           <Route path='/faq/:id' element={<FaqContent />} />
-          <Route path='/privacyPolicy' element={<PrivacyPolicy />} />
-          <Route path='/termCondition' element={<TermCondition />} />
+          <Route path='/privacypolicy' element={<PrivacyPolicy />} />
+          <Route path='/termcondition' element={<TermCondition />} />
+          <Route path='/refundpolicy' element={<RefundPolicy />} />
           <Route path='/coursedetail' element={<BuyThisCourse />} />
           <Route path='*' element={<Navigate to="/" />} />
         </Routes>

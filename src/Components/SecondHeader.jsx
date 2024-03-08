@@ -16,7 +16,7 @@ const SecondHeader = () => {
   const isMobile = useMediaQuery("(min-width:600px)");
 
   const handleClick = () => {
-    window.location.href = 'mailto:care@psacademy.co.in';
+    window.location.href = 'mailto:academyps123@gmail.com';
   };
 
   const handleClickPhone = () => {
@@ -39,7 +39,7 @@ const SecondHeader = () => {
     window.location.href = 'https://t.me/ps_academy'
   }
   const handleComingSoon = () => {
-    
+
   }
 
   return (
@@ -81,7 +81,7 @@ const SecondHeader = () => {
               display: ['none', 'flex']
             }}
           >
-            care@psacademy.co.in
+            academyps123@gmail.com
           </Typography>
           {/* </Box> */}
           {/* <Box

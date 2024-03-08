@@ -30,10 +30,18 @@ const BlogContent = () => {
     const [blogData, setBlogData] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [message, setMessage] = React.useState('PS Team');
 
-    const handleWhatsapp = () => {
-        const url = `https://api.whatsapp.com/send?phone=919630020141`
-        window.open(url, '_blank', 'noreferrer');
+    const handleWhatsapp = (event) => {
+        event.preventDefault();
+
+        // Replace the phone number and construct the WhatsApp URL
+        const phoneNumber = '+919926576466';
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappURL = `https://api.whatsapp.com/send/?phone=${phoneNumber}&text=Hey,+${encodedMessage}+%21&type=phone_number&app_absent=0`;
+
+        // Open the WhatsApp URL in a new tab
+        window.open(whatsappURL, '_blank');
     };
 
     useEffect(() => {
@@ -55,11 +63,32 @@ const BlogContent = () => {
         fetchData();
     }, [blogData]);
 
+    const [isSticky, setIsSticky] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollTop = window.pageYOffset;
+            if (scrollTop > 0) {
+                setIsSticky(true);
+            } else {
+                setIsSticky(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return (
         <div>
             <Header />
             <SecondHeader />
             <Navbar />
+            <div style={{ position: 'fixed', width: '100%', zIndex: 100000, top: isSticky ? '0' : 'auto' }}>
+                {isSticky && <Navbar />}
+            </div>
             {/* <ContentSectionTwo /> */}
             {/* <SectionOne /> */}
             {/* <BannerSection /> */}

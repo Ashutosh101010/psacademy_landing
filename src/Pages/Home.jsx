@@ -16,9 +16,18 @@ import SectionGellary from '../Components/HomeSections/SectionGellary/SectionGel
 
 const Home = () => {
 
-    const handleWhatsapp = () => {
-        const url = `https://api.whatsapp.com/send?phone=919630020141`
-        window.open(url, '_blank', 'noreferrer');
+    const [message, setMessage] = React.useState('PS Team');
+
+    const handleWhatsapp = (event) => {
+        event.preventDefault();
+
+        // Replace the phone number and construct the WhatsApp URL
+        const phoneNumber = '+919926576466';
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappURL = `https://api.whatsapp.com/send/?phone=${phoneNumber}&text=Hey,+${encodedMessage}+%21&type=phone_number&app_absent=0`;
+
+        // Open the WhatsApp URL in a new tab
+        window.open(whatsappURL, '_blank');
     };
 
 

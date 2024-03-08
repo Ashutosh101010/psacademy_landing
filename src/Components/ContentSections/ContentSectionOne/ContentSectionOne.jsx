@@ -50,7 +50,7 @@ const ContentSectionOne = () => {
                             justifyContent: 'center'
                         }}
                     >
-                        <img alt='' width={isMobile ? '100%' : '50%'} style={{ position: 'relative', left: '55px' }} src={phoneSvg} />
+                        <img alt='' width={isMobile ? '70%' : '100%'} style={{ position: 'relative', left: isMobile ? '55px' : '25px' }} src={phoneSvg} />
                     </div>
                 </Grid>
                 <Grid item xs={12} sm={6} md={6} p={2}>

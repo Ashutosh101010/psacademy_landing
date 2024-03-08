@@ -8,3 +8,61 @@ html {
 #root {
     height: 100%;
 }
+
+.slider-container {
+    width: 70%;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 5rem;
+    /* overflow-x: hidden; */
+    /* Ensure that overflow is hidden for smooth sliding */
+}
+
+/* .slide {
+    flex: 0 0 100%;
+    /* Set each slide to take up one-third of the container */
+/* } */
+
+.slide img {
+    width: 60%;
+    height: auto;
+}
+
+.active {
+    opacity: 1;
+}
+
+
+
+/* Adjust as needed for positioning and styling */
+
+.slider-container-course {
+    width: 70%;
+    overflow: hidden;
+}
+
+.slidercourse {
+    display: flex;
+    transition: transform 0.5s ease;
+    /* gap: 5rem; */
+    /* overflow-x: hidden; */
+    /* Ensure that overflow is hidden for smooth sliding */
+}
+
+/* .slide {
+    flex: 0 0 100%;
+    /* Set each slide to take up one-third of the container */
+/* } */
+
+.slideCourse img {
+    width: 60%;
+    height: auto;
+}
+
+.activecourse {
+    opacity: 1;
+}

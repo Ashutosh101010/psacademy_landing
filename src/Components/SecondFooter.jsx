@@ -9,12 +9,16 @@ const SecondFooter = () => {
 
     const handleNavigatePolicy = (event) => {
         event.stopPropagation();
-        navigate('/privacyPolicy');
+        navigate('/privacypolicy');
     };
 
     const handleNavigateTerm = (event) => {
         event.stopPropagation();
-        navigate('/termCondition');
+        navigate('/termcondition');
+    };
+    const handleNavigateRefund = (event) => {
+        event.stopPropagation();
+        navigate('/refundpolicy');
     };
 
     return (
@@ -109,16 +113,10 @@ const SecondFooter = () => {
                             fontSize={'16px'}
                             fontWeight={'400'}
                             lineHeight={'24px'}
-                        >
-                            FAQs |
-                        </Typography>
-                        <Typography
-                            color={'#979595'}
-                            fontFamily={'Inter'}
-                            fontSize={'16px'}
-                            fontWeight={'400'}
-                            lineHeight={'24px'}
                             onClick={handleNavigatePolicy}
+                            sx={{
+                                cursor: 'pointer'
+                            }}
                         >
                             Privacy Policy  |
                         </Typography>
@@ -129,8 +127,24 @@ const SecondFooter = () => {
                             fontWeight={'400'}
                             lineHeight={'24px'}
                             onClick={handleNavigateTerm}
+                            sx={{
+                                cursor: 'pointer'
+                            }}
                         >
-                            Terms and Conditions
+                            Terms and Conditions |
+                        </Typography>
+                        <Typography
+                            color={'#979595'}
+                            fontFamily={'Inter'}
+                            fontSize={'16px'}
+                            fontWeight={'400'}
+                            lineHeight={'24px'}
+                            onClick={handleNavigateRefund}
+                            sx={{
+                                cursor: 'pointer'
+                            }}
+                        >
+                            Refund Policy
                         </Typography>
                     </Box>
                 </Grid>

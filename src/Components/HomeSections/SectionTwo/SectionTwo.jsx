@@ -26,6 +26,12 @@ const SectionTwo = () => {
     getAllCourses();
   }, []);
 
+  React.useEffect(() => {
+    // Filter active courses
+    const activeCourses = coursesData.filter(course => course.active);
+    setCoursesData(activeCourses);
+}, [coursesData]);
+
   return (
     <Box
       sx={{

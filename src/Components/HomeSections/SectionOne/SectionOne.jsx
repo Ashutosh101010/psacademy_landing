@@ -62,7 +62,7 @@ const SectionOne = () => {
                                         width: mobile ? '70%' : '100%'
                                     }}
                                 >
-                                    <Typography>
+                                    <Typography width={mobile ? '65%' : '100%'}>
                                         <Item>🏆 Pioneer in UPSC-MPPSC Preparation</Item>
                                     </Typography>
                                     <Box mt={3}>
@@ -188,7 +188,7 @@ const SectionOne = () => {
                         md={6}
                     >
                         <Box display={'flex'} justifyContent={'start'} alignItems={'center'}>
-                            <img alt='' style={{ position: 'relative', top: mobile ? '-13px' : '12px', width: mobile ? '60%' : '100%', borderBottomRightRadius: '136px' }} src={director} />
+                            <img alt='' style={{ position: 'relative', top: mobile ? '0px' : '12px', width: mobile ? '60%' : '100%', borderBottomRightRadius: mobile ? '175px' : '10px', marginBottom: mobile ? '18px' : '0px' }} src={director} />
                         </Box>
                     </Grid>
                     {/* <hr color='#fff' style={{ height: '14px', position: 'relative', top: mobile ? '612px' : '990px', width: '100%' }} /> */}

@@ -8,6 +8,20 @@ const SectionThree = () => {
 
     const isMobile = useMediaQuery("(min-width:600px)");
 
+    const[message, setMessage] = React.useState('I am interested in the Answer Writing Program, Kindly guide me with that.');
+
+    const handleWhatsapp = (event) => {
+        event.preventDefault();
+
+        // Replace the phone number and construct the WhatsApp URL
+        const phoneNumber = '+919926576466';
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappURL = `https://api.whatsapp.com/send/?phone=${phoneNumber}&text=Hey,+${encodedMessage}+Thanks%21&type=phone_number&app_absent=0`;
+
+        // Open the WhatsApp URL in a new tab
+        window.open(whatsappURL, '_blank');
+    };
+
     return (
         <Box
             sx={{
@@ -56,6 +70,7 @@ const SectionThree = () => {
                     alignItems={'center'}
                 >
                     <Button
+                        onClick={handleWhatsapp}
                         sx={{
                             textTransform: 'none',
                             background: '#FFD80D',

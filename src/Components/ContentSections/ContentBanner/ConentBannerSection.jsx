@@ -1,39 +1,58 @@
-import { Box, CardMedia, Typography } from '@mui/material';
-import React, { useEffect, useState } from 'react';
+import { Box, CardMedia, Typography, useMediaQuery } from '@mui/material';
+import React, { useEffect, useRef, useState } from 'react';
 import bannerImage1 from './Images/bannerImage1.svg'
 import CourseNetwrok from '../../../Network';
 import Endpoints from '../../../constant/endpoints';
+import '../../../index.css'
 
 const ContentBannerSection = () => {
 
-    const [courses, setCourses] = useState([]);
+    // const [courses, setCourses] = useState([]);
     const [banners, setBanners] = useState([]);
+    const sliderRef = useRef(null);
+    const isMobile = useMediaQuery("(min-width:600px)");
+    const [currentIndex, setCurrentIndex] = useState(0);
 
     const instId = 94;
 
-    const getAllCourses = async () => {
-        const response = await CourseNetwrok.fetchCourses(instId);
-        setCourses(response.courses);
-    };
+    // const getAllCourses = async () => {
+    //     const response = await CourseNetwrok.fetchCourses(instId);
+    //     setCourses(response.courses);
+    // };
 
     const getAllBanners = async () => {
         const response = await CourseNetwrok.fetchBannerss(instId);
         setBanners(response.banners);
     };
 
-    // console.log('banners', banners);
-
-
     useEffect(() => {
         // getAllCourses();
         getAllBanners();
     }, []);
 
+
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentIndex(prevIndex => (prevIndex + 1) % banners.length);
+        }, 1500); // Change image every 3 seconds (adjust as needed)
+
+        return () => clearInterval(interval);
+    }, [banners]);
+
+    useEffect(() => {
+        if (sliderRef.current) {
+            sliderRef.current.style.transform = `translateX(-${currentIndex * (100 / banners.length)}%)`;
+        }
+    }, [currentIndex, banners.length]);
+
     return (
-        <Box m={'20px'}>
+        <Box sx={{ background: '#FFE8E8' }}>
             <Box
                 sx={{
                     mb: 2,
+                    mt: 4,
+                    p: [2, 4],
                     overflow: 'hidden',
                     '&:hover': { overflowX: 'auto' },
                     scrollbarWidth: 'thin',
@@ -52,7 +71,7 @@ const ContentBannerSection = () => {
                     },
                 }}
             >
-                <Box
+                {/* <Box
                     sx={{ width: '1000px' }}
                     display={'flex'}
                     gap={'20px'}
@@ -67,14 +86,24 @@ const ContentBannerSection = () => {
                                 // image={Endpoints.mediaBaseUrl + banner?.banner ? bannerImage1 : ""}
                                 image={Endpoints.mediaBaseUrl + banner?.banner}
                             /> */}
-                                <img alt='' width={'100%'} height={'240px'} src={Endpoints.mediaBaseUrl + banner?.banner} />
+                {/* <img alt='' width={'100%'} height={'240px'} src={Endpoints.mediaBaseUrl + banner?.banner} />
                             </>
                         )
                     })}
-                </Box>
+                </Box> */}
+                <div className="slider-container">
+                    <div className="slider" ref={sliderRef}>
+                        {banners.map((banner, index) => (
+                            <div key={index} style={{ flex: isMobile ? '0 0 33.33%' : '0 0 100%' }}>
+                                <img alt='' width={'100%'} height={'240px'} src={Endpoints.mediaBaseUrl + banner?.banner} />
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </Box>
-            <Box
+            {/* <Box
                 textAlign={'center'}
+                mt={4}
             >
                 <Typography
                     fontSize={'18px'}
@@ -94,7 +123,7 @@ const ContentBannerSection = () => {
                 >
                     YOUR ACADEMICS AND EXPLAINS YOUR GAP YEARS
                 </Typography>
-            </Box>
+            </Box> */}
         </Box >
     )
 }

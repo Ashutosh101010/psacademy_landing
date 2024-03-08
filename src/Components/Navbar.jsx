@@ -116,6 +116,12 @@ const Navbar = () => {
         prevOpen.current = open;
     }, [open]);
 
+    React.useEffect(() => {
+        // Filter active courses
+        const activeCourses = courses.filter(course => course.active);
+        setCourses(activeCourses);
+    }, [courses]);
+
 
     React.useEffect(() => {
         if (prevOpenFree.current === true && openFree === false) {
@@ -165,6 +171,7 @@ const Navbar = () => {
     const [openLeft, setOpenLeft] = React.useState(false);
     const [openCourse, setOpenCourse] = React.useState(false);
     const [openFreeResources, setOpenFreeResources] = React.useState(false);
+    const [message, setMessage] = React.useState('I am interested in the Scholarship Test, Kindly guide me with that.');
 
     const toggleDrawer = (newOpen) => () => {
         setOpenLeft(newOpen);
@@ -189,6 +196,18 @@ const Navbar = () => {
 
     const handlePlayStore = () => {
         window.location.href = 'https://play.google.com/store/apps/details?id=com.classiolabs.psacademy&pcampaignid=web_share'
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        // Replace the phone number and construct the WhatsApp URL
+        const phoneNumber = '+919926576466';
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappURL = `https://api.whatsapp.com/send/?phone=${phoneNumber}&text=Hey,+${encodedMessage}+Thanks%21&type=phone_number&app_absent=0`;
+
+        // Open the WhatsApp URL in a new tab
+        window.open(whatsappURL, '_blank');
     };
 
     const handleFreeResources = () => {
@@ -279,7 +298,7 @@ const Navbar = () => {
                         <ListItemButton
                             onClick={(e) => handleMenuChange(e, text)}
                         >
-                            <Typography variant="body1" style={{ fontSize: '1.2rem' }} >
+                            <Typography onClick={handlePlayStore} variant="body1" style={{ fontSize: '1.2rem' }} >
                                 {text}
                             </Typography>
                         </ListItemButton>
@@ -287,6 +306,7 @@ const Navbar = () => {
                 ))}
                 <ListItem>
                     <Button
+                        onClick={handleSubmit}
                         sx={{
                             background: '#FFD80D',
                             borderRadius: '40px',
@@ -546,10 +566,10 @@ const Navbar = () => {
                                 )
                             })}
                         </Menu>
-                        <Button sx={{ color: '#fff', fontWeight: '600', textTransform: 'none' }}>
+                        <Button onClick={handlePlayStore} sx={{ color: '#fff', fontWeight: '600', textTransform: 'none' }}>
                             Interview Guidance
                         </Button>
-                        <Button sx={{ color: '#fff', fontWeight: '600', textTransform: 'none' }}>
+                        <Button onClick={handlePlayStore} sx={{ color: '#fff', fontWeight: '600', textTransform: 'none' }}>
                             Answer Writing Program
                         </Button>
                         <IconButton
@@ -624,7 +644,7 @@ const Navbar = () => {
                                 Blogs
                             </MenuItem>
                         </Menu> */}
-                        <Button sx={{ color: '#fff', fontWeight: '600', textTransform: 'none' }}>
+                        <Button onClick={handlePlayStore} sx={{ color: '#fff', fontWeight: '600', textTransform: 'none' }}>
                             Topper’s Strategy
                         </Button>
                     </Box>
@@ -648,6 +668,7 @@ const Navbar = () => {
                     </Box> */}
                     <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' } }}>
                         <Button
+                            onClick={handleSubmit}
                             sx={{
                                 background: '#FFD80D',
                                 borderRadius: '40px',

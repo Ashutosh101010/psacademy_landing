@@ -2,6 +2,11 @@ import React from 'react';
 import { Box, Button, Grid, Typography } from '@mui/material'
 
 const Header = () => {
+
+    const handlePlayStore = () => {
+        window.location.href = 'https://play.google.com/store/apps/details?id=com.classiolabs.psacademy&pcampaignid=web_share'
+    };
+
     return (
         <>
             <Grid container spacing={2}
@@ -20,6 +25,7 @@ const Header = () => {
                 </Grid>
                 <Grid item xs={12} sm={6} md={6} display={'flex'} justifyContent={['center', 'start']}>
                     <Button
+                        onClick={handlePlayStore}
                         sx={{
                             background: '#9D0009',
                             borderRadius: '8px',
