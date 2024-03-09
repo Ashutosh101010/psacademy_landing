@@ -30,7 +30,7 @@ const SectionTwo = () => {
     // Filter active courses
     const activeCourses = coursesData.filter(course => course.active);
     setCoursesData(activeCourses);
-}, [coursesData]);
+  }, [coursesData]);
 
   return (
     <Box
@@ -139,9 +139,11 @@ const SectionTwo = () => {
                   fontSize: '17px',
                   lineHeight: ['30px', '40px'],
                   display: 'flex',
-                  justifyContent: 'flex-start',
+                  justifyContent: ['center', 'flex-start'],
                   alignItem: 'center',
-                  gap: '8px'
+                  gap: '8px',
+                  position: 'relative',
+                  right: ['14px', '0px']
                 }}
               >
                 cracked the exam themselves.
@@ -169,12 +171,31 @@ const SectionTwo = () => {
                   fontSize: '17px',
                   lineHeight: ['30px', '40px'],
                   display: 'flex',
-                  justifyContent: 'flex-start',
+                  justifyContent: ['center', 'flex-start'],
                   alignItem: 'center',
-                  gap: '8px'
+                  gap: '8px',
+                  position: 'relative',
+                  right: ['35px', '0px']
                 }}
               >
-                along with focused UPSC preparation.
+                along with focused UPSC
+              </Typography>
+              <Typography
+                sx={{
+                  fontFamily: 'Inter',
+                  fontWeight: '500',
+                  color: '#fff',
+                  fontSize: '17px',
+                  lineHeight: ['30px', '40px'],
+                  display: 'flex',
+                  justifyContent: ['center', 'flex-start'],
+                  alignItem: 'center',
+                  gap: '8px',
+                  position: 'relative',
+                  right: ['88px', '0px']
+                }}
+              >
+                preparation.
               </Typography>
               <Typography
                 sx={{
@@ -199,9 +220,11 @@ const SectionTwo = () => {
                   fontSize: '17px',
                   lineHeight: ['30px', '40px'],
                   display: 'flex',
-                  justifyContent: 'flex-start',
+                  justifyContent: ['center', 'flex-start'],
                   alignItem: 'center',
-                  gap: '8px'
+                  gap: '8px',
+                  position: 'relative',
+                  right: ['42px', '0px']
                 }}
               >including test practice.
               </Typography>

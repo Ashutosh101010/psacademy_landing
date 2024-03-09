@@ -89,7 +89,13 @@ const BannerSection = () => {
                         )
                     })}
                 </Box> */}
-                <div className="slider-container">
+                <div
+                    // className="slider-container"
+                    style={{
+                        width: isMobile ? '70%' : '100%',
+                        overflow: 'hidden'
+                    }}
+                >
                     <div className="slider" ref={sliderRef}>
                         {banners.map((banner, index) => (
                             <div key={index} style={{ flex: isMobile ? '0 0 33.33%' : '0 0 100%' }}>
