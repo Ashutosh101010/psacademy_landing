@@ -26,7 +26,7 @@ const Navbar = () => {
 
     const instId = '94'
     const [anchorElNav, setAnchorElNav] = React.useState(null);
-    const [anchorElUser, setAnchorElUser] = React.useState(null);
+    // const [anchorElUser, setAnchorElUser] = React.useState(null);
     const navigate = useNavigate();
     const [open, setOpen] = React.useState(false);
     const anchorRef = React.useRef(null);
@@ -39,23 +39,27 @@ const Navbar = () => {
     const prevOpenFree = React.useRef(openFree);
     const [anchorElM, setAnchorElM] = React.useState(null);
     const openM = Boolean(anchorElM);
-    const [showCoursesSubMenu, setShowCoursesSubMenu] = React.useState(false);
-    const [showFreeResourcesSubMenu, setShowFreeResourcesSubMenu] = React.useState(false);
+    const [openLeft, setOpenLeft] = React.useState(false);
+    const [openCourse, setOpenCourse] = React.useState(false);
+    // const [openFreeResources, setOpenFreeResources] = React.useState(false);
+    const [message, setMessage] = React.useState('I am interested in the Scholarship Test, Kindly guide me with that.');
+    // const [showCoursesSubMenu, setShowCoursesSubMenu] = React.useState(false);
+    // const [showFreeResourcesSubMenu, setShowFreeResourcesSubMenu] = React.useState(false);
 
-    const handleOpenNavMenu = (event) => {
-        setAnchorElNav(event.currentTarget);
-    };
-    const handleOpenUserMenu = (event) => {
-        setAnchorElUser(event.currentTarget);
-    };
+    // const handleOpenNavMenu = (event) => {
+    //     setAnchorElNav(event.currentTarget);
+    // };
+    // const handleOpenUserMenu = (event) => {
+    //     setAnchorElUser(event.currentTarget);
+    // };
 
     const handleCloseNavMenu = () => {
         setAnchorElNav(null);
     };
 
-    const handleCloseUserMenu = () => {
-        setAnchorElUser(null);
-    };
+    // const handleCloseUserMenu = () => {
+    //     setAnchorElUser(null);
+    // };
 
     const getAllCourses = async () => {
         const response = await CourseNetwrok.fetchCourses(instId);
@@ -138,14 +142,14 @@ const Navbar = () => {
         setAnchorElM(null);
     };
 
-    const handleClickF = (event) => {
-        setAnchorElF(event.currentTarget);
-    };
-    const handleCloseF = () => {
-        setAnchorElF(null);
-        handleCloseNavMenu();
-        navigate('/content');
-    };
+    // const handleClickF = (event) => {
+    //     setAnchorElF(event.currentTarget);
+    // };
+    // const handleCloseF = () => {
+    //     setAnchorElF(null);
+    //     // handleCloseNavMenu();
+    //     navigate('/content');
+    // };
 
     const handleBuyCourse = (item) => {
         const url = `https://iframe.classiolabs.com/buyCourseDetails/` + `?iframeId=12&courseId=${item?.id}&folderId=${0}&on-click=${true}`
@@ -161,17 +165,12 @@ const Navbar = () => {
         navigate('/')
     };
 
-    const handleCoursesClick = () => {
-        setShowCoursesSubMenu(!showCoursesSubMenu);
-    };
-    const handleFreeResourcesClick = () => {
-        setShowFreeResourcesSubMenu(!showFreeResourcesSubMenu);
-    };
-
-    const [openLeft, setOpenLeft] = React.useState(false);
-    const [openCourse, setOpenCourse] = React.useState(false);
-    const [openFreeResources, setOpenFreeResources] = React.useState(false);
-    const [message, setMessage] = React.useState('I am interested in the Scholarship Test, Kindly guide me with that.');
+    // const handleCoursesClick = () => {
+    //     // setShowCoursesSubMenu(!showCoursesSubMenu);
+    // };
+    // const handleFreeResourcesClick = () => {
+    //     // setShowFreeResourcesSubMenu(!showFreeResourcesSubMenu);
+    // };
 
     const toggleDrawer = (newOpen) => () => {
         setOpenLeft(newOpen);
@@ -189,10 +188,10 @@ const Navbar = () => {
         setOpenLeft(false);
     };
 
-    const handleClickFreeResources = (event) => {
-        setOpenFreeResources((prevOpen) => !prevOpen);
-        event.stopPropagation();
-    };
+    // const handleClickFreeResources = (event) => {
+    //     setOpenFreeResources((prevOpen) => !prevOpen);
+    //     event.stopPropagation();
+    // };
 
     const handlePlayStore = () => {
         window.location.href = 'https://play.google.com/store/apps/details?id=com.classiolabs.psacademy&pcampaignid=web_share'
@@ -545,7 +544,7 @@ const Navbar = () => {
                             PaperProps={{
                                 style: {
                                     maxHeight: ITEM_HEIGHT * 6.5,
-                                    width: '20%',
+                                    width: 'fit-content',
                                     // position: 'relative',
                                     top: '200px'
                                 },

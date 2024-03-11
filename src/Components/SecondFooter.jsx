@@ -106,11 +106,12 @@ const SecondFooter = () => {
                         display={'flex'}
                         gap={'10px'}
                         padding={'5px'}
+                        justifyContent={['center', 'start']}
                     >
                         <Typography
                             color={'#979595'}
                             fontFamily={'Inter'}
-                            fontSize={'16px'}
+                            fontSize={['13px', '16px']}
                             fontWeight={'400'}
                             lineHeight={'24px'}
                             onClick={handleNavigatePolicy}
@@ -123,7 +124,7 @@ const SecondFooter = () => {
                         <Typography
                             color={'#979595'}
                             fontFamily={'Inter'}
-                            fontSize={'16px'}
+                            fontSize={['13px', '16px']}
                             fontWeight={'400'}
                             lineHeight={'24px'}
                             onClick={handleNavigateTerm}
@@ -136,7 +137,7 @@ const SecondFooter = () => {
                         <Typography
                             color={'#979595'}
                             fontFamily={'Inter'}
-                            fontSize={'16px'}
+                            fontSize={['13px', '16px']}
                             fontWeight={'400'}
                             lineHeight={'24px'}
                             onClick={handleNavigateRefund}

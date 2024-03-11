@@ -69,6 +69,8 @@ const ContentBannerSection = () => {
                     '&::-webkit-scrollbar-thumb:hover': {
                         background: '#402f2f69',
                     },
+                    display: 'flex',
+                    justifyContent: 'center'
                 }}
             >
                 {/* <Box
