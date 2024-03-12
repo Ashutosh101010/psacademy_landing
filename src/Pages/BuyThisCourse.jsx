@@ -95,8 +95,8 @@ const BuyThisCourse = () => {
 
     return (
         <>
-            <Header />
-            <SecondHeader />
+            {/* <Header />
+            <SecondHeader /> */}
             <Navbar />
             <div style={{ position: 'fixed', width: '100%', zIndex: 100000, top: isSticky ? '0' : 'auto' }}>
                 {isSticky && <Navbar />}

@@ -31,18 +31,18 @@ const ContentSectionTwo = () => {
                     <Typography
                         fontFamily={'Inter'}
                         fontWeight={'700'}
-                        fontSize={'46px'}
+                        fontSize={['35px', '46px']}
                         color={'white'}
-                        lineHeight={'61px'}
+                        lineHeight={'51px'}
                     >
                         Daily Current Affairs Notes
                     </Typography>
                     <Typography
                         fontFamily={'Inter'}
                         fontWeight={'700'}
-                        fontSize={'31px'}
+                        fontSize={'30px'}
                         color={'white'}
-                        lineHeight={'61px'}
+                        lineHeight={'51px'}
                     >
                         For UPSC-MPPSC Prelim & Mains Exam
                     </Typography>

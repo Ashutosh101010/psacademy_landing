@@ -96,7 +96,8 @@ const SectionTwo = () => {
                   fontFamily: 'Inter , sans-serif',
                   fontWeight: '700',
                   color: '#fff',
-                  fontSize: ['30px', '44px']
+                  fontSize: ['30px', '44px'],
+                  mb:2
                 }}
               >
                 PS Academy ?
@@ -114,7 +115,7 @@ const SectionTwo = () => {
                   gap: '8px'
                 }}
               >
-                <img alt='' style={{ position: 'relative', top: mobile ? '0px' : '-12px' }} src={checkBoxsvg} /> Provide precise and pin-pointed guidance.
+                <img alt='' style={{ position: 'relative', bottom: mobile ? '0px' : '12px' }} src={checkBoxsvg} /> Provide precise and pin-pointed guidance.
               </Typography>
               <Typography
                 sx={{
@@ -122,31 +123,15 @@ const SectionTwo = () => {
                   fontWeight: '500',
                   color: '#fff',
                   fontSize: '17px',
-                  lineHeight: ['30px', '40px'],
+                  lineHeight: ['30px', '35px'],
                   display: 'flex',
                   justifyContent: 'flex-start',
                   alignItem: 'center',
-                  gap: '8px'
-                }}
-              >
-                <img alt='' style={{ position: 'relative', top: mobile ? '0px' : '-12px' }} src={checkBoxsvg} />Hand holding and mentoring of students by people who have
-              </Typography>
-              <Typography
-                sx={{
-                  fontFamily: 'Inter',
-                  fontWeight: '500',
-                  color: '#fff',
-                  fontSize: '17px',
-                  lineHeight: ['30px', '40px'],
-                  display: 'flex',
-                  justifyContent: ['center', 'flex-start'],
-                  alignItem: 'center',
                   gap: '8px',
-                  position: 'relative',
-                  right: ['14px', '0px']
+                  width: ['100%', '75%']
                 }}
               >
-                cracked the exam themselves.
+                <img alt='' style={{ position: 'relative', bottom: mobile ? '15px' : '25px' }} src={checkBoxsvg} />Hand holding and mentoring of students by people who have cracked the exam themselves.
               </Typography>
               <Typography
                 sx={{
@@ -154,31 +139,15 @@ const SectionTwo = () => {
                   fontWeight: '500',
                   color: '#fff',
                   fontSize: '17px',
-                  lineHeight: ['30px', '40px'],
+                  lineHeight: ['30px', '35px'],
                   display: 'flex',
                   justifyContent: 'flex-start',
                   alignItem: 'center',
-                  gap: '8px'
-                }}
-              >
-                <img alt='' style={{ position: 'relative', top: mobile ? '0px' : '-12px' }} src={checkBoxsvg} /> Provide academic growth and continuation of formal education
-              </Typography>
-              <Typography
-                sx={{
-                  fontFamily: 'Inter',
-                  fontWeight: '500',
-                  color: '#fff',
-                  fontSize: '17px',
-                  lineHeight: ['30px', '40px'],
-                  display: 'flex',
-                  justifyContent: ['center', 'flex-start'],
-                  alignItem: 'center',
                   gap: '8px',
-                  position: 'relative',
-                  right: ['35px', '0px']
+                  width: ['100%', '75%']
                 }}
               >
-                along with focused UPSC
+                <img alt='' style={{ position: 'relative', bottom: mobile ? '15px' : '25px' }} src={checkBoxsvg} /> Provide academic growth and continuation of formal education preparation.
               </Typography>
               <Typography
                 sx={{
@@ -186,47 +155,15 @@ const SectionTwo = () => {
                   fontWeight: '500',
                   color: '#fff',
                   fontSize: '17px',
-                  lineHeight: ['30px', '40px'],
-                  display: 'flex',
-                  justifyContent: ['center', 'flex-start'],
-                  alignItem: 'center',
-                  gap: '8px',
-                  position: 'relative',
-                  right: ['88px', '0px']
-                }}
-              >
-                preparation.
-              </Typography>
-              <Typography
-                sx={{
-                  fontFamily: 'Inter',
-                  fontWeight: '500',
-                  color: '#fff',
-                  fontSize: '17px',
-                  lineHeight: ['30px', '40px'],
+                  lineHeight: ['30px', '35px'],
                   display: 'flex',
                   justifyContent: 'flex-start',
                   alignItem: 'center',
-                  gap: '8px'
+                  gap: '8px',
+                  width: ['100%', '73%']
                 }}
               >
-                <img alt='' style={{ position: 'relative', top: mobile ? '0px' : '-12px' }} src={checkBoxsvg} /> Answer Writing skill and creativity development program,
-              </Typography>
-              <Typography
-                sx={{
-                  fontFamily: 'Inter',
-                  fontWeight: '500',
-                  color: '#fff',
-                  fontSize: '17px',
-                  lineHeight: ['30px', '40px'],
-                  display: 'flex',
-                  justifyContent: ['center', 'flex-start'],
-                  alignItem: 'center',
-                  gap: '8px',
-                  position: 'relative',
-                  right: ['42px', '0px']
-                }}
-              >including test practice.
+                <img alt='' style={{ position: 'relative', bottom: mobile ? '15px' : '40px' }} src={checkBoxsvg} /> Answer Writing skill and creativity development program, including test practice.
               </Typography>
             </Box>
             {/* </Grid> */}

@@ -138,7 +138,7 @@ const SectionFourth = () => {
                             .slice(0, 5) // Take the first 10 words
                             .join(' ');
                         const imageUrl = extractImageUrlFromPostContent(data?.post_content);
-
+                        // console.log('images',data?.post_content);
                         return (
                             <Grid item xs={12} sm={3} md={3} key={data.id}>
                                 <Card sx={{ width: 'fit-content', height: 'fit-content' }}>
@@ -202,13 +202,13 @@ const SectionFourth = () => {
                         const first10WordsTitle = data?.post_title
                             .replace(/<[^>]*>/g, ' ') // Remove HTML tags
                             .split(/\s+/) // Split into words
-                            .slice(0, 5) // Take the first 10 words
+                            .slice(0, 3) // Take the first 10 words
                             .join(' ');
                         const imageUrl = extractImageUrlFromPostContent(data?.post_content);
-
+                        // console.log('images',data?.post_content);
                         return (
                             <Grid item xs={12} sm={3} md={3} key={data.id}>
-                               <Card sx={{ width: 'fit-content', height: 'fit-content' }}>
+                                <Card sx={{ width: 'fit-content', height: 'fit-content' }}>
                                     {/* <CardMedia
                                             sx={{ height: 200 }}
                                             image={imageUrl}

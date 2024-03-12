@@ -4,6 +4,8 @@ import bannerImage1 from './Images/bannerImage1.svg'
 import CourseNetwrok from '../../../Network';
 import Endpoints from '../../../constant/endpoints';
 import '../../../index.css'
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 const ContentBannerSection = () => {
 
@@ -30,6 +32,23 @@ const ContentBannerSection = () => {
         getAllBanners();
     }, []);
 
+    const responsive = {
+        desktop: {
+            breakpoint: { max: 3000, min: 1024 },
+            items: 3,
+            slidesToSlide: 3 // optional, default to 1.
+        },
+        tablet: {
+            breakpoint: { max: 1024, min: 464 },
+            items: 2,
+            slidesToSlide: 2 // optional, default to 1.
+        },
+        mobile: {
+            breakpoint: { max: 464, min: 0 },
+            items: 1,
+            slidesToSlide: 1 // optional, default to 1.
+        }
+    };
 
 
     useEffect(() => {
@@ -93,7 +112,7 @@ const ContentBannerSection = () => {
                         )
                     })}
                 </Box> */}
-                <div
+                {/* <div
                     // className="slider-container"
                     style={{
                         width: isMobile ? '70%' : '100%',
@@ -107,6 +126,36 @@ const ContentBannerSection = () => {
                             </div>
                         ))}
                     </div>
+                </div> */}
+                <div style={{ width: isMobile ? '80%' : '100%' }}>
+                    <Carousel
+                       swipeable={false}
+                       draggable={false}
+                       showDots={false}
+                       responsive={responsive}
+                       ssr={true}
+                       infinite={true}
+                       autoPlay={true}
+                       autoPlaySpeed={1000}
+                       keyBoardControl={false}
+                       // customTransition="all 3"
+                       transitionDuration={1000}
+                       containerClass="carousel-container"
+                       removeArrowOnDeviceType={["desktop"]}
+                       // deviceType={this.props.deviceType}
+                       dotListClass="custom-dot-list-style"
+                       itemClass="carousel-item-padding-40-px"
+                       arrows={true}
+                       renderButtonGroupOutside={true}
+                    >
+                        {
+                            banners.map((item, i) => (
+                                <div key={i} style={{ padding: '1rem' }}>
+                                    <img alt='' width={'100%'} height={'220px'} src={Endpoints.mediaBaseUrl + item?.banner} />
+                                </div>
+                            ))
+                        }
+                    </Carousel>
                 </div>
             </Box>
             {/* <Box

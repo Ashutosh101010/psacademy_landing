@@ -111,7 +111,7 @@ const SecondFooter = () => {
                         <Typography
                             color={'#979595'}
                             fontFamily={'Inter'}
-                            fontSize={['13px', '16px']}
+                            fontSize={['11px', '16px']}
                             fontWeight={'400'}
                             lineHeight={'24px'}
                             onClick={handleNavigatePolicy}
@@ -124,7 +124,7 @@ const SecondFooter = () => {
                         <Typography
                             color={'#979595'}
                             fontFamily={'Inter'}
-                            fontSize={['13px', '16px']}
+                            fontSize={['11px', '16px']}
                             fontWeight={'400'}
                             lineHeight={'24px'}
                             onClick={handleNavigateTerm}
@@ -137,7 +137,7 @@ const SecondFooter = () => {
                         <Typography
                             color={'#979595'}
                             fontFamily={'Inter'}
-                            fontSize={['13px', '16px']}
+                            fontSize={['11px', '16px']}
                             fontWeight={'400'}
                             lineHeight={'24px'}
                             onClick={handleNavigateRefund}

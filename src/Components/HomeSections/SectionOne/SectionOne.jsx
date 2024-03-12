@@ -45,6 +45,7 @@ const SectionOne = () => {
                     backgroundImage: `url(${backgroundImage})`,
                     backgroundSize: 'cover', // or 'contain' depending on your needs
                     backgroundRepeat: 'no-repeat',
+                    borderBottom: mobile ? '' : '1px solid #8f7e7e00'
                 }}
             >
                 <Grid container spacing={2} mt={'0px'} pb={mobile ? '0px' : '12px'}>
@@ -71,7 +72,7 @@ const SectionOne = () => {
                                                 fontFamily: 'Inter , sans-serif',
                                                 fontWeight: '700',
                                                 color: '#fff',
-                                                fontSize: mobile ? '35px' : '30px',
+                                                fontSize: mobile ? '35px' : '27px',
                                             }}
                                         >
                                             Best <Typewriter text="UPSC Coaching" delay={100} />
@@ -81,7 +82,7 @@ const SectionOne = () => {
                                                 fontFamily: 'Inter , sans-serif',
                                                 fontWeight: '700',
                                                 color: '#fff',
-                                                fontSize: mobile ? '35px' : '30px',
+                                                fontSize: mobile ? '35px' : '27px',
                                             }}
                                         >
                                             Near You.
@@ -122,14 +123,14 @@ const SectionOne = () => {
                                                 fontWeight: '500',
                                                 color: '#fff',
                                                 fontSize: '17px',
-                                                lineHeight: '36px',
+                                                lineHeight: ['30px', '36px'],
                                                 display: 'flex',
                                                 justifyContent: 'flex-start',
                                                 alignItem: 'center',
                                                 gap: '8px'
                                             }}
                                         >
-                                            <img alt='' src={checkBoxsvg} /> Mentorship by Pradeep Srivastava Sir
+                                            <img alt='' style={{ position: 'relative', bottom: mobile ? '0px' : '12px' }} src={checkBoxsvg} /> Mentorship by Pradeep Srivastava Sir
                                         </Typography>
                                         <Typography
                                             sx={{
@@ -174,7 +175,7 @@ const SectionOne = () => {
                                                 gap: '8px'
                                             }}
                                         >
-                                            <img alt='' src={checkBoxsvg} /> Answer Writing Skill Development Program
+                                            <img alt='' style={{ position: 'relative', bottom: mobile ? '0px' : '14px' }} src={checkBoxsvg} /> Answer Writing Skill Development Program
                                         </Typography>
                                     </Box>
                                 </Box>
