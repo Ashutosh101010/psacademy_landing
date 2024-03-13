@@ -64,12 +64,31 @@ const Navbar = () => {
 
     const getAllCourses = async () => {
         const response = await CourseNetwrok.fetchCourses(instId);
-        setCourses(response.courses);
+        // setCourses(response.courses);
+        let templist = [];
+        response.courses.forEach((course) => {
+            if (course.active == true) {
+                templist.push(course);
+            }
+        })
+        setCourses(templist);
     };
 
     useEffect(() => {
         getAllCourses();
     }, []);
+
+    // useEffect(() => {
+    //     // Filter active courses
+    //     // const activeCourses = courses.filter(course => course.active);
+    //     let templist = [];
+    //     courses.forEach((course) => {
+    //         if (course.active == true) {
+    //             templist.push(course);
+    //         }
+    //     })
+    //     setCourses(templist);
+    // }, [courses]);
 
     // const handleToggle = () => {
     //     setOpen((prevOpen) => !prevOpen);
@@ -121,18 +140,7 @@ const Navbar = () => {
         prevOpen.current = open;
     }, [open]);
 
-    useEffect(() => {
-        // Filter active courses
-        // const activeCourses = courses.filter(course => course.active);
-        let templist=[];
-        courses.forEach((course)=>{
-            if(course.active==true)
-            {
-                templist.push(course);
-            }
-        })
-        setCourses(templist);
-    }, [courses]);
+
 
 
     useEffect(() => {

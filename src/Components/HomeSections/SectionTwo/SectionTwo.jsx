@@ -5,13 +5,14 @@ import appLogo from './Images/appLogosvg.svg'
 import checkBoxsvg from './Images/checkBoxsvg.svg'
 import CourseNetwrok from '../../../Network'
 import '../../../App.css';
+import { useEffect } from 'react'
 
 const SectionTwo = () => {
 
   const instId = '94'
   const mobile = useMediaQuery("(min-width:600px)");
   const [course, setCourse] = useState('');
-  const [coursesData, setCoursesData] = React.useState([]);
+  const [coursesData, setCoursesData] = useState([]);
 
   const handleChangeCourse = (event) => {
     setCourse(event.target.value);
@@ -19,18 +20,31 @@ const SectionTwo = () => {
 
   const getAllCourses = async () => {
     const response = await CourseNetwrok.fetchCourses(instId);
-    setCoursesData(response.courses);
-  };
+    // setCourses(response.courses);
+    let templist = [];
+    response.courses.forEach((course) => {
+        if (course.active == true) {
+            templist.push(course);
+        }
+    })
+    setCoursesData(templist);
+};
 
-  React.useEffect(() => {
+  useEffect(() => {
     getAllCourses();
   }, []);
 
-  React.useEffect(() => {
-    // Filter active courses
-    const activeCourses = coursesData.filter(course => course.active);
-    setCoursesData(activeCourses);
-  }, [coursesData]);
+  // useEffect(() => {
+  //   // Filter active courses
+  //   // const activeCourses = courses.filter(course => course.active);
+  //   let templist = [];
+  //   coursesData.forEach((course) => {
+  //     if (course.active == true) {
+  //       templist.push(course);
+  //     }
+  //   })
+  //   setCoursesData(templist);
+  // }, [coursesData]);
 
   return (
     <Box
@@ -97,7 +111,7 @@ const SectionTwo = () => {
                   fontWeight: '700',
                   color: '#fff',
                   fontSize: ['30px', '44px'],
-                  mb:2
+                  mb: 2
                 }}
               >
                 PS Academy ?
