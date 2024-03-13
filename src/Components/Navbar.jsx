@@ -18,6 +18,7 @@ import appleStore from '../../images/applestoresvg.svg'
 import playStore from '../../images/playstoresvg.svg'
 import windowsStore from '../../images/windowsstoresvg.svg'
 import pdf from '../MPPSC_syllabus_23feb.pdf'
+import { useEffect } from 'react';
 
 const pages = ['Interview Guidance', 'Answer Writing Program', 'Free-Resources', `Topper's Strategy`];
 const ITEM_HEIGHT = 48;
@@ -66,7 +67,7 @@ const Navbar = () => {
         setCourses(response.courses);
     };
 
-    React.useEffect(() => {
+    useEffect(() => {
         getAllCourses();
     }, []);
 
@@ -112,7 +113,7 @@ const Navbar = () => {
     // };
 
     // return focus to the button when we transitioned from !open -> open
-    React.useEffect(() => {
+    useEffect(() => {
         if (prevOpen.current === true && open === false) {
             anchorRef.current.focus();
         }
@@ -120,14 +121,21 @@ const Navbar = () => {
         prevOpen.current = open;
     }, [open]);
 
-    React.useEffect(() => {
+    useEffect(() => {
         // Filter active courses
-        const activeCourses = courses.filter(course => course.active);
-        setCourses(activeCourses);
+        // const activeCourses = courses.filter(course => course.active);
+        let templist=[];
+        courses.forEach((course)=>{
+            if(course.active==true)
+            {
+                templist.push(course);
+            }
+        })
+        setCourses(templist);
     }, [courses]);
 
 
-    React.useEffect(() => {
+    useEffect(() => {
         if (prevOpenFree.current === true && openFree === false) {
             anchorRefFree.current.focus();
         }

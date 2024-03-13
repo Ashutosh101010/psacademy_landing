@@ -42,7 +42,7 @@ const SectionGellary = () => {
                     >
                         Gallery
                     </Typography>
-                </Grid> 
+                </Grid>
             </Grid>
             <Grid container spacing={2} padding={'1rem'} ml={'-5px'}>
                 <ImageList
