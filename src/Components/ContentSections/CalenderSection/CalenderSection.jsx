@@ -160,8 +160,7 @@ const CalenderSection = () => {
                                                 padding: '5px 20px 5px 20px',
                                                 fontWeight: '600',
                                                 '&:hover': {
-                                                    background: '#CC0000', // Change the background color on hover
-                                                    // Add any other styles you want for hover effect
+                                                    background: '#CC0000',
                                                 },
                                             }}
                                         >

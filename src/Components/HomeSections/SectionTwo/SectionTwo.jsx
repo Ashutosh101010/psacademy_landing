@@ -57,7 +57,7 @@ const SectionTwo = () => {
       }}>
       <Grid container spacing={2}
         sx={{
-          padding: ['10px 18px 30px 32px', '15px 10px 35px 15px']
+          padding: ['10px 18px 30px 32px', '15px 0px 25px 240px']
         }}
       >
         <Grid item xs={12} sm={6} md={6} mt={3}>

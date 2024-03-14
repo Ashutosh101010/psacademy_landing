@@ -32,7 +32,6 @@ const SectionFourth = () => {
                 setIsLoading(false);
             }
         };
-
         fetchData();
     }, []);
 
@@ -53,9 +52,7 @@ const SectionFourth = () => {
     };
 
     const handleReadMoreFaq = (e, data) => {
-        // console.log('data', data);
         navigate(`/faq/${data?.ID}`);
-        // console.log('id', data);
     };
 
     return (
@@ -83,7 +80,6 @@ const SectionFourth = () => {
                             background: 'none',
                             border: 'none'
                         }}
-
                     >
                         <ChevronLeftIcon onClick={previous} style={{ width: isMobile ? "14%" : '100%', background: '#FECACA', borderRadius: '10px', color: 'white' }} />
                     </button>
@@ -106,7 +102,6 @@ const SectionFourth = () => {
                             background: 'none',
                             border: 'none'
                         }}
-
                     >
                         <ChevronRightIcon onClick={next} style={{ width: isMobile ? "14%" : '100%', background: '#FECACA', borderRadius: '10px', color: 'white' }} />
                     </button>
@@ -115,39 +110,20 @@ const SectionFourth = () => {
             <Grid container spacing={2} p={4}>
                 {showAll
                     ? faqs && faqs.map((data, index) => {
-
-                        const extractImageUrlFromPostContent = (post_content) => {
-                            const parser = new DOMParser();
-                            const doc = parser.parseFromString(post_content, 'text/html');
-                            const imageElement = doc.querySelector('img'); // Assuming the image is the first one found
-
-                            if (imageElement) {
-                                return imageElement.getAttribute('src');
-                            } else {
-                                return null;
-                            }
-                        }
                         const first10Words = data?.post_content
-                            .replace(/<[^>]*>/g, ' ') // Remove HTML tags
-                            .split(/\s+/) // Split into words
-                            .slice(0, 10) // Take the first 10 words
+                            .replace(/<[^>]*>/g, ' ')
+                            .split(/\s+/)
+                            .slice(0, 8)
                             .join(' ');
                         const first10WordsTitle = data?.post_title
-                            .replace(/<[^>]*>/g, ' ') // Remove HTML tags
-                            .split(/\s+/) // Split into words
-                            .slice(0, 5) // Take the first 10 words
+                            .replace(/<[^>]*>/g, ' ')
+                            .split(/\s+/)
+                            .slice(0, 3)
                             .join(' ');
-                        const imageUrl = extractImageUrlFromPostContent(data?.post_content);
-                        // console.log('images',data?.post_content);
                         return (
                             <Grid item xs={12} sm={3} md={3} key={data.id}>
-                                <Card sx={{ width: 'fit-content', height: 'fit-content' }}>
-                                    {/* <CardMedia
-                                            sx={{ height: 200 }}
-                                            image={imageUrl}
-                                        // title="green iguana"
-                                        /> */}
-                                    <img alt='' src={imageUrl} />
+                                <Card sx={{ width: '75%', height: 'fit-content' }}>
+                                    <img style={{ width: '100%', height: '100%' }} alt='' src={data?.guid} />
                                     <CardContent>
                                         <Typography textAlign={'left'} fontWeight={'bold'} lineHeight={'24px'} fontSize={'20px'}>
                                             {parse(first10WordsTitle)}
@@ -156,16 +132,15 @@ const SectionFourth = () => {
                                             {parse(first10Words)}
                                         </Typography>
                                     </CardContent>
-                                    <CardActions>
+                                    <CardActions sx={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
                                         <Typography textAlign={'left'} fontWeight={'600'} color={'#00000080'} lineHeight={'24px'} fontSize={'13px'}>
                                             {moment(data?.post_date).format('MMMM Do YYYY')}
                                         </Typography>
                                         <Button
                                             onClick={(e) => handleReadMoreFaq(e, data)}
                                             sx={{
-                                                // background: '#F6E9FF',
                                                 padding: '16px 32px',
-                                                alignItems: 'flex-end',
+                                                alignItems: 'end',
                                                 gap: '10px',
                                                 borderRadius: '15px',
                                                 textTransform: 'none',
@@ -182,39 +157,20 @@ const SectionFourth = () => {
                         )
                     })
                     : faqs.slice(index, index + 4).map((data) => {
-
-                        const extractImageUrlFromPostContent = (post_content) => {
-                            const parser = new DOMParser();
-                            const doc = parser.parseFromString(post_content, 'text/html');
-                            const imageElement = doc.querySelector('img'); // Assuming the image is the first one found
-
-                            if (imageElement) {
-                                return imageElement.getAttribute('src');
-                            } else {
-                                return null;
-                            }
-                        }
                         const first10Words = data?.post_content
-                            .replace(/<[^>]*>/g, ' ') // Remove HTML tags
-                            .split(/\s+/) // Split into words
-                            .slice(0, 10) // Take the first 10 words
+                            .replace(/<[^>]*>/g, ' ')
+                            .split(/\s+/)
+                            .slice(0, 8)
                             .join(' ');
                         const first10WordsTitle = data?.post_title
-                            .replace(/<[^>]*>/g, ' ') // Remove HTML tags
-                            .split(/\s+/) // Split into words
-                            .slice(0, 3) // Take the first 10 words
+                            .replace(/<[^>]*>/g, ' ')
+                            .split(/\s+/)
+                            .slice(0, 3)
                             .join(' ');
-                        const imageUrl = extractImageUrlFromPostContent(data?.post_content);
-                        // console.log('images',data?.post_content);
                         return (
                             <Grid item xs={12} sm={3} md={3} key={data.id}>
-                                <Card sx={{ width: 'fit-content', height: 'fit-content' }}>
-                                    {/* <CardMedia
-                                            sx={{ height: 200 }}
-                                            image={imageUrl}
-                                        // title="green iguana"
-                                        /> */}
-                                    <img alt='' src={imageUrl} />
+                                <Card sx={{ width: '75%', height: 'fit-content' }}>
+                                    <img style={{ width: '100%', height: '100%' }} alt='' src={data?.guid} />
                                     <CardContent>
                                         <Typography textAlign={'left'} fontWeight={'bold'} lineHeight={'24px'} fontSize={'20px'}>
                                             {parse(first10WordsTitle)}
@@ -223,7 +179,7 @@ const SectionFourth = () => {
                                             {parse(first10Words)}
                                         </Typography>
                                     </CardContent>
-                                    <CardActions>
+                                    <CardActions sx={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
                                         <Typography textAlign={'left'} fontWeight={'600'} color={'#00000080'} lineHeight={'24px'} fontSize={'13px'}>
                                             {moment(data?.post_date).format('MMMM Do YYYY')}
                                         </Typography>

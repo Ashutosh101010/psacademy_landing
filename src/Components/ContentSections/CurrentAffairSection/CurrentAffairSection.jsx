@@ -65,8 +65,6 @@ const CurrentAffairSection = () => {
         fetchCurrentAffiar();
     }, []);
 
-    // console.log('data', data);
-
     const handleCurrentAffairPage = (data) => {
         navigate(`/currentAffair/${data?.ID}`);
     };
@@ -78,25 +76,6 @@ const CurrentAffairSection = () => {
             </Typography>
             <Grid container spacing={2} p={2}>
                 {data.slice(index, index + 1).map((data, index) => {
-
-                    const extractImageUrlFromPostContent = (post_content) => {
-                        const parser = new DOMParser();
-                        const doc = parser.parseFromString(post_content, 'text/html');
-                        const imageElement = doc.querySelector('img'); // Assuming the image is the first one found
-
-                        if (imageElement) {
-                            return imageElement.getAttribute('src');
-                        } else {
-                            return null;
-                        }
-                    }
-                    const imageUrl = extractImageUrlFromPostContent(data?.post_content);
-                    const first10Words = data?.post_content
-                        .replace(/<[^>]*>/g, ' ') // Remove HTML tags
-                        .split(/\s+/) // Split into words
-                        .slice(0, 20) // Take the first 10 words
-                        .join(' ');
-
                     return (
                         <Grid item xs={12} sm={6} md={6}>
                             <Card
@@ -104,8 +83,7 @@ const CurrentAffairSection = () => {
                                 sx={{ maxWidth: '100%', boxShadow: 'none' }}>
                                 <CardMedia
                                     sx={{ height: 400 }}
-                                    image={imageUrl}
-                                // title="green iguana"
+                                    image={data?.guid}
                                 />
                                 <CardContent>
                                     <Typography
@@ -121,84 +99,32 @@ const CurrentAffairSection = () => {
                                         {data?.post_title}
                                     </Typography>
                                     <Typography variant="body2" color="text.secondary">
-                                        {parse(first10Words)}
+                                        {parse(data?.post_content)}
                                     </Typography>
                                 </CardContent>
-                                <CardActions>
-                                    {/* <Button
-                                        sx={{
-                                            borderRadius: '30px',
-                                            textTransform: 'none',
-                                            fontWeight: '600',
-                                            fontSize: '11px',
-                                            color: '#6941C6',
-                                            background: '#F9F5FF'
-                                        }}
-                                    >
-                                        {data?.name}
-                                    </Button> */}
-                                    {/* <Button
-                                sx={{
-                                    borderRadius: '30px',
-                                    textTransform: 'none',
-                                    fontWeight: '600',
-                                    fontSize: '11px',
-                                    color: '#3538CD',
-                                    background: '#EEF4FF'
-                                }}
-                            >
-                                Research
-                            </Button>
-                            <Button
-                                sx={{
-                                    borderRadius: '30px',
-                                    textTransform: 'none',
-                                    fontWeight: '600',
-                                    fontSize: '11px',
-                                    color: '#C11574',
-                                    background: '#FDF2FA'
-                                }}
-                            >
-                                Developments
-                            </Button> */}
-                                </CardActions>
                             </Card>
                         </Grid>
                     )
                 })}
-
                 <Grid item xs={12} sm={6} md={6}>
                     <Grid container spacing={2}>
                         {data.slice(index, index + 2).map((data, index) => {
-                            const extractImageUrlFromPostContent = (post_content) => {
-                                const parser = new DOMParser();
-                                const doc = parser.parseFromString(post_content, 'text/html');
-                                const imageElement = doc.querySelector('img'); // Assuming the image is the first one found
-
-                                if (imageElement) {
-                                    return imageElement.getAttribute('src');
-                                } else {
-                                    return null;
-                                }
-                            }
-                            const imageUrl = extractImageUrlFromPostContent(data?.post_content);
                             const first10Words = data?.post_content
-                                .replace(/<[^>]*>/g, ' ') // Remove HTML tags
-                                .split(/\s+/) // Split into words
-                                .slice(0, 20) // Take the first 10 words
+                                .replace(/<[^>]*>/g, ' ')
+                                .split(/\s+/)
+                                .slice(0, 10)
                                 .join(' ');
                             const first10WordsTitle = data?.post_title
-                                .replace(/<[^>]*>/g, ' ') // Remove HTML tags
-                                .split(/\s+/) // Split into words
-                                .slice(0, 4) // Take the first 10 words
+                                .replace(/<[^>]*>/g, ' ')
+                                .split(/\s+/)
+                                .slice(0, 5)
                                 .join(' ');
                             return (
                                 <>
                                     <Grid item xs={12} sm={4} md={4}>
                                         <CardMedia
                                             sx={{ height: 165 }}
-                                            image={imageUrl}
-                                        // title="green iguana"
+                                            image={data?.guid}
                                         />
                                     </Grid>
                                     <Grid item xs={12} sm={8} md={8}>
@@ -219,45 +145,6 @@ const CurrentAffairSection = () => {
                                                 {parse(first10Words)}
                                             </Typography>
                                         </CardContent>
-                                        <CardActions>
-                                            {/* <Button
-                                                sx={{
-                                                    borderRadius: '30px',
-                                                    textTransform: 'none',
-                                                    fontWeight: '600',
-                                                    fontSize: '11px',
-                                                    color: '#6941C6',
-                                                    background: '#F9F5FF'
-                                                }}
-                                            >
-                                                {data.name}
-                                            </Button> */}
-                                            {/* <Button
-                                                sx={{
-                                                    borderRadius: '30px',
-                                                    textTransform: 'none',
-                                                    fontWeight: '600',
-                                                    fontSize: '11px',
-                                                    color: '#3538CD',
-                                                    background: '#EEF4FF'
-                                                }}
-                                            >
-                                                Research
-                                            </Button>
-
-                                            <Button
-                                                sx={{
-                                                    borderRadius: '30px',
-                                                    textTransform: 'none',
-                                                    fontWeight: '600',
-                                                    fontSize: '11px',
-                                                    color: '#C11574',
-                                                    background: '#FDF2FA'
-                                                }}
-                                            >
-                                                Developments
-                                            </Button> */}
-                                        </CardActions>
                                     </Grid>
                                 </>
                             )
@@ -267,38 +154,23 @@ const CurrentAffairSection = () => {
             </Grid>
             <Grid container spacing={2} p={2}>
                 {
-                    // showAll
-                    //     ?
                     data.map((data) => {
-                        const extractImageUrlFromPostContent = (post_content) => {
-                            const parser = new DOMParser();
-                            const doc = parser.parseFromString(post_content, 'text/html');
-                            const imageElement = doc.querySelector('img'); // Assuming the image is the first one found
-
-                            if (imageElement) {
-                                return imageElement.getAttribute('src');
-                            } else {
-                                return null;
-                            }
-                        }
-                        const imageUrl = extractImageUrlFromPostContent(data?.post_content);
                         const first10Words = data?.post_content
-                            .replace(/<[^>]*>/g, ' ') // Remove HTML tags
-                            .split(/\s+/) // Split into words
-                            .slice(0, 20) // Take the first 10 words
+                            .replace(/<[^>]*>/g, ' ')
+                            .split(/\s+/)
+                            .slice(0, 8)
                             .join(' ');
                         const first10WordsTitle = data?.post_title
-                            .replace(/<[^>]*>/g, ' ') // Remove HTML tags
-                            .split(/\s+/) // Split into words
-                            .slice(0, 4) // Take the first 10 words
+                            .replace(/<[^>]*>/g, ' ')
+                            .split(/\s+/)
+                            .slice(0, 3)
                             .join(' ');
                         return (
                             <Grid item xs={12} sm={3} md={3} key={data.id}>
                                 <Card sx={{ maxWidth: 345 }}>
                                     <CardMedia
                                         sx={{ height: 200 }}
-                                        image={imageUrl}
-                                    // title="green iguana"
+                                        image={data?.guid}
                                     />
                                     <CardContent>
                                         <Typography textAlign={'left'} fontWeight={'bold'} lineHeight={'24px'} fontSize={'20px'}>
@@ -309,49 +181,13 @@ const CurrentAffairSection = () => {
                                         </Typography>
                                     </CardContent>
                                     <CardActions
-                                        sx={{
-                                            display: 'flex',
-                                            justifyContent: 'space-evenly',
-                                            alignItems: 'center'
-                                        }}
-                                    >
-                                        {/* <Button
-                                            sx={{
-                                                borderRadius: '30px',
-                                                textTransform: 'none',
-                                                fontWeight: '600',
-                                                fontSize: '11px',
-                                                color: '#6941C6',
-                                                background: '#F9F5FF'
-                                            }}
-                                        >
-                                            {data.name}
-                                        </Button>
-                                        <Button
-                                            sx={{
-                                                borderRadius: '30px',
-                                                textTransform: 'none',
-                                                fontWeight: '600',
-                                                fontSize: '11px',
-                                                color: '#6941C6',
-                                                background: '#F9F5FF'
-                                            }}
-                                        >
-                                            {data.name}
-                                        </Button> */}
-                                    </CardActions>
-                                    <CardActions
-                                        sx={{
-                                            display: 'flex',
-                                            justifyContent: 'space-between'
-                                        }}
+                                        sx={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}
                                     >
                                         <Typography textAlign={'left'} fontWeight={'600'} color={'#00000080'} lineHeight={'24px'} fontSize={'13px'}>
                                             {moment(data?.post_date).format('MMMM Do YYYY')}
                                         </Typography>
                                         <Button
                                             sx={{
-                                                // background: '#F6E9FF',
                                                 padding: '16px 32px',
                                                 alignItems: 'flex-end',
                                                 gap: '10px',
@@ -369,45 +205,6 @@ const CurrentAffairSection = () => {
                             </Grid>
                         )
                     })
-                    // : cardData.slice(index, index + 4).map((data) => (
-                    //     <Grid item xs={12} sm={4} md={3} key={data.id}>
-                    //         <Card sx={{ maxWidth: 345 }}>
-                    //             <CardMedia
-                    //                 sx={{ height: 200 }}
-                    //                 image={data?.guid}
-                    //             // title="green iguana"
-                    //             />
-                    //             <CardContent>
-                    //                 <Typography textAlign={'left'} fontWeight={'bold'} lineHeight={'24px'} fontSize={'20px'}>
-                    //                     {data?.post_title}
-                    //                 </Typography>
-                    //                 <Typography textAlign={'left'} fontWeight={'600'} color={'#00000080'} lineHeight={'24px'} fontSize={'14px'}>
-                    //                     {parse(data?.post_content)}
-                    //                 </Typography>
-                    //             </CardContent>
-                    //             <Box display={'flex'} justifyContent={'space-between'} alignItems={'baseline'} mt={'-15px'} ml={1}>
-                    //                 <Typography textAlign={'left'} fontWeight={'600'} color={'#00000080'} lineHeight={'24px'} fontSize={'13px'}>
-                    //                     {moment(data?.post_date).format('MMMM Do YYYY')}
-                    //                 </Typography>
-                    //                 <Typography
-                    //                     sx={{
-                    //                         // background: '#F6E9FF',
-                    //                         padding: '16px 32px',
-                    //                         alignItems: 'flex-end',
-                    //                         gap: '10px',
-                    //                         borderRadius: '15px',
-                    //                         textTransform: 'none',
-                    //                         fontSize: '14px',
-                    //                         fontWeight: '700',
-                    //                         color: "#8976FD"
-                    //                     }}
-                    //                 >
-                    //                     Read More
-                    //                 </Typography>
-                    //             </Box>
-                    //         </Card>
-                    //     </Grid>
-                    // ))
                 }
             </Grid>
         </Box>
