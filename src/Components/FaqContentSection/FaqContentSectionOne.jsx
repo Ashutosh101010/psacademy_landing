@@ -12,11 +12,15 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import '../../newcss/css/dist/block-library/common.min.css'
 import '../../newcss/blocks/navigation/style.min.css'
 import '../../newcss/blocks/image/style.min.css'
+import '../../newcss/blocks/block-library/editor.min.css'
+import '../../newcss/blocks/block-library/style.min.css'
+import '../../newcss/blocks/block-editor/content.min.css'
 
 const FaqContentSectionOne = ({ data }) => {
 
     const [value, setValue] = useState(null);
     const isMobile = useMediaQuery("(min-width:600px)");
+    // console.log('data', data);
 
     const months = [
         "January", "February", "March", "April", "May", "June",
@@ -71,7 +75,7 @@ const FaqContentSectionOne = ({ data }) => {
 
                     return (
                         <Grid item xs={12} sm={8} md={8} p={3}>
-                            <Box  justifyContent={'center'} alignItems={'center'}>
+                            <Box justifyContent={'center'} alignItems={'center'}>
                                 <Typography width={'75%'} textAlign={'left'} fontWeight={'bold'} lineHeight={'44px'} fontSize={'35px'} mb={3} mt={5}>
                                     {data?.post_title}
                                 </Typography>
