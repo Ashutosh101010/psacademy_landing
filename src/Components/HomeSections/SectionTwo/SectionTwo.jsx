@@ -23,12 +23,12 @@ const SectionTwo = () => {
     // setCourses(response.courses);
     let templist = [];
     response.courses.forEach((course) => {
-        if (course.active == true) {
-            templist.push(course);
-        }
+      if (course.active == true) {
+        templist.push(course);
+      }
     })
     setCoursesData(templist);
-};
+  };
 
   useEffect(() => {
     getAllCourses();
@@ -184,7 +184,7 @@ const SectionTwo = () => {
           </Grid>
         </Grid>
         <Grid xs={12} sm={6} md={6} paddingLeft={"0px"} mt={['30px']}>
-          <Card
+          {/* <Card
             sx={{
               maxWidth: [700, 500]
             }}
@@ -223,8 +223,8 @@ const SectionTwo = () => {
                     Name :
                   </Typography>
                   {/* <TextField fullWidth id="outlined-basic" label="Name" type='text' variant="outlined" /> */}
-                  {/* <input type='text' name='name' placeholder='Enter Your Name' className='form-control' style={{ width: '100%', height: mobile ? '45px' : '39px', fontSize: '16px', position: 'relative', top: '2px' }} /> */}
-                  <input class="input-field" type='text' name='name' placeholder='Enter Your Name' style={{ width: '100%', height: mobile ? '45px' : '39px', fontSize: '16px', position: 'relative', top: '2px' }} />
+          {/* <input type='text' name='name' placeholder='Enter Your Name' className='form-control' style={{ width: '100%', height: mobile ? '45px' : '39px', fontSize: '16px', position: 'relative', top: '2px' }} /> */}
+          {/* <input class="input-field" type='text' name='name' placeholder='Enter Your Name' style={{ width: '100%', height: mobile ? '45px' : '39px', fontSize: '16px', position: 'relative', top: '2px' }} />
                 </Grid>
               </Grid>
               <Grid container spacing={2} mb={4}>
@@ -233,14 +233,14 @@ const SectionTwo = () => {
                     Phone :
                   </Typography>
                   {/* <TextField fullWidth id="outlined-basic" label="Phone" type='number' variant="outlined" /> */}
-                  <input class="input-field" type='number' name='number' placeholder='Enter Your Phone Number' style={{ width: '100%', height: mobile ? '45px' : '39px', fontSize: '16px' }} />
+          {/* <input class="input-field" type='number' name='number' placeholder='Enter Your Phone Number' style={{ width: '100%', height: mobile ? '45px' : '39px', fontSize: '16px' }} />
                 </Grid>
                 <Grid item xs={12} sm={6} md={6}>
                   <Typography>
                     Email :
                   </Typography>
                   {/* <TextField fullWidth id="outlined-basic" label="Email" type='email' variant="outlined" /> */}
-                  <input class="input-field" type='email' name='email' placeholder='Enter Your Email' style={{ width: '100%', height: mobile ? '45px' : '39px', fontSize: '16px' }} />
+          {/* <input class="input-field" type='email' name='email' placeholder='Enter Your Email' style={{ width: '100%', height: mobile ? '45px' : '39px', fontSize: '16px' }} />
                 </Grid>
               </Grid>
               <Grid container spacing={2}>
@@ -287,7 +287,7 @@ const SectionTwo = () => {
                     rows={4}
                     fullWidth
                   /> */}
-                  <textarea class="input-field" name='message' rows={5} placeholder='Enter Message' style={{ width: '100%', height: '90px', fontSize: '16px' }} />
+          {/* <textarea class="input-field" name='message' rows={5} placeholder='Enter Message' style={{ width: '100%', height: '90px', fontSize: '16px' }} />
                 </Grid>
               </Grid>
             </CardContent>
@@ -319,8 +319,11 @@ const SectionTwo = () => {
                 <img alt='' src={smssvg} />
                 Send Message
               </Button>
-            </CardActions>
-          </Card>
+            </CardActions> */}
+          {/* // </Card> */}
+          <Box maxWidth={800}>
+            <iframe style={{ width: '99%', height: mobile ? '100vh' : '110vh', border: 'none' }} src='https://forms.classiolabs.com/?instituteid=94' />
+          </Box>
         </Grid>
       </Grid>
     </Box>

@@ -1,4 +1,4 @@
-import { Box, Button, Typography } from '@mui/material'
+import { Box, Button, Dialog, Typography } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import Header from '../Components/Header'
 import SecondHeader from '../Components/SecondHeader'
@@ -13,6 +13,8 @@ import BannerSection from '../Components/HomeSections/SectionBanner/BannerSectio
 import CourseSection from '../Components/HomeSections/SectionCourse/CourseSection'
 import SectionFourth from '../Components/HomeSections/SectionFourth/SectionFourth'
 import SectionGellary from '../Components/HomeSections/SectionGellary/SectionGellary'
+import landingImage from '../../images/landingImage.jpeg'
+import CloseIcon from '@mui/icons-material/Close';
 
 const Home = () => {
 
@@ -28,6 +30,12 @@ const Home = () => {
 
         // Open the WhatsApp URL in a new tab
         window.open(whatsappURL, '_blank');
+    };
+
+    const [showLandingImage, setShowLandingImage] = useState(true);
+
+    const handleCloseModal = () => {
+        setShowLandingImage(false);
     };
 
 
@@ -51,6 +59,29 @@ const Home = () => {
 
     return (
         <div>
+            {/* {showLandingImage && (
+                <div className="landing-image-modal">
+                    <img width={'50%'} src={landingImage} alt='' />
+                    <button className="close-button" onClick={handleCloseModal}>
+                        &times;
+                    </button>
+                </div>
+            )} */}
+            {/* {showLandingImage && (
+                <Dialog open={showLandingImage} onClose={handleCloseModal}>
+                    <div className="landing-image-modal">
+                        <CloseIcon sx={{ position: 'absolute', top: 10, right: 10 }} onClick={handleCloseModal} />
+                        <img width={'25%'} src={landingImage} alt='' />
+                    </div>
+                </Dialog>
+            )} */}
+
+            <Dialog open={showLandingImage} onClose={(e) => setShowLandingImage(false)}>
+                <div className="landing-image-modal">
+                    <CloseIcon sx={{ position: 'absolute', top: 10, right: 10 }} onClick={handleCloseModal} />
+                    <img width={'70%'} height={'100%'} src={landingImage} alt='' />
+                </div>
+            </Dialog>
             <Header />
             <SecondHeader />
             <Navbar />

@@ -5,7 +5,7 @@ import image1 from './Images/image1.svg';
 import CourseNetwrok from '../../../Network';
 import parse from 'html-react-parser'
 import moment from 'moment';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const SectionFourth = () => {
 
@@ -51,9 +51,9 @@ const SectionFourth = () => {
         setShowAll(!showAll);
     };
 
-    const handleReadMoreFaq = (e, data) => {
-        navigate(`/faq/${data?.ID}`);
-    };
+    // const handleReadMoreFaq = (e, data) => {
+    //     navigate(`/faq/${data?.ID}`);
+    // };
 
     return (
         <Box m={'20px'}>
@@ -71,7 +71,7 @@ const SectionFourth = () => {
                         FAQ'S
                     </Typography>
                 </Grid>
-                <Grid item xs={6} sm={6} md={6} display={'flex'} justifyContent={'flex-end'}>
+                <Grid item xs={6} sm={6} md={6} display={['none', 'flex']} justifyContent={'flex-end'}>
                     <button
                         style={{
                             display: 'flex',
@@ -113,7 +113,7 @@ const SectionFourth = () => {
                         const first10Words = data?.post_content
                             .replace(/<[^>]*>/g, ' ')
                             .split(/\s+/)
-                            .slice(0, 8)
+                            .slice(0, 5)
                             .join(' ');
                         const first10WordsTitle = data?.post_title
                             .replace(/<[^>]*>/g, ' ')
@@ -122,37 +122,39 @@ const SectionFourth = () => {
                             .join(' ');
                         return (
                             <Grid item xs={12} sm={3} md={3} key={data.id}>
-                                <Card sx={{ width: '75%', height: 'fit-content' }}>
-                                    <img style={{ width: '100%', height: '100%' }} alt='' src={data?.guid} />
-                                    <CardContent>
-                                        <Typography textAlign={'left'} fontWeight={'bold'} lineHeight={'24px'} fontSize={'20px'}>
-                                            {parse(first10WordsTitle)}
-                                        </Typography>
-                                        <Typography textAlign={'left'} fontWeight={'600'} color={'#00000080'} lineHeight={'24px'} fontSize={'14px'}>
-                                            {parse(first10Words)}
-                                        </Typography>
-                                    </CardContent>
-                                    <CardActions sx={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
-                                        <Typography textAlign={'left'} fontWeight={'600'} color={'#00000080'} lineHeight={'24px'} fontSize={'13px'}>
-                                            {moment(data?.post_date).format('MMMM Do YYYY')}
-                                        </Typography>
-                                        <Button
-                                            onClick={(e) => handleReadMoreFaq(e, data)}
-                                            sx={{
-                                                padding: '16px 32px',
-                                                alignItems: 'end',
-                                                gap: '10px',
-                                                borderRadius: '15px',
-                                                textTransform: 'none',
-                                                fontSize: '14px',
-                                                fontWeight: '700',
-                                                color: "#8976FD"
-                                            }}
-                                        >
-                                            Read More
-                                        </Button>
-                                    </CardActions>
-                                </Card>
+                                <a href={`/faq/${data?.ID}`}>
+                                    <Card sx={{ width: ['100%', '75%'], height: 'fit-content' }}>
+                                        <img style={{ width: '100%', height: '100%' }} alt='' src={data?.guid} />
+                                        <CardContent>
+                                            <Typography textAlign={'left'} fontWeight={'bold'} lineHeight={'24px'} fontSize={'20px'}>
+                                                {parse(first10WordsTitle)}...
+                                            </Typography>
+                                            <Typography textAlign={'left'} fontWeight={'600'} color={'#00000080'} lineHeight={'24px'} fontSize={'14px'}>
+                                                {parse(first10Words)}...
+                                            </Typography>
+                                        </CardContent>
+                                        <CardActions sx={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
+                                            <Typography textAlign={'left'} fontWeight={'600'} color={'#00000080'} lineHeight={'24px'} fontSize={'13px'}>
+                                                {moment(data?.post_date).format('MMMM Do YYYY')}
+                                            </Typography>
+                                            <Button
+                                                // onClick={(e) => handleReadMoreFaq(e, data)}
+                                                sx={{
+                                                    padding: '16px 32px',
+                                                    alignItems: 'end',
+                                                    gap: '10px',
+                                                    borderRadius: '15px',
+                                                    textTransform: 'none',
+                                                    fontSize: '14px',
+                                                    fontWeight: '700',
+                                                    color: "#8976FD"
+                                                }}
+                                            >
+                                                Read More
+                                            </Button>
+                                        </CardActions>
+                                    </Card>
+                                </a>
                             </Grid>
                         )
                     })
@@ -160,7 +162,7 @@ const SectionFourth = () => {
                         const first10Words = data?.post_content
                             .replace(/<[^>]*>/g, ' ')
                             .split(/\s+/)
-                            .slice(0, 8)
+                            .slice(0, 5)
                             .join(' ');
                         const first10WordsTitle = data?.post_title
                             .replace(/<[^>]*>/g, ' ')
@@ -169,38 +171,40 @@ const SectionFourth = () => {
                             .join(' ');
                         return (
                             <Grid item xs={12} sm={3} md={3} key={data.id}>
-                                <Card sx={{ width: '75%', height: 'fit-content' }}>
-                                    <img style={{ width: '100%', height: '100%' }} alt='' src={data?.guid} />
-                                    <CardContent>
-                                        <Typography textAlign={'left'} fontWeight={'bold'} lineHeight={'24px'} fontSize={'20px'}>
-                                            {parse(first10WordsTitle)}
-                                        </Typography>
-                                        <Typography textAlign={'left'} fontWeight={'600'} color={'#00000080'} lineHeight={'24px'} fontSize={'14px'}>
-                                            {parse(first10Words)}
-                                        </Typography>
-                                    </CardContent>
-                                    <CardActions sx={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
-                                        <Typography textAlign={'left'} fontWeight={'600'} color={'#00000080'} lineHeight={'24px'} fontSize={'13px'}>
-                                            {moment(data?.post_date).format('MMMM Do YYYY')}
-                                        </Typography>
-                                        <Button
-                                            onClick={(e) => handleReadMoreFaq(e, data)}
-                                            sx={{
-                                                // background: '#F6E9FF',
-                                                padding: '16px 32px',
-                                                alignItems: 'flex-end',
-                                                gap: '10px',
-                                                borderRadius: '15px',
-                                                textTransform: 'none',
-                                                fontSize: '14px',
-                                                fontWeight: '700',
-                                                color: "#8976FD"
-                                            }}
-                                        >
-                                            Read More
-                                        </Button>
-                                    </CardActions>
-                                </Card>
+                                <a href={`/faq/${data?.ID}`}>
+                                    <Card sx={{ width: ['100%', '75%'], height: 'fit-content' }}>
+                                        <img style={{ width: '100%', height: '100%' }} alt='' src={data?.guid} />
+                                        <CardContent>
+                                            <Typography textAlign={'left'} fontWeight={'bold'} lineHeight={'24px'} fontSize={'20px'}>
+                                                {parse(first10WordsTitle)}...
+                                            </Typography>
+                                            <Typography textAlign={'left'} fontWeight={'600'} color={'#00000080'} lineHeight={'24px'} fontSize={'14px'}>
+                                                {parse(first10Words)}...
+                                            </Typography>
+                                        </CardContent>
+                                        <CardActions sx={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
+                                            <Typography textAlign={'left'} fontWeight={'600'} color={'#00000080'} lineHeight={'24px'} fontSize={'13px'}>
+                                                {moment(data?.post_date).format('MMMM Do YYYY')}
+                                            </Typography>
+                                            <Button
+                                                // onClick={(e) => handleReadMoreFaq(e, data)}
+                                                sx={{
+                                                    // background: '#F6E9FF',
+                                                    padding: '16px 32px',
+                                                    alignItems: 'flex-end',
+                                                    gap: '10px',
+                                                    borderRadius: '15px',
+                                                    textTransform: 'none',
+                                                    fontSize: '14px',
+                                                    fontWeight: '700',
+                                                    color: "#8976FD"
+                                                }}
+                                            >
+                                                Read More
+                                            </Button>
+                                        </CardActions>
+                                    </Card>
+                                </a>
                             </Grid>
                         )
                     }

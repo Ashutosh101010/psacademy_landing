@@ -79,17 +79,17 @@ const FaqContentSectionOne = ({ data }) => {
                                 <Typography width={'75%'} textAlign={'left'} fontWeight={'bold'} lineHeight={'44px'} fontSize={'35px'} mb={3} mt={5}>
                                     {data?.post_title}
                                 </Typography>
-                                <Typography textAlign={'left'} fontWeight={'600'} color={'#00000080'} lineHeight={'24px'} fontSize={'20px'} mb={3}>
-                                    {moment(data?.post_date).format('MMMM Do YYYY')}
-                                </Typography>
                             </Box>
                             {/* <img alt='' style={{ width: isMobile ? '60%' : '100%' }} src={imageUrl} /> */}
+                            <Typography textAlign={'left'} fontWeight={'400'} color={'#00000080'} lineHeight={'24px'} fontSize={'18px'} mb={3}>
+                                {moment(data?.post_date).format('MMMM Do YYYY')}
+                            </Typography>
                             <Typography
                                 style={styles}
-                            // textAlign={'left'} fontWeight={'600'} color={'#00000080'} lineHeight={'35px'} fontSize={'25px'}
                             >
                                 {parsedContent}
                             </Typography>
+
                         </Grid>
                     )
                 }

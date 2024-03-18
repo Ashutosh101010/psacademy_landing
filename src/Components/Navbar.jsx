@@ -321,7 +321,7 @@ const Navbar = () => {
                 ))}
                 <ListItem>
                     <Button
-                        onClick={handleSubmit}
+                        onClick={handlePlayStore}
                         sx={{
                             background: '#FFD80D',
                             borderRadius: '40px',
@@ -683,7 +683,7 @@ const Navbar = () => {
                     </Box> */}
                     <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' } }}>
                         <Button
-                            onClick={handleSubmit}
+                            onClick={handlePlayStore}
                             sx={{
                                 background: '#FFD80D',
                                 borderRadius: '40px',

@@ -25,3 +25,16 @@
     box-shadow: 0 0 5px 3px rgb(248, 170, 1);
     /* x-offset, y-offset, blur-radius, spread-radius, color */
 }
+
+.landing-image-modal {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}

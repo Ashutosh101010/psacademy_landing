@@ -20,7 +20,7 @@ const Header = () => {
             >
                 <Grid item xs={12} sm={6} md={6} textAlign={['center', 'end']}>
                     <Typography fontWeight={'700'}>
-                        Registration Open for Interview Guidance Program
+                        Registration Open for Scholarship Program
                     </Typography>
                 </Grid>
                 <Grid item xs={12} sm={6} md={6} display={'flex'} justifyContent={['center', 'start']}>
