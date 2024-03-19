@@ -19,6 +19,8 @@ import CloseIcon from '@mui/icons-material/Close';
 const Home = () => {
 
     const [message, setMessage] = React.useState('PS Team');
+    const [showLandingImage, setShowLandingImage] = useState(true);
+    const [isSticky, setIsSticky] = useState(false);
 
     const handleWhatsapp = (event) => {
         event.preventDefault();
@@ -32,14 +34,9 @@ const Home = () => {
         window.open(whatsappURL, '_blank');
     };
 
-    const [showLandingImage, setShowLandingImage] = useState(true);
-
     const handleCloseModal = () => {
         setShowLandingImage(false);
     };
-
-
-    const [isSticky, setIsSticky] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -50,7 +47,6 @@ const Home = () => {
                 setIsSticky(false);
             }
         };
-
         window.addEventListener('scroll', handleScroll);
         return () => {
             window.removeEventListener('scroll', handleScroll);
@@ -59,27 +55,10 @@ const Home = () => {
 
     return (
         <div>
-            {/* {showLandingImage && (
-                <div className="landing-image-modal">
-                    <img width={'50%'} src={landingImage} alt='' />
-                    <button className="close-button" onClick={handleCloseModal}>
-                        &times;
-                    </button>
-                </div>
-            )} */}
-            {/* {showLandingImage && (
-                <Dialog open={showLandingImage} onClose={handleCloseModal}>
-                    <div className="landing-image-modal">
-                        <CloseIcon sx={{ position: 'absolute', top: 10, right: 10 }} onClick={handleCloseModal} />
-                        <img width={'25%'} src={landingImage} alt='' />
-                    </div>
-                </Dialog>
-            )} */}
-
             <Dialog open={showLandingImage} onClose={(e) => setShowLandingImage(false)}>
                 <div className="landing-image-modal">
                     <CloseIcon sx={{ position: 'absolute', top: 10, right: 10 }} onClick={handleCloseModal} />
-                    <img width={'70%'} height={'100%'} src={landingImage} alt='' />
+                    <img width={'100%'} height={['800px', '600px']} src={landingImage} alt='' />
                 </div>
             </Dialog>
             <Header />

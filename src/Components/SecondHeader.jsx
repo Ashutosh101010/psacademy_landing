@@ -78,7 +78,8 @@ const SecondHeader = () => {
           <Typography
             sx={{
               color: 'white',
-              display: ['none', 'flex']
+              display: ['none', 'flex'],
+              cursor: 'pointer'
             }}
           >
             academyps123@gmail.com
@@ -106,7 +107,8 @@ const SecondHeader = () => {
           <Typography
             sx={{
               color: 'white',
-              display: ['none', 'flex']
+              display: ['none', 'flex'],
+              cursor: 'pointer'
             }}
           >
             0731-4001178 / 9826063466
@@ -123,10 +125,10 @@ const SecondHeader = () => {
           alignItems={'center'}
           gap={'25px'}
         >
-          <img onClick={handleFacebook} width={'8%'} alt='' src={facebookLogo} />
-          <img onClick={handleYouTube} width={'8%'} alt='' src={youtubeLogo} />
-          <img onClick={handleInstagram} width={'8%'} alt='' src={instagramLogo} />
-          <img onClick={handleTelegram} width={'8%'} alt='' src={telegramLogo} />
+          <img style={{ cursor: 'pointer' }} onClick={handleFacebook} width={'8%'} alt='' src={facebookLogo} />
+          <img style={{ cursor: 'pointer' }} onClick={handleYouTube} width={'8%'} alt='' src={youtubeLogo} />
+          <img style={{ cursor: 'pointer' }} onClick={handleInstagram} width={'8%'} alt='' src={instagramLogo} />
+          <img style={{ cursor: 'pointer' }} onClick={handleTelegram} width={'8%'} alt='' src={telegramLogo} />
         </Grid>
         <Grid
           item
@@ -137,9 +139,9 @@ const SecondHeader = () => {
           justifyContent={'center'}
           alignItems={'center'}
         >
-          <img onClick={handleComingSoon} width={'20%'} alt='' src={appleStore} />
-          <img onClick={handlePlayStore} width={'25%'} alt='' src={playStore} />
-          <img onClick={handleComingSoon} width={'20%'} alt='' src={windowsStore} />
+          <img style={{ cursor: 'pointer' }} onClick={handleComingSoon} width={'20%'} alt='' src={appleStore} />
+          <img style={{ cursor: 'pointer' }} onClick={handlePlayStore} width={'25%'} alt='' src={playStore} />
+          <img style={{ cursor: 'pointer' }} onClick={handleComingSoon} width={'20%'} alt='' src={windowsStore} />
         </Grid>
       </Grid>
       <hr />

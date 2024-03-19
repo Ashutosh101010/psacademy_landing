@@ -122,7 +122,7 @@ const SectionFourth = () => {
                             .join(' ');
                         return (
                             <Grid item xs={12} sm={3} md={3} key={data.id}>
-                                <a href={`/faq/${data?.ID}`}>
+                                <a className='anchor' href={`/faq/${data?.ID}`}>
                                     <Card sx={{ width: ['100%', '75%'], height: 'fit-content' }}>
                                         <img style={{ width: '100%', height: '100%' }} alt='' src={data?.guid} />
                                         <CardContent>
@@ -171,7 +171,7 @@ const SectionFourth = () => {
                             .join(' ');
                         return (
                             <Grid item xs={12} sm={3} md={3} key={data.id}>
-                                <a href={`/faq/${data?.ID}`}>
+                                <a className='anchor' href={`/faq/${data?.ID}`}>
                                     <Card sx={{ width: ['100%', '75%'], height: 'fit-content' }}>
                                         <img style={{ width: '100%', height: '100%' }} alt='' src={data?.guid} />
                                         <CardContent>
