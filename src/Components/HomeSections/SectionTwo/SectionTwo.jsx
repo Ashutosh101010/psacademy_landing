@@ -322,7 +322,7 @@ const SectionTwo = () => {
             </CardActions> */}
           {/* // </Card> */}
           <Box maxWidth={800}>
-            <iframe style={{ width: '99%', height: mobile ? '100vh' : '110vh', border: 'none' }} src='https://forms.classiolabs.com/?instituteid=94' />
+            <iframe style={{ width: '100%', height: mobile ? '110vh' : '120vh', border: 'none' }} src='https://forms.classiolabs.com/?instituteid=94' />
           </Box>
         </Grid>
       </Grid>

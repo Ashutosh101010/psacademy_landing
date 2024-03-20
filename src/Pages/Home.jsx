@@ -55,10 +55,10 @@ const Home = () => {
 
     return (
         <div>
-            <Dialog open={showLandingImage} onClose={(e) => setShowLandingImage(false)}>
+            <Dialog sx={{ zIndex: 200000000000000 }} open={showLandingImage} onClose={(e) => setShowLandingImage(false)}>
                 <div className="landing-image-modal">
                     <CloseIcon sx={{ position: 'absolute', top: 10, right: 10 }} onClick={handleCloseModal} />
-                    <img width={'100%'} height={['800px', '600px']} src={landingImage} alt='' />
+                    <img width={'100%'} height={'650px'} src={landingImage} alt='' />
                 </div>
             </Dialog>
             <Header />
