@@ -168,7 +168,7 @@ const Navbar = () => {
     // };
 
     const handleBuyCourse = (item) => {
-        const url = `https://iframe.classiolabs.com/buyCourseDetails/` + `?iframeId=12&courseId=${item?.id}&folderId=${0}&on-click=${true}`
+        const url = `https://psacademy.co.in/coursedetail/` + `?iframeId=12&courseId=${item?.id}&folderId=${0}&on-click=${true}`
 
         // const url = `${iframeData?.redirectUri}/buyCourseDetails/${item?.id}/0`
         window.open(url, '_blank', 'noreferrer');

@@ -102,7 +102,7 @@ const BuyThisCourse = () => {
                 {isSticky && <Navbar />}
             </div>
             <Box width={'100%'} height={'100%'} pb={2.9} >
-                <iframe style={{ border: 'none' }} src={`https://iframe.classiolabs.com/buyCourseDetails/?iframeId=${iframeId}&courseId=${courseId}&folderId=${0}&on-click=${onClick}`} width={'100%'} height={'100%'} />
+                <iframe style={{ border: 'none' }} src={`https://psacademy.co.in/coursedetail/?iframeId=${iframeId}&courseId=${courseId}&folderId=${0}&on-click=${onClick}`} width={'100%'} height={'100%'} />
             </Box>
             <div style={{ position: 'fixed', left: '-45px', top: '95%', transform: 'translateY(-50%)', padding: '10px', width: '100%', display: 'flex', justifyContent: 'end', alignItems: 'center' }}>
                 <Button variant="contained" color="primary"
