@@ -1,6 +1,11 @@
 import { Box, Grid, Typography, useMediaQuery } from '@mui/material'
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
+import contactsvg from '../../images/contactIcon.svg'
+import emailLogo from '../../images/emailIcon.svg'
+import appleStore from '../../images/applestoresvg.svg'
+import playStore from '../../images/playstoresvg.svg'
+import windowsStore from '../../images/windowsstoresvg.svg'
 
 const SecondFooter = () => {
 
@@ -19,6 +24,22 @@ const SecondFooter = () => {
     const handleNavigateRefund = (event) => {
         event.stopPropagation();
         navigate('/refundpolicy');
+    };
+
+    const handleClick = () => {
+        window.location.href = 'mailto:academyps123@gmail.com';
+    };
+
+    const handleClickPhone = () => {
+        window.location.href = 'tel:0731-4001178'
+    };
+
+    const handlePlayStore = () => {
+        window.location.href = 'https://play.google.com/store/apps/details?id=com.classiolabs.psacademy&pcampaignid=web_share'
+    };
+
+    const handleComingSoon = () => {
+
     };
 
     return (
@@ -41,7 +62,7 @@ const SecondFooter = () => {
                             fontWeight={'400'}
                             fontFamily={'Inter'}
                             color={'#000'}
-                            lineHeight={'24px'}
+                            lineHeight={'14px'}
                             display={['grid', 'flex']}
                             justifyContent={'flex-start'}
                             alignItems={'baseline'}
@@ -54,7 +75,7 @@ const SecondFooter = () => {
                             fontWeight={'400'}
                             fontFamily={'Inter'}
                             color={'#000'}
-                            lineHeight={'24px'}
+                            lineHeight={'14px'}
                             display={['grid', 'flex']}
                             justifyContent={'flex-start'}
                             alignItems={'baseline'}
@@ -76,7 +97,68 @@ const SecondFooter = () => {
                         >
                             PS Academy
                         </Typography>
-                        <Typography
+                        <Box
+                            sx={{
+                                display: ['grid', 'flex'],
+                                justifyContent: ['center', 'flex-start'],
+                                alignItems: 'center',
+                                gap: '10px',
+                            }}
+                        >
+                            <Box
+                                sx={{
+                                    display: 'flex',
+                                    justifyContent: 'flex-start',
+                                    alignItems: 'center',
+                                    gap: '10px'
+                                }}
+                            >
+                                <img alt=''
+                                    onClick={handleClick}
+                                    style={{
+                                        width: isMobile ? '7.5%' : '10%'
+                                    }}
+                                    src={emailLogo} />
+                                <Typography
+                                    sx={{
+                                        color: '#000',
+                                        // display: ['none', 'flex'],
+                                        cursor: 'pointer',
+                                        fontSize: '15px'
+                                    }}
+                                >
+                                    academyps123@gmail.com
+                                </Typography>
+                            </Box>
+                            <Box
+                                sx={{
+                                    display: 'flex',
+                                    justifyContent: 'flex-start',
+                                    alignItems: 'center',
+                                    gap: '10px'
+                                }}
+                            >
+                                <img
+                                    alt=''
+                                    onClick={handleClickPhone}
+                                    style={{
+                                        width: isMobile ? '6.5%' : '9.3%'
+                                    }}
+                                    src={contactsvg}
+                                />
+                                <Typography
+                                    sx={{
+                                        color: '#000',
+                                        display: 'flex',
+                                        cursor: 'pointer',
+                                        fontSize: '14px'
+                                    }}
+                                >
+                                    0731-4001178 / 9826063466
+                                </Typography>
+                            </Box>
+                        </Box>
+                        {/* <Typography
                             fontSize={'15px'}
                             fontWeight={'500'}
                             fontFamily={'Inter'}
@@ -87,7 +169,18 @@ const SecondFooter = () => {
                         >
                             PS Academy does not want to pen down a success story but we want to create a successful generation.
                             We believe in shaping the future of every student in the best way possible.
-                        </Typography>
+                        </Typography> */}
+                        <Box
+                            display={'flex'}
+                            justifyContent={'flex-start'}
+                            alignItems={'center'}
+                            gap={'10px'}
+                            mt={2}
+                        >
+                            <img style={{ cursor: 'pointer' }} onClick={handleComingSoon} width={isMobile ? '12%' : '30%'} alt='' src={appleStore} />
+                            <img style={{ cursor: 'pointer' }} onClick={handlePlayStore} width={isMobile ? '14.5%' : '35%'} alt='' src={playStore} />
+                            <img style={{ cursor: 'pointer' }} onClick={handleComingSoon} width={isMobile ? '13%' : '32%'} alt='' src={windowsStore} />
+                        </Box>
                     </Box>
                 </Grid>
                 <Grid item xs={12} sm={4} md={4}>
@@ -109,7 +202,7 @@ const SecondFooter = () => {
                         justifyContent={['center', 'start']}
                     >
                         <Typography
-                            color={'#979595'}
+                            color={'#000'}
                             fontFamily={'Inter'}
                             fontSize={['11px', '16px']}
                             fontWeight={'400'}
@@ -122,7 +215,7 @@ const SecondFooter = () => {
                             Privacy Policy  |
                         </Typography>
                         <Typography
-                            color={'#979595'}
+                            color={'#000'}
                             fontFamily={'Inter'}
                             fontSize={['11px', '16px']}
                             fontWeight={'400'}
@@ -135,7 +228,7 @@ const SecondFooter = () => {
                             Terms and Conditions |
                         </Typography>
                         <Typography
-                            color={'#979595'}
+                            color={'#000'}
                             fontFamily={'Inter'}
                             fontSize={['11px', '16px']}
                             fontWeight={'400'}

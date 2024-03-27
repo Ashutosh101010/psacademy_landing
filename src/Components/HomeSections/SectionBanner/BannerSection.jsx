@@ -42,7 +42,7 @@ const BannerSection = () => {
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
             items: 3,
-            slidesToSlide: 3 
+            slidesToSlide: 3
         },
         tablet: {
             breakpoint: { max: 1024, min: 464 },
@@ -131,12 +131,12 @@ const BannerSection = () => {
                         ssr={true}
                         infinite={true}
                         autoPlay={true}
-                        autoPlaySpeed={1000}
+                        autoPlaySpeed={3000}
                         keyBoardControl={false}
                         // customTransition="all 3"
-                        transitionDuration={1000}
+                        transitionDuration={3000}
                         containerClass="carousel-container"
-                        removeArrowOnDeviceType={["desktop"]}
+                        removeArrowOnDeviceType={["desktop", "mobile"]}
                         // deviceType={this.props.deviceType}
                         dotListClass="custom-dot-list-style"
                         itemClass="carousel-item-padding-40-px"
@@ -145,7 +145,7 @@ const BannerSection = () => {
                     >
                         {
                             banners.map((item, i) => (
-                                <div key={i} style={{padding: '1rem'}}>
+                                <div key={i} style={{ padding: '1rem' }}>
                                     <img alt='' width={'100%'} height={'220px'} src={Endpoints.mediaBaseUrl + item?.banner} />
                                 </div>
                             ))

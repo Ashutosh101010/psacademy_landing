@@ -9,7 +9,7 @@ const Header = () => {
 
     return (
         <>
-            <Grid container spacing={2}
+            <Grid container spacing={1}
                 sx={{
                     background: '#FE9805',
                     padding: '8px',
@@ -20,7 +20,7 @@ const Header = () => {
             >
                 <Grid item xs={12} sm={6} md={6} textAlign={['center', 'end']}>
                     <Typography fontWeight={'700'}>
-                        Registration Open for Interview Guidance Program
+                        Registration Open for Scholarship Program
                     </Typography>
                 </Grid>
                 <Grid item xs={12} sm={6} md={6} display={'flex'} justifyContent={['center', 'start']}>
@@ -34,7 +34,7 @@ const Header = () => {
                             lineHeight: '24px',
                             textTransform: 'none',
                             border: '1px solid #9D0009',
-                            width: ['80%', '15%'],
+                            width: ['50%', '15%'],
                             '&:hover': {
                                 backgroundColor: '#ECE2E2', // Change to desired hover background color
                             },

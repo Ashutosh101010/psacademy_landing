@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Typography, useMediaQuery } from '@mui/material'
+import { Box, Button, Dialog, Grid, Typography, useMediaQuery } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import CourseNetwrok from '../../../Network';
 import Endpoints from '../../../constant/endpoints';
@@ -9,7 +9,10 @@ const SectionGellary = () => {
 
     const instId = '94';
     const isMobile = useMediaQuery("(min-width:600px)");
+    const [openPhoto, setOpenPhooto] = useState(false);
     const [galleryList, setGalleryList] = useState([]);
+    const [selectPhoto, setSelectPhoto] = useState([]);
+
     const getInstituteList = async () => {
         const response = await CourseNetwrok.fetchInstitute(instId);
         setGalleryList(response?.institute?.gallery);
@@ -27,6 +30,11 @@ const SectionGellary = () => {
     useEffect(() => {
         getInstituteList();
     }, []);
+
+    const handleOpenPhoto = (e, item) => {
+        setOpenPhooto(true);
+        setSelectPhoto(item);
+    }
 
     return (
         <Box m={'20px'}>
@@ -46,16 +54,17 @@ const SectionGellary = () => {
             </Grid>
             <Grid container spacing={2} padding={'1rem'} ml={'-5px'}>
                 <ImageList
-                    sx={{ width: '100%', height: 450 }}
-                    variant="quilted"
+                    sx={{ width: '100%', height: 318 }}
+                    variant="masonry"
                     cols={isMobile ? 4 : 1}
-                    rowHeight={121}
+                    rowHeight={150}
                 >
                     {galleryList.map((item, index) => (
                         <ImageListItem key={index} cols={index?.length || 1} rows={index?.length || 2}>
                             <img
                                 {...srcset(Endpoints.mediaBaseUrl + item, 121, index, index)}
                                 // alt={item.title}
+                                onClick={(e) => handleOpenPhoto(e, item)}
                                 loading="lazy"
                             />
                         </ImageListItem>
@@ -65,6 +74,11 @@ const SectionGellary = () => {
                     <img key={index} alt='' width={'10%'} src={Endpoints.mediaBaseUrl + data} />
                 ))} */}
             </Grid>
+            <Dialog maxWidth='xl' open={openPhoto} onClose={(e) => setOpenPhooto(false)}>
+                <Box>
+                    <img style={{ width: '100%', height: isMobile ? '555px' : '100%' }} alt='' src={Endpoints.mediaBaseUrl + selectPhoto} />
+                </Box>
+            </Dialog>
         </Box>
     )
 }

@@ -86,7 +86,7 @@ const CourseSection = () => {
                                     return <Grid item xs={12} sm={12} md={12}>
                                         <div key={i} style={{ position: 'relative', padding: "10px 0px 10px 0px", margin: "10px" }}>
                                             {iframeData?.showHeader === true ?
-                                                <Typography noWrap sx={{ fontWeight: '700', fontSize: '40px', paddingLeft: '0rem', textAlign: 'center', p: 1, color: '#540000', lineHeight: '60px' }}>
+                                                <Typography noWrap sx={{ fontWeight: '700', fontSize: ['25px','40px'], paddingLeft: '0rem', textAlign: 'center', p: 1, color: '#540000', lineHeight: '60px' }}>
                                                     {tags.tag}
                                                 </Typography>
                                                 : ""}

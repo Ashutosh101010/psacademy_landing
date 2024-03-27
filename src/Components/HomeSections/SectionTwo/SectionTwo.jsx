@@ -91,38 +91,39 @@ const SectionTwo = () => {
                   fontFamily: 'Inter , sans-serif',
                   fontWeight: '700',
                   color: '#000',
-                  fontSize: ['30px', '44px'],
-                }}
-              >
-                Here are the reasons
-              </Typography>
-              <Typography
-                sx={{
-                  fontFamily: 'Inter , sans-serif',
-                  fontWeight: '700',
-                  color: '#000',
-                  fontSize: ['30px', '44px']
-                }}
-              >
-                why you should join
-              </Typography>
-              <Typography
-                sx={{
-                  fontFamily: 'Inter , sans-serif',
-                  fontWeight: '700',
-                  color: '#000',
-                  fontSize: ['30px', '44px'],
+                  fontSize: ['23px', '30px'],
                   mb: 2
                 }}
               >
-                PS Academy ?
+                Here are the reasons, why you should join, PS Academy ?
               </Typography>
+              {/* <Typography
+                sx={{
+                  fontFamily: 'Inter , sans-serif',
+                  fontWeight: '700',
+                  color: '#000',
+                  fontSize: ['25px', '44px']
+                }}
+              >
+
+              </Typography>
+              <Typography
+                sx={{
+                  fontFamily: 'Inter , sans-serif',
+                  fontWeight: '700',
+                  color: '#000',
+                  fontSize: ['25px', '44px'],
+                  mb: 2
+                }}
+              >
+
+              </Typography> */}
               <Typography
                 sx={{
                   fontFamily: 'Inter',
                   fontWeight: '500',
                   color: '#000',
-                  fontSize: '17px',
+                  fontSize: ['14px', '17px'],
                   lineHeight: ['30px', '40px'],
                   display: 'flex',
                   justifyContent: 'flex-start',
@@ -137,7 +138,7 @@ const SectionTwo = () => {
                   fontFamily: 'Inter',
                   fontWeight: '500',
                   color: '#000',
-                  fontSize: '17px',
+                  fontSize: ['14px', '17px'],
                   lineHeight: ['30px', '35px'],
                   display: 'flex',
                   justifyContent: 'flex-start',
@@ -146,14 +147,14 @@ const SectionTwo = () => {
                   width: ['100%', '75%']
                 }}
               >
-                <img alt='' style={{ position: 'relative', bottom: mobile ? '15px' : '15px' }} src={checkBoxsvg} />Hand holding and mentoring of students by people who have cracked the exam themselves.
+                <img alt='' style={{ position: 'relative', bottom: mobile ? '15px' : '26px' }} src={checkBoxsvg} />Hand holding and mentoring of students by people who have cracked the exam themselves.
               </Typography>
               <Typography
                 sx={{
                   fontFamily: 'Inter',
                   fontWeight: '500',
                   color: '#000',
-                  fontSize: '17px',
+                  fontSize: ['14px', '17px'],
                   lineHeight: ['30px', '35px'],
                   display: 'flex',
                   justifyContent: 'flex-start',
@@ -162,14 +163,14 @@ const SectionTwo = () => {
                   width: ['100%', '75%']
                 }}
               >
-                <img alt='' style={{ position: 'relative', bottom: mobile ? '15px' : '15px' }} src={checkBoxsvg} /> Provide academic growth and continuation of formal education preparation.
+                <img alt='' style={{ position: 'relative', bottom: mobile ? '15px' : '14px' }} src={checkBoxsvg} /> Provide academic growth and continuation of formal education preparation.
               </Typography>
               <Typography
                 sx={{
                   fontFamily: 'Inter',
                   fontWeight: '500',
                   color: '#000',
-                  fontSize: '17px',
+                  fontSize: ['14px', '17px'],
                   lineHeight: ['30px', '35px'],
                   display: 'flex',
                   justifyContent: 'flex-start',
@@ -178,7 +179,7 @@ const SectionTwo = () => {
                   width: ['100%', '73%']
                 }}
               >
-                <img alt='' style={{ position: 'relative', bottom: mobile ? '15px' : '12px' }} src={checkBoxsvg} /> Answer Writing skill and creativity development program, including test practice.
+                <img alt='' style={{ position: 'relative', bottom: mobile ? '15px' : '14px' }} src={checkBoxsvg} /> Answer Writing skill and creativity development program, including test practice.
               </Typography>
             </Box>
             {/* </Grid> */}

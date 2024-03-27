@@ -113,12 +113,12 @@ const SectionFourth = () => {
                         const first10Words = data?.post_content
                             .replace(/<[^>]*>/g, ' ')
                             .split(/\s+/)
-                            .slice(0, 5)
+                            .slice(0, 4)
                             .join(' ');
                         const first10WordsTitle = data?.post_title
                             .replace(/<[^>]*>/g, ' ')
                             .split(/\s+/)
-                            .slice(0, 3)
+                            .slice(0, 2)
                             .join(' ');
                         return (
                             <Grid item xs={12} sm={3} md={3} key={data.id}>
@@ -134,7 +134,7 @@ const SectionFourth = () => {
                                             </Typography>
                                         </CardContent>
                                         <CardActions sx={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
-                                            <Typography textAlign={'left'} fontWeight={'600'} color={'#00000080'} lineHeight={'24px'} fontSize={'13px'}>
+                                            <Typography textAlign={'left'} fontWeight={'600'} color={'#00000080'} lineHeight={'24px'} fontSize={'12px'}>
                                                 {moment(data?.post_date).format('MMMM Do YYYY')}
                                             </Typography>
                                             <Button
@@ -145,7 +145,7 @@ const SectionFourth = () => {
                                                     gap: '10px',
                                                     borderRadius: '15px',
                                                     textTransform: 'none',
-                                                    fontSize: '14px',
+                                                    fontSize: '12px',
                                                     fontWeight: '700',
                                                     color: "#8976FD"
                                                 }}
@@ -162,12 +162,12 @@ const SectionFourth = () => {
                         const first10Words = data?.post_content
                             .replace(/<[^>]*>/g, ' ')
                             .split(/\s+/)
-                            .slice(0, 5)
+                            .slice(0, 4)
                             .join(' ');
                         const first10WordsTitle = data?.post_title
                             .replace(/<[^>]*>/g, ' ')
                             .split(/\s+/)
-                            .slice(0, 3)
+                            .slice(0, 2)
                             .join(' ');
                         return (
                             <Grid item xs={12} sm={3} md={3} key={data.id}>
@@ -183,7 +183,7 @@ const SectionFourth = () => {
                                             </Typography>
                                         </CardContent>
                                         <CardActions sx={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
-                                            <Typography textAlign={'left'} fontWeight={'600'} color={'#00000080'} lineHeight={'24px'} fontSize={'13px'}>
+                                            <Typography textAlign={'left'} fontWeight={'600'} color={'#00000080'} lineHeight={'24px'} fontSize={'12px'}>
                                                 {moment(data?.post_date).format('MMMM Do YYYY')}
                                             </Typography>
                                             <Button
@@ -195,7 +195,7 @@ const SectionFourth = () => {
                                                     gap: '10px',
                                                     borderRadius: '15px',
                                                     textTransform: 'none',
-                                                    fontSize: '14px',
+                                                    fontSize: '12px',
                                                     fontWeight: '700',
                                                     color: "#8976FD"
                                                 }}

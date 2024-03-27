@@ -73,7 +73,7 @@ const SectionThree = () => {
                         onClick={handleWhatsapp}
                         sx={{
                             textTransform: 'none',
-                            background: '#FFD80D',
+                            background: '#FE9805',
                             fontFamily: 'Inter',
                             fontWeight: '600',
                             lineHeight: '24px',
@@ -83,12 +83,12 @@ const SectionThree = () => {
                             width: ['90%', '15%'],
                             borderRadius: '0px',
                             '&:hover': {
-                                backgroundColor: '#FFD80D',
+                                backgroundColor: '#FE9805',
                             },
                         }}
                     >
                         <img alt='' src={smssvg} />
-                        Join Now
+                        Coming Soon
                     </Button>
                 </Box>
             </Box>

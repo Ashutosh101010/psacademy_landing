@@ -22,7 +22,7 @@ const SectionOne = () => {
         color: '#000',
         fontFamily: 'Inter , sans-serif',
         fontWeight: '700',
-        fontSize: mobile ? '18px' : '14px'
+        fontSize: mobile ? '14px' : '10px'
     }));
 
     return (
@@ -46,10 +46,16 @@ const SectionOne = () => {
                     // backgroundSize: 'cover', // or 'contain' depending on your needs
                     // backgroundRepeat: 'no-repeat',
                     // borderBottom: mobile ? '' : '1px solid #8f7e7e00'
-                    background: 'linear-gradient(161deg, #FFFCFC 0%, #FF0000 41%, transparent)'
+                    // background: 'linear-gradient(161deg, #FFFCFC 0%, #FF0000 41%, transparent)'
+                    padding: ['1rem','3rem']
                 }}
             >
-                <Grid container spacing={2} mt={'0px'} pt={6}>
+                <Grid container spacing={2} mt={'0px'}
+                    sx={{
+                        borderBottom: '6px solid #FF0000',
+                    }}
+                    pt={2}
+                >
                     <Grid item xs={12} sm={6} md={6} mt={0} mb={4} padding={mobile ? '0px' : '30px'}>
                         <Grid container spacing={2}
                             sx={{
@@ -62,7 +68,7 @@ const SectionOne = () => {
                                 <Box
                                     sx={{
                                         width: mobile ? '70%' : '100%',
-                                        pt: 5
+                                        pt: 1
                                     }}
                                 >
                                     <Typography width={mobile ? '65%' : '100%'}>
@@ -74,7 +80,7 @@ const SectionOne = () => {
                                                 fontFamily: 'Inter , sans-serif',
                                                 fontWeight: '700',
                                                 color: '#000',
-                                                fontSize: mobile ? '35px' : '27px',
+                                                fontSize: mobile ? '35px' : '24px',
                                             }}
                                         >
                                             Best <Typewriter text="UPSC Coaching" delay={100} />
@@ -84,7 +90,8 @@ const SectionOne = () => {
                                                 fontFamily: 'Inter , sans-serif',
                                                 fontWeight: '700',
                                                 color: '#000',
-                                                fontSize: mobile ? '35px' : '27px',
+                                                fontSize: mobile ? '35px' : '24px',
+                                                pb: '20px'
                                             }}
                                         >
                                             Near You.
@@ -124,60 +131,60 @@ const SectionOne = () => {
                                                 fontFamily: 'Inter',
                                                 fontWeight: '500',
                                                 color: '#000',
-                                                fontSize: '17px',
-                                                lineHeight: ['30px', '36px'],
+                                                fontSize: ['12px', '14px'],
+                                                lineHeight: ['24px', '36px'],
                                                 display: 'flex',
                                                 justifyContent: 'flex-start',
                                                 alignItem: 'center',
                                                 gap: '8px'
                                             }}
                                         >
-                                            <img alt='' style={{ position: 'relative', bottom: mobile ? '0px' : '11px' }} src={checkBoxsvg} />   Guidance from Esteemed Mentor, Pradeep Srivastava Sir.
+                                            <img alt='' style={{ position: 'relative', bottom: mobile ? '0px' : '10px' }} src={checkBoxsvg} />   Guidance from Esteemed Mentor, Pradeep Srivastava Sir.
+                                        </Typography>
+                                        <Typography
+                                            sx={{
+                                                fontFamily: 'Inter',
+                                                fontWeight: 'bolder',
+                                                color: '#000',
+                                                fontSize: ['12px', '14px'],
+                                                lineHeight: ['24px', '36px'],
+                                                display: 'flex',
+                                                justifyContent: 'flex-start',
+                                                alignItem: 'center',
+                                                gap: '8px'
+                                            }}
+                                        >
+                                            <img alt='' style={{ position: 'relative', bottom: mobile ? '0px' : '10px' }} src={checkBoxsvg} /> First ever PSC Career Assessment Test ®
                                         </Typography>
                                         <Typography
                                             sx={{
                                                 fontFamily: 'Inter',
                                                 fontWeight: '500',
                                                 color: '#000',
-                                                fontSize: '17px',
-                                                lineHeight: '36px',
+                                                fontSize: ['12px', '14px'],
+                                                lineHeight: ['24px', '36px'],
                                                 display: 'flex',
                                                 justifyContent: 'flex-start',
                                                 alignItem: 'center',
                                                 gap: '8px'
                                             }}
                                         >
-                                            <img alt='' src={checkBoxsvg} /> First ever PSC Career Assessment Test ®
+                                            <img alt='' style={{ position: 'relative', bottom: mobile ? '0px' : '10px' }} src={checkBoxsvg} /> Exhaustive Mock Test Series and revision classes.
                                         </Typography>
                                         <Typography
                                             sx={{
                                                 fontFamily: 'Inter',
                                                 fontWeight: '500',
                                                 color: '#000',
-                                                fontSize: '17px',
-                                                lineHeight: '36px',
+                                                fontSize: ['12px', '14px'],
+                                                lineHeight: ['24px', '36px'],
                                                 display: 'flex',
                                                 justifyContent: 'flex-start',
                                                 alignItem: 'center',
                                                 gap: '8px'
                                             }}
                                         >
-                                            <img alt='' style={{ position: 'relative', bottom: mobile ? '0px' : '15px' }} src={checkBoxsvg} /> Exhaustive Mock Test Series and revision classes.
-                                        </Typography>
-                                        <Typography
-                                            sx={{
-                                                fontFamily: 'Inter',
-                                                fontWeight: '500',
-                                                color: '#000',
-                                                fontSize: '17px',
-                                                lineHeight: '36px',
-                                                display: 'flex',
-                                                justifyContent: 'flex-start',
-                                                alignItem: 'center',
-                                                gap: '8px'
-                                            }}
-                                        >
-                                            <img alt='' style={{ position: 'relative', bottom: mobile ? '0px' : '0px' }} src={checkBoxsvg} />   Hybrid module – Offline and Recorded Lectures
+                                            <img alt='' style={{ position: 'relative', bottom: mobile ? '0px' : '10px' }} src={checkBoxsvg} />   Hybrid module – Offline and Recorded Lectures
                                         </Typography>
                                     </Box>
                                 </Box>
@@ -196,7 +203,7 @@ const SectionOne = () => {
                                     position: 'relative',
                                     top: mobile ? '0px' : '0px',
                                     width: mobile ? '60%' : '100%',
-                                    borderBottomRightRadius: mobile ? '175px' : '10px',
+                                    // borderBottomRightRadius: mobile ? '175px' : '10px',
                                     marginBottom: mobile ? '0px' : '0px'
                                 }}
                                 src={director} />
