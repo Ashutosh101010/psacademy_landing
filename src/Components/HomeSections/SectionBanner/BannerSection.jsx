@@ -153,7 +153,7 @@ const BannerSection = () => {
                     </Carousel>
                 </div>
             </Box>
-            <Box
+            {/* <Box
                 textAlign={'center'}
                 mt={4}
             >
@@ -175,7 +175,7 @@ const BannerSection = () => {
                 >
                     YOUR ACADEMICS AND EXPLAINS YOUR GAP YEARS
                 </Typography>
-            </Box>
+            </Box> */}
         </Box >
     )
 }

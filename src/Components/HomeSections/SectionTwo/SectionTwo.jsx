@@ -2,7 +2,7 @@ import { Box, Button, Card, CardActions, CardContent, CardMedia, FormControl, Gr
 import React, { useState } from 'react'
 import smssvg from './Images/smssvg.svg'
 import appLogo from './Images/appLogosvg.svg'
-import checkBoxsvg from './Images/checkBoxsvg.svg'
+import checkBoxsvg from './Images/redcheckbox.svg'
 import CourseNetwrok from '../../../Network'
 import '../../../App.css';
 import { useEffect } from 'react'
@@ -50,10 +50,11 @@ const SectionTwo = () => {
     <Box
       sx={{
         flexGrow: 1,
-        background: '#D93535',
+        background: '#DFDFDF',
         width: '100%',
         height: '100%',
         paddingTop: '15px',
+        color: 'black'
       }}>
       <Grid container spacing={2}
         sx={{
@@ -89,7 +90,7 @@ const SectionTwo = () => {
                 sx={{
                   fontFamily: 'Inter , sans-serif',
                   fontWeight: '700',
-                  color: '#fff',
+                  color: '#000',
                   fontSize: ['30px', '44px'],
                 }}
               >
@@ -99,7 +100,7 @@ const SectionTwo = () => {
                 sx={{
                   fontFamily: 'Inter , sans-serif',
                   fontWeight: '700',
-                  color: '#fff',
+                  color: '#000',
                   fontSize: ['30px', '44px']
                 }}
               >
@@ -109,7 +110,7 @@ const SectionTwo = () => {
                 sx={{
                   fontFamily: 'Inter , sans-serif',
                   fontWeight: '700',
-                  color: '#fff',
+                  color: '#000',
                   fontSize: ['30px', '44px'],
                   mb: 2
                 }}
@@ -120,7 +121,7 @@ const SectionTwo = () => {
                 sx={{
                   fontFamily: 'Inter',
                   fontWeight: '500',
-                  color: '#fff',
+                  color: '#000',
                   fontSize: '17px',
                   lineHeight: ['30px', '40px'],
                   display: 'flex',
@@ -129,13 +130,13 @@ const SectionTwo = () => {
                   gap: '8px'
                 }}
               >
-                <img alt='' style={{ position: 'relative', bottom: mobile ? '0px' : '12px' }} src={checkBoxsvg} /> Provide precise and pin-pointed guidance.
+                <img alt='' style={{ position: 'relative', bottom: mobile ? '0px' : '0px' }} src={checkBoxsvg} /> Provide precise and pin-pointed guidance.
               </Typography>
               <Typography
                 sx={{
                   fontFamily: 'Inter',
                   fontWeight: '500',
-                  color: '#fff',
+                  color: '#000',
                   fontSize: '17px',
                   lineHeight: ['30px', '35px'],
                   display: 'flex',
@@ -145,13 +146,13 @@ const SectionTwo = () => {
                   width: ['100%', '75%']
                 }}
               >
-                <img alt='' style={{ position: 'relative', bottom: mobile ? '15px' : '25px' }} src={checkBoxsvg} />Hand holding and mentoring of students by people who have cracked the exam themselves.
+                <img alt='' style={{ position: 'relative', bottom: mobile ? '15px' : '15px' }} src={checkBoxsvg} />Hand holding and mentoring of students by people who have cracked the exam themselves.
               </Typography>
               <Typography
                 sx={{
                   fontFamily: 'Inter',
                   fontWeight: '500',
-                  color: '#fff',
+                  color: '#000',
                   fontSize: '17px',
                   lineHeight: ['30px', '35px'],
                   display: 'flex',
@@ -161,13 +162,13 @@ const SectionTwo = () => {
                   width: ['100%', '75%']
                 }}
               >
-                <img alt='' style={{ position: 'relative', bottom: mobile ? '15px' : '25px' }} src={checkBoxsvg} /> Provide academic growth and continuation of formal education preparation.
+                <img alt='' style={{ position: 'relative', bottom: mobile ? '15px' : '15px' }} src={checkBoxsvg} /> Provide academic growth and continuation of formal education preparation.
               </Typography>
               <Typography
                 sx={{
                   fontFamily: 'Inter',
                   fontWeight: '500',
-                  color: '#fff',
+                  color: '#000',
                   fontSize: '17px',
                   lineHeight: ['30px', '35px'],
                   display: 'flex',
@@ -177,7 +178,7 @@ const SectionTwo = () => {
                   width: ['100%', '73%']
                 }}
               >
-                <img alt='' style={{ position: 'relative', bottom: mobile ? '15px' : '40px' }} src={checkBoxsvg} /> Answer Writing skill and creativity development program, including test practice.
+                <img alt='' style={{ position: 'relative', bottom: mobile ? '15px' : '12px' }} src={checkBoxsvg} /> Answer Writing skill and creativity development program, including test practice.
               </Typography>
             </Box>
             {/* </Grid> */}

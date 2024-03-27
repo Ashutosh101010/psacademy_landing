@@ -11,7 +11,7 @@ const Header = () => {
         <>
             <Grid container spacing={2}
                 sx={{
-                    background: '#FFD80D',
+                    background: '#FE9805',
                     padding: '8px',
                     display: 'flex',
                     justifyContent: 'center',
@@ -20,22 +20,23 @@ const Header = () => {
             >
                 <Grid item xs={12} sm={6} md={6} textAlign={['center', 'end']}>
                     <Typography fontWeight={'700'}>
-                        Registration Open for Scholarship Program
+                        Registration Open for Interview Guidance Program
                     </Typography>
                 </Grid>
                 <Grid item xs={12} sm={6} md={6} display={'flex'} justifyContent={['center', 'start']}>
                     <Button
                         onClick={handlePlayStore}
                         sx={{
-                            background: '#9D0009',
+                            background: '#ECE2E2',
                             borderRadius: '8px',
-                            color: 'white',
+                            color: '#000',
                             fontWeight: '400',
                             lineHeight: '24px',
                             textTransform: 'none',
+                            border: '1px solid #9D0009',
                             width: ['80%', '15%'],
                             '&:hover': {
-                                backgroundColor: '#9D0009', // Change to desired hover background color
+                                backgroundColor: '#ECE2E2', // Change to desired hover background color
                             },
                         }}
                     >

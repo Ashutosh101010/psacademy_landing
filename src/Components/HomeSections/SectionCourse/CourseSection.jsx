@@ -16,7 +16,7 @@ const CourseSection = () => {
     const [currentTagIndices, setCurrentTagIndices] = useState([]);
 
     const instId = 94;
-    const iframeId = 12;
+    const iframeIdss = 13;
 
     const getAllCourses = async () => {
         const response = await CourseNetwrok.fetchCourses(instId);
@@ -35,12 +35,13 @@ const CourseSection = () => {
     };
 
     const getIframe = async () => {
-        const response = await CourseNetwrok.fetchIFrame(iframeId);
+        const response = await CourseNetwrok.fetchIFrame(iframeIdss);
         setIframeData(response.iFrame);
+        console.log('response.iFrame', response.iFrame);
     };
 
     const handleBuyCourse = (item) => {
-        const url = `${iframeData?.redirectUri}` + `?iframeId=${iframeId}&courseId=${item?.id}&folderId=${0}&on-click=${true}`
+        const url = `http://localhost:5174/coursedetail/` + `?iframeId=${iframeData?.id}&courseId=${item?.id}&folderId=${0}&on-click=${true}`
         window.open(url, '_blank', 'noreferrer');
     };
 

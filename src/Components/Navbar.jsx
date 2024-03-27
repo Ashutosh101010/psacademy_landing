@@ -3,7 +3,7 @@ import logo from '../../images/appLogosvg.svg'
 import capLogo from '../../images/capsvg.svg'
 import downArrow from '../../images/downArrowsvg.svg'
 import upArrow from '../../images/upArrowsvg.svg'
-import { Menu, MenuItem, Box, Button, Popper, Grow, Paper, MenuList, ClickAwayListener, Grid, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Divider, Drawer, Collapse } from '@mui/material';
+import { Menu, MenuItem, Box, Button, Popper, Grow, Paper, MenuList, ClickAwayListener, Grid, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Divider, Drawer, Collapse, Badge } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -19,8 +19,9 @@ import playStore from '../../images/playstoresvg.svg'
 import windowsStore from '../../images/windowsstoresvg.svg'
 import pdf from '../MPPSC_syllabus_23feb.pdf'
 import { useEffect } from 'react';
+import { useState } from 'react';
 
-const pages = ['Interview Guidance', 'Answer Writing Program', 'Free-Resources', `Topper's Strategy`];
+const pages = ['PSC Assessment Test', 'Answer Writing Program', 'Free-Resources', `Topper's Strategy`];
 const ITEM_HEIGHT = 48;
 
 const Navbar = () => {
@@ -53,6 +54,19 @@ const Navbar = () => {
     // const handleOpenUserMenu = (event) => {
     //     setAnchorElUser(event.currentTarget);
     // };
+    const [iframeData, setIframeData] = useState([]);
+
+    const iframeId = 13;
+
+    // const getIframe = async () => {
+    //     const response = await CourseNetwrok.fetchIFrame(iframeId);
+    //     setIframeData(response.iFrame);
+    // };
+
+    // useEffect(() => {
+    //     getIframe();
+    // }, [])
+
 
     const handleCloseNavMenu = () => {
         setAnchorElNav(null);
@@ -168,7 +182,7 @@ const Navbar = () => {
     // };
 
     const handleBuyCourse = (item) => {
-        const url = `https://psacademy.co.in/coursedetail/` + `?iframeId=12&courseId=${item?.id}&folderId=${0}&on-click=${true}`
+        const url = `http://localhost:5174/coursedetail/` + `?iframeId=${iframeId}&courseId=${item?.id}&folderId=${0}&on-click=${true}`
 
         // const url = `${iframeData?.redirectUri}/buyCourseDetails/${item?.id}/0`
         window.open(url, '_blank', 'noreferrer');
@@ -323,7 +337,7 @@ const Navbar = () => {
                     <Button
                         onClick={handlePlayStore}
                         sx={{
-                            background: '#FFD80D',
+                            background: '#FE9805',
                             borderRadius: '40px',
                             textTransform: 'none',
                             fontWeight: '600',
@@ -331,12 +345,12 @@ const Navbar = () => {
                             color: 'black',
                             width: '100%',
                             '&:hover': {
-                                background: '#FFD80D',
+                                background: '#FE9805',
                             },
                         }}
                     >
                         <img alt='' src={capLogo} />
-                        Free Scholarship Test
+                        Scholarship Test
                     </Button>
                 </ListItem>
                 <ListItem
@@ -371,7 +385,7 @@ const Navbar = () => {
     return (
         <AppBar position="static"
             sx={{
-                background: '#540000'
+                background: '#7A7474'
             }}
         >
             <Container maxWidth="xl">
@@ -581,12 +595,16 @@ const Navbar = () => {
                                 )
                             })}
                         </Menu>
-                        <Button onClick={handlePlayStore} sx={{ color: '#fff', fontWeight: '600', textTransform: 'none' }}>
-                            Interview Guidance
-                        </Button>
-                        <Button onClick={handlePlayStore} sx={{ color: '#fff', fontWeight: '600', textTransform: 'none' }}>
-                            Answer Writing Program
-                        </Button>
+                        <Badge badgeContent={'New'} color='error'>
+                            <Button onClick={handlePlayStore} sx={{ color: '#fff', fontWeight: '600', textTransform: 'none' }}>
+                                PSC Assessment Test
+                            </Button>
+                        </Badge>
+                        <Badge badgeContent={'Soon'} color='error'>
+                            <Button onClick={handlePlayStore} sx={{ color: '#fff', fontWeight: '600', textTransform: 'none' }}>
+                                Answer Writing Program
+                            </Button>
+                        </Badge>
                         <IconButton
                             onClick={handleFreeResources}
                             size="small"
@@ -685,19 +703,19 @@ const Navbar = () => {
                         <Button
                             onClick={handlePlayStore}
                             sx={{
-                                background: '#FFD80D',
+                                background: '#FE9805',
                                 borderRadius: '40px',
                                 textTransform: 'none',
                                 fontWeight: '600',
                                 color: 'black',
                                 width: ['80%', '100%'],
                                 '&:hover': {
-                                    background: '#FFD80D',
+                                    background: '#FE9805',
                                 },
                             }}
                         >
                             <img alt='' src={capLogo} />
-                            Free Scholarship Test
+                            Scholarship Test
                         </Button>
                     </Box>
                 </Toolbar>
