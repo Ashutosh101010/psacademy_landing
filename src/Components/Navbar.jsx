@@ -182,7 +182,7 @@ const Navbar = () => {
     // };
 
     const handleBuyCourse = (item) => {
-        const url = `http://localhost:5174/coursedetail/` + `?iframeId=${iframeId}&courseId=${item?.id}&folderId=${0}&on-click=${true}`
+        const url = `http://localhost:5177/coursedetail/` + `?iframeId=${iframeId}&courseId=${item?.id}&folderId=${0}&on-click=${true}`
 
         // const url = `${iframeData?.redirectUri}/buyCourseDetails/${item?.id}/0`
         window.open(url, '_blank', 'noreferrer');
