@@ -58,14 +58,14 @@ const Navbar = () => {
 
     const iframeId = 13;
 
-    // const getIframe = async () => {
-    //     const response = await CourseNetwrok.fetchIFrame(iframeId);
-    //     setIframeData(response.iFrame);
-    // };
+    const getIframe = async () => {
+        const response = await CourseNetwrok.fetchIFrame(iframeId);
+        setIframeData(response.iFrame);
+    };
 
-    // useEffect(() => {
-    //     getIframe();
-    // }, [])
+    useEffect(() => {
+        getIframe();
+    }, [])
 
 
     const handleCloseNavMenu = () => {
@@ -182,7 +182,7 @@ const Navbar = () => {
     // };
 
     const handleBuyCourse = (item) => {
-        const url = `http://localhost:5177/coursedetail/` + `?iframeId=${iframeId}&courseId=${item?.id}&folderId=${0}&on-click=${true}`
+        const url = `${iframeData?.redirectUri}` + `?iframeId=${iframeId}&courseId=${item?.id}&folderId=${0}&on-click=${true}`
 
         // const url = `${iframeData?.redirectUri}/buyCourseDetails/${item?.id}/0`
         window.open(url, '_blank', 'noreferrer');
