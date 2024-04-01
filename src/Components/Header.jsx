@@ -12,7 +12,7 @@ const Header = () => {
             <Grid container spacing={1}
                 sx={{
                     background: '#FE9805',
-                    padding: '8px',
+                    py: 2,
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'baseline',

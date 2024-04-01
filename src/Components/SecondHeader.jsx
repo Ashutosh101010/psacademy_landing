@@ -43,7 +43,7 @@ const SecondHeader = () => {
   }
 
   return (
-    <Box sx={{ flexGrow: 1, background: '#7A7474', padding: '1px' }}>
+    <Box sx={{ background: '#7A7474' , py:0}}>
       <Grid container spacing={1}>
         <Grid
           item

@@ -256,7 +256,7 @@ const Navbar = () => {
 
 
     const DrawerList = (
-        <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
+        <Box sx={{ width: 260 }} role="presentation" onClick={toggleDrawer(false)}>
             <List>
                 <ListItem sx={{ display: 'flex', justifyContent: 'end' }}>
                     <CloseIcon onClick={handleOpenNavMen2Close} />
@@ -268,7 +268,7 @@ const Navbar = () => {
                             justifyContent: 'space-between'
                         }}
                         onClick={handleClick2}>
-                        <Typography variant="body1" style={{ fontSize: '1.2rem' }}>
+                        <Typography variant="body1" style={{ fontSize: '1rem' }}>
                             Courses
                         </Typography>
                         {openCourse ? <ExpandLess /> : <ExpandMore />}
@@ -324,12 +324,22 @@ const Navbar = () => {
                 {/* Other items */}
                 {pages.map((text, index) => (
                     <ListItem key={text} disablePadding>
-                        <ListItemButton
-                            onClick={(e) => handleMenuChange(e, text)}
-                        >
-                            <Typography onClick={handlePlayStore} variant="body1" style={{ fontSize: '1.2rem' }} >
+                        <ListItemButton onClick={(e) => handleMenuChange(e, text)}>
+                            <Typography onClick={handlePlayStore} variant="body1" style={{ fontSize: '1rem' }}>
                                 {text}
                             </Typography>
+                            {text === 'PSC Assessment Test' && (
+                                <Badge badgeContent={'New'} color='error' overlap="circular">
+                                    {/* <Typography onClick={handlePlayStore} variant="body1" style={{ fontSize: '1.2rem' }}>
+                                        PSC Assessment Test
+                                    </Typography> */}
+                                </Badge>
+                            )}
+                            {text === 'Answer Writing Program' && (
+                                <Badge badgeContent={'Soon'} color='error' overlap="circular">
+                                    {/* Answer Writing Program */}
+                                </Badge>
+                            )}
                         </ListItemButton>
                     </ListItem>
                 ))}
@@ -385,10 +395,13 @@ const Navbar = () => {
     return (
         <AppBar position="static"
             sx={{
-                background: '#7A7474'
+                background: '#7A7474',
+                position: 'relative',
+                bottom: '9px',
+                py:1
             }}
         >
-            <Container maxWidth="xl">
+            <Container maxWidth="xl" >
                 <Toolbar disableGutters
                     sx={{
                         display: 'flex',
@@ -496,7 +509,7 @@ const Navbar = () => {
                     </Box> */}
                     <Box
                         sx={{
-                            mr: 2,
+                            // mr: 2,
                             display: { xs: 'flex', md: 'none' },
                             justifyContent: { xs: 'space-between', md: 'none' },
                             width: '100%'
@@ -508,7 +521,7 @@ const Navbar = () => {
                             // textDecoration: 'none',
                         }}
                     >
-                        <img alt='' onClick={handlNavigateHome} src={logo} />
+                        <img alt='' width={'35%'} onClick={handlNavigateHome} src={logo} />
                         <IconButton
                             size="large"
                             aria-label="account of current user"

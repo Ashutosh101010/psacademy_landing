@@ -131,7 +131,7 @@ const SectionTwo = () => {
                   gap: '8px'
                 }}
               >
-                <img alt='' style={{ position: 'relative', bottom: mobile ? '0px' : '0px' }} src={checkBoxsvg} /> Provide precise and pin-pointed guidance.
+                <img alt='' style={{ position: 'relative', bottom: mobile ? '18px' : '28px' }} src={checkBoxsvg} />Track Record of Success: Many students exceled in MPPSC and UPSC exams under our guidance.
               </Typography>
               <Typography
                 sx={{
@@ -147,7 +147,7 @@ const SectionTwo = () => {
                   width: ['100%', '75%']
                 }}
               >
-                <img alt='' style={{ position: 'relative', bottom: mobile ? '15px' : '26px' }} src={checkBoxsvg} />Hand holding and mentoring of students by people who have cracked the exam themselves.
+                <img alt='' style={{ position: 'relative', bottom: mobile ? '17px' : '28px' }} src={checkBoxsvg} />Expert Guidance: Learn from instructors who have achieved success in these exams themselves.
               </Typography>
               <Typography
                 sx={{
@@ -163,7 +163,7 @@ const SectionTwo = () => {
                   width: ['100%', '75%']
                 }}
               >
-                <img alt='' style={{ position: 'relative', bottom: mobile ? '15px' : '14px' }} src={checkBoxsvg} /> Provide academic growth and continuation of formal education preparation.
+                <img alt='' style={{ position: 'relative', bottom: mobile ? '17px' : '28px' }} src={checkBoxsvg} />Trusted Reputation: Legacy of being consistent with selections in MPPSC and UPSC over the past 28 years
               </Typography>
               <Typography
                 sx={{
@@ -179,7 +179,7 @@ const SectionTwo = () => {
                   width: ['100%', '73%']
                 }}
               >
-                <img alt='' style={{ position: 'relative', bottom: mobile ? '15px' : '14px' }} src={checkBoxsvg} /> Answer Writing skill and creativity development program, including test practice.
+                <img alt='' style={{ position: 'relative', bottom: mobile ? '17px' : '14px' }} src={checkBoxsvg} />Personalized Support: Receive individualized strategies tailored to your exam preparation.
               </Typography>
             </Box>
             {/* </Grid> */}

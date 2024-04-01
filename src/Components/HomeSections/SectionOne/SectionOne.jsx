@@ -22,7 +22,7 @@ const SectionOne = () => {
         color: '#000',
         fontFamily: 'Inter , sans-serif',
         fontWeight: '700',
-        fontSize: mobile ? '14px' : '10px'
+        fontSize: mobile ? '14px' : '13px'
     }));
 
     return (
@@ -47,7 +47,7 @@ const SectionOne = () => {
                     // backgroundRepeat: 'no-repeat',
                     // borderBottom: mobile ? '' : '1px solid #8f7e7e00'
                     // background: 'linear-gradient(161deg, #FFFCFC 0%, #FF0000 41%, transparent)'
-                    padding: ['1rem','3rem']
+                    padding: ['1rem', '3rem']
                 }}
             >
                 <Grid container spacing={2} mt={'0px'}
@@ -131,12 +131,13 @@ const SectionOne = () => {
                                                 fontFamily: 'Inter',
                                                 fontWeight: '500',
                                                 color: '#000',
-                                                fontSize: ['12px', '14px'],
+                                                fontSize: '14px',
                                                 lineHeight: ['24px', '36px'],
                                                 display: 'flex',
                                                 justifyContent: 'flex-start',
                                                 alignItem: 'center',
-                                                gap: '8px'
+                                                gap: '8px',
+                                                py:0.3
                                             }}
                                         >
                                             <img alt='' style={{ position: 'relative', bottom: mobile ? '0px' : '10px' }} src={checkBoxsvg} />   Guidance from Esteemed Mentor, Pradeep Srivastava Sir.
@@ -146,27 +147,29 @@ const SectionOne = () => {
                                                 fontFamily: 'Inter',
                                                 fontWeight: 'bolder',
                                                 color: '#000',
-                                                fontSize: ['12px', '14px'],
+                                                fontSize: '14px',
                                                 lineHeight: ['24px', '36px'],
                                                 display: 'flex',
                                                 justifyContent: 'flex-start',
                                                 alignItem: 'center',
-                                                gap: '8px'
+                                                gap: '8px',
+                                                py:0.3
                                             }}
                                         >
-                                            <img alt='' style={{ position: 'relative', bottom: mobile ? '0px' : '10px' }} src={checkBoxsvg} /> First ever PSC Career Assessment Test ®
+                                            <img alt='' style={{ position: 'relative', bottom: mobile ? '0px' : '0px' }} src={checkBoxsvg} /> First ever PSC Career Assessment Test ®
                                         </Typography>
                                         <Typography
                                             sx={{
                                                 fontFamily: 'Inter',
                                                 fontWeight: '500',
                                                 color: '#000',
-                                                fontSize: ['12px', '14px'],
+                                                fontSize: '14px',
                                                 lineHeight: ['24px', '36px'],
                                                 display: 'flex',
                                                 justifyContent: 'flex-start',
                                                 alignItem: 'center',
-                                                gap: '8px'
+                                                gap: '8px',
+                                                py:0.3
                                             }}
                                         >
                                             <img alt='' style={{ position: 'relative', bottom: mobile ? '0px' : '10px' }} src={checkBoxsvg} /> Exhaustive Mock Test Series and revision classes.
@@ -176,12 +179,13 @@ const SectionOne = () => {
                                                 fontFamily: 'Inter',
                                                 fontWeight: '500',
                                                 color: '#000',
-                                                fontSize: ['12px', '14px'],
+                                                fontSize: '14px',
                                                 lineHeight: ['24px', '36px'],
                                                 display: 'flex',
                                                 justifyContent: 'flex-start',
                                                 alignItem: 'center',
-                                                gap: '8px'
+                                                gap: '8px',
+                                                py:0.3
                                             }}
                                         >
                                             <img alt='' style={{ position: 'relative', bottom: mobile ? '0px' : '10px' }} src={checkBoxsvg} />   Hybrid module – Offline and Recorded Lectures
