@@ -153,29 +153,6 @@ const BannerSection = () => {
                     </Carousel>
                 </div>
             </Box>
-            {/* <Box
-                textAlign={'center'}
-                mt={4}
-            >
-                <Typography
-                    fontSize={'18px'}
-                    fontWeight={'700'}
-                    fontFamily={'Inter'}
-                    lineHeight={'30px'}
-                    color={'black'}
-                >
-                    A UPSC-MPPSC COACHING THAT WILL HELP YOU CRACK
-                </Typography>
-                <Typography
-                    fontSize={'18px'}
-                    fontWeight={'700'}
-                    fontFamily={'Inter'}
-                    lineHeight={'30px'}
-                    color={'black'}
-                >
-                    YOUR ACADEMICS AND EXPLAINS YOUR GAP YEARS
-                </Typography>
-            </Box> */}
         </Box >
     )
 }

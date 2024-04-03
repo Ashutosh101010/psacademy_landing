@@ -15,10 +15,9 @@ import SectionFourth from '../Components/HomeSections/SectionFourth/SectionFourt
 import SectionGellary from '../Components/HomeSections/SectionGellary/SectionGellary'
 import landingImage from '../../images/landingImage.jpeg'
 import CloseIcon from '@mui/icons-material/Close';
-import webView from '../../images/Group1000001624web.png'
-import mobile from '../../images/Group1000001623mobile.png'
+import AssementTest from '../Components/AssessmentTest/AssementTest'
 
-const Home = () => {
+const PSCAssessment = () => {
 
     const isMobile = useMediaQuery("(min-width:600px)");
     const [message, setMessage] = React.useState('PS Team');
@@ -70,18 +69,7 @@ const Home = () => {
             <div style={{ position: 'fixed', width: '100%', zIndex: 100000, top: isSticky ? '0' : 'auto' }}>
                 {isSticky && <Navbar />}
             </div>
-            <SectionOne />
-            <BannerSection />
-            <Box px={'4rem'} py={2} display={'flex'} justifyContent={'center'} onClick={handleWhatsapp}>
-                {
-                    isMobile ? <img width={'80%'} alt='' src={webView} /> : <img width={'100%'} alt='' src={mobile} />
-                }
-            </Box>
-            <CourseSection />
-            <SectionTwo />
-            <SectionThree />
-            <SectionFourth />
-            <SectionGellary />
+            <AssementTest />
             <SecondFooter />
             <Footer />
             <div style={{ position: 'fixed', left: '-45px', top: '95%', transform: 'translateY(-50%)', padding: '10px', width: '100%', display: 'flex', justifyContent: 'end', alignItems: 'center' }}>
@@ -109,4 +97,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default PSCAssessment

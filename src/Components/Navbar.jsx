@@ -21,7 +21,7 @@ import pdf from '../MPPSC_syllabus_23feb.pdf'
 import { useEffect } from 'react';
 import { useState } from 'react';
 
-const pages = ['PSC Assessment Test', 'Answer Writing Program', 'Free-Resources', `Topper's Strategy`];
+const pages = ['Answer Writing Program', 'Free-Resources', `Topper's Strategy`];
 const ITEM_HEIGHT = 48;
 
 const Navbar = () => {
@@ -92,60 +92,6 @@ const Navbar = () => {
         getAllCourses();
     }, []);
 
-    // useEffect(() => {
-    //     // Filter active courses
-    //     // const activeCourses = courses.filter(course => course.active);
-    //     let templist = [];
-    //     courses.forEach((course) => {
-    //         if (course.active == true) {
-    //             templist.push(course);
-    //         }
-    //     })
-    //     setCourses(templist);
-    // }, [courses]);
-
-    // const handleToggle = () => {
-    //     setOpen((prevOpen) => !prevOpen);
-    // };
-
-    // const handleToggleFree = () => {
-    //     setOpenFree((prevOpenFree) => !prevOpenFree);
-    // };
-
-    // const handleClose = (event) => {
-    //     if (anchorRef.current && anchorRef.current.contains(event.target)) {
-    //         return;
-    //     }
-
-    //     setOpen(false);
-    // };
-
-    // const handleCloseFree = (event) => {
-    //     if (anchorRefFree.current && anchorRefFree.current.contains(event.target)) {
-    //         return;
-    //     }
-    //     setOpenFree(false);
-    // };
-
-    // function handleListKeyDown(event) {
-    //     if (event.key === 'Tab') {
-    //         event.preventDefault();
-    //         setOpen(false);
-    //     } else if (event.key === 'Escape') {
-    //         setOpen(false);
-    //     };
-    // };
-
-    // function handleListKeyDownFree(event) {
-    //     if (event.key === 'Tab') {
-    //         event.preventDefault();
-    //         setOpenFree(false);
-    //     } else if (event.key === 'Escape') {
-    //         setOpenFree(false);
-    //     };
-    // };
-
-    // return focus to the button when we transitioned from !open -> open
     useEffect(() => {
         if (prevOpen.current === true && open === false) {
             anchorRef.current.focus();
@@ -153,9 +99,6 @@ const Navbar = () => {
 
         prevOpen.current = open;
     }, [open]);
-
-
-
 
     useEffect(() => {
         if (prevOpenFree.current === true && openFree === false) {
@@ -168,6 +111,7 @@ const Navbar = () => {
     const handleClick = (event) => {
         setAnchorElM(event.currentTarget);
     };
+
     const handleCloseM = () => {
         setAnchorElM(null);
     };
@@ -243,7 +187,7 @@ const Navbar = () => {
         const pdfUrl = pdf;
         // Open a new window to initiate the download
         window.open(pdfUrl, '_blank');
-    }
+    };
 
     const handleMenuChange = (e, text) => {
         if (text === 'Free-Resources') {
@@ -252,8 +196,11 @@ const Navbar = () => {
             // Open a new window to initiate the download
             window.open(pdfUrl, '_blank');
         }
-    }
+    };
 
+    const handleNavigateAssessment = () => {
+        navigate('/assessment');
+    };
 
     const DrawerList = (
         <Box sx={{ width: 260 }} role="presentation" onClick={toggleDrawer(false)}>
@@ -291,58 +238,44 @@ const Navbar = () => {
                         ))}
                     </List>
                 </Collapse>
-
-                {/* <ListItem disablePadding>
-                    <ListItemButton
-                        sx={{
-                            display: 'flex',
-                            justifyContent: 'space-between'
-                        }}
-                        onClick={handleClickFreeResources}>
-                        <Typography variant="body1" style={{ fontSize: '1.2rem' }}>
-                            Free-Rescources
+                <ListItem sx={{ display: 'flex', justifyContent: 'start' }}>
+                    <Badge
+                        badgeContent={'New'}
+                        color='error'
+                        overlap="circular"
+                        onClick={handleNavigateAssessment}
+                        sx={{ cursor: 'pointer' }}
+                    >
+                        <Typography variant="body1" style={{ fontSize: '1rem' }}>
+                            PSC Assessment Test
                         </Typography>
-                        {openFreeResources ? <ExpandLess /> : <ExpandMore />}
-                    </ListItemButton>
+                    </Badge>
                 </ListItem>
-                <Collapse in={openFreeResources} timeout="auto" unmountOnExit>
-                    <List component="div" disablePadding>
-                        <ListItemButton sx={{ pl: 4, boxShadow: '0px 2px 8px 0px #b3a3a3' }} onClick={handleClickFreeResources}>
-                            <ListItemText
-                                primary={'Current Affair'}
-                                onClick={handleCloseF}
-                            />
-                        </ListItemButton>
-                        <ListItemButton sx={{ pl: 4, boxShadow: '0px 2px 8px 0px #b3a3a3' }} onClick={handleClickFreeResources}>
-                            <ListItemText
-                                primary={'Blogs'}
-                                onClick={handleCloseF}
-                            />
-                        </ListItemButton>
-                    </List>
-                </Collapse> */}
-                {/* Other items */}
+
                 {pages.map((text, index) => (
                     <ListItem key={text} disablePadding>
-                        <ListItemButton onClick={(e) => handleMenuChange(e, text)}>
-                            <Typography onClick={handlePlayStore} variant="body1" style={{ fontSize: '1rem' }}>
+                        <ListItemButton>
+                            <Typography
+                                variant="body1"
+                                style={{ fontSize: '1rem', cursor: 'pointer' }}
+                                onClick={() => handleMenuChange(text)} // Trigger handleMenuChange on text click
+                            >
                                 {text}
                             </Typography>
-                            {text === 'PSC Assessment Test' && (
-                                <Badge badgeContent={'New'} color='error' overlap="circular">
-                                    {/* <Typography onClick={handlePlayStore} variant="body1" style={{ fontSize: '1.2rem' }}>
-                                        PSC Assessment Test
-                                    </Typography> */}
-                                </Badge>
-                            )}
                             {text === 'Answer Writing Program' && (
-                                <Badge badgeContent={'Soon'} color='error' overlap="circular">
-                                    {/* Answer Writing Program */}
+                                <Badge
+                                    badgeContent={'Soon'}
+                                    color='error'
+                                    overlap="circular"
+                                    style={{ cursor: 'pointer' }} // Ensure the badge is clickable
+                                >
+                                    {/* Badge content */}
                                 </Badge>
                             )}
                         </ListItemButton>
                     </ListItem>
                 ))}
+
                 <ListItem>
                     <Button
                         onClick={handlePlayStore}
@@ -398,7 +331,7 @@ const Navbar = () => {
                 background: '#7A7474',
                 position: 'relative',
                 bottom: '9px',
-                py:1
+                py: 1
             }}
         >
             <Container maxWidth="xl" >
@@ -609,7 +542,7 @@ const Navbar = () => {
                             })}
                         </Menu>
                         <Badge badgeContent={'New'} color='error'>
-                            <Button onClick={handlePlayStore} sx={{ color: '#fff', fontWeight: '600', textTransform: 'none' }}>
+                            <Button onClick={handleNavigateAssessment} sx={{ color: '#fff', fontWeight: '600', textTransform: 'none' }}>
                                 PSC Assessment Test
                             </Button>
                         </Badge>

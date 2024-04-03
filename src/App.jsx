@@ -9,6 +9,7 @@ import PrivacyPolicy from './Pages/privacypolicy';
 import TermCondition from './Pages/Term&Condition';
 import BuyThisCourse from './Pages/BuyThisCourse';
 import RefundPolicy from './Pages/RefundPolicy';
+import PSCAssessment from './Pages/PSCAssessment';
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
           <Route path='/termcondition' element={<TermCondition />} />
           <Route path='/refundpolicy' element={<RefundPolicy />} />
           <Route path='/coursedetail' element={<BuyThisCourse />} />
+          <Route path='/assessment' element={<PSCAssessment />} />
           <Route path='*' element={<Navigate to="/" />} />
         </Routes>
       </BrowserRouter>
