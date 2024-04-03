@@ -1,7 +1,7 @@
 import { Box, Button, Grid, useMediaQuery } from '@mui/material';
 import React, { useEffect, useRef, useState } from 'react';
-import WebView from './Images/Group1000001624web.png'
-import MobileView from './Images/Group1000001623mobile.png'
+import WebView from './Images/Group1000001624web1.svg'
+import MobileView from './Images/Group1000001623mobile1.svg'
 import banneImage1 from './Images/banneImage1.svg'
 import banneImage2 from './Images/banneImage2.svg'
 import banneImage3 from './Images/banneImage3.svg'

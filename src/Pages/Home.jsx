@@ -15,8 +15,8 @@ import SectionFourth from '../Components/HomeSections/SectionFourth/SectionFourt
 import SectionGellary from '../Components/HomeSections/SectionGellary/SectionGellary'
 import landingImage from '../../images/landingImage.jpeg'
 import CloseIcon from '@mui/icons-material/Close';
-import webView from '../../images/Group1000001624web.png'
-import mobile from '../../images/Group1000001623mobile.png'
+import webView from '../../images/Group1000001624web1.svg'
+import mobile from '../../images/Group1000001623mobile1.svg'
 
 const Home = () => {
 

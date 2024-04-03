@@ -21,7 +21,7 @@ import pdf from '../MPPSC_syllabus_23feb.pdf'
 import { useEffect } from 'react';
 import { useState } from 'react';
 
-const pages = ['Answer Writing Program', 'Free-Resources', `Topper's Strategy`];
+const pages = ['Free-Resources', `Topper's Strategy`];
 const ITEM_HEIGHT = 48;
 
 const Navbar = () => {
@@ -203,7 +203,7 @@ const Navbar = () => {
     };
 
     const DrawerList = (
-        <Box sx={{ width: 260 }} role="presentation" onClick={toggleDrawer(false)}>
+        <Box sx={{ width: 280 }} role="presentation" onClick={toggleDrawer(false)}>
             <List>
                 <ListItem sx={{ display: 'flex', justifyContent: 'end' }}>
                     <CloseIcon onClick={handleOpenNavMen2Close} />
@@ -242,12 +242,25 @@ const Navbar = () => {
                     <Badge
                         badgeContent={'New'}
                         color='error'
-                        overlap="circular"
+                        // overlap="circular"
                         onClick={handleNavigateAssessment}
                         sx={{ cursor: 'pointer' }}
                     >
                         <Typography variant="body1" style={{ fontSize: '1rem' }}>
                             PSC Assessment Test
+                        </Typography>
+                    </Badge>
+                </ListItem>
+                <ListItem sx={{ display: 'flex', justifyContent: 'start' }}>
+                    <Badge
+                        badgeContent={'Soon'}
+                        color='error'
+                        // overlap="circular"
+                        // onClick={handleNavigateAssessment}
+                        sx={{ cursor: 'pointer' }}
+                    >
+                        <Typography variant="body1" style={{ fontSize: '1rem' }}>
+                            Answer Writing Program
                         </Typography>
                     </Badge>
                 </ListItem>
@@ -262,16 +275,16 @@ const Navbar = () => {
                             >
                                 {text}
                             </Typography>
-                            {text === 'Answer Writing Program' && (
+                            {/* {text === 'Answer Writing Program' && (
                                 <Badge
                                     badgeContent={'Soon'}
                                     color='error'
-                                    overlap="circular"
+                                    // overlap="circular"
                                     style={{ cursor: 'pointer' }} // Ensure the badge is clickable
                                 >
                                     {/* Badge content */}
-                                </Badge>
-                            )}
+                            {/* </Badge>
+                            )} */}
                         </ListItemButton>
                     </ListItem>
                 ))}
