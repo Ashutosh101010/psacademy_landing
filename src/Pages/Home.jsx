@@ -15,7 +15,7 @@ import SectionFourth from '../Components/HomeSections/SectionFourth/SectionFourt
 import SectionGellary from '../Components/HomeSections/SectionGellary/SectionGellary'
 import landingImage from '../../images/landingImage.jpeg'
 import CloseIcon from '@mui/icons-material/Close';
-import webView from '../../images/Group1000001624web1.svg'
+import webView from '../../images/Group1000001629.svg'
 import mobile from '../../images/Group1000001623mobile1.svg'
 
 const Home = () => {
@@ -72,7 +72,7 @@ const Home = () => {
             </div>
             <SectionOne />
             <BannerSection />
-            <Box px={'4rem'} py={2} display={'flex'} justifyContent={'center'} onClick={handleWhatsapp}>
+            <Box px={'0rem'} py={2} display={'flex'} justifyContent={'center'} onClick={handleWhatsapp}>
                 {
                     isMobile ? <img width={'80%'} alt='' src={webView} /> : <img width={'100%'} alt='' src={mobile} />
                 }

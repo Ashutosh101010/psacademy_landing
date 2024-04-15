@@ -341,7 +341,7 @@ const Navbar = () => {
     return (
         <AppBar position="static"
             sx={{
-                background: '#7A7474',
+                background: '#540000',
                 position: 'relative',
                 bottom: '9px',
                 py: 1

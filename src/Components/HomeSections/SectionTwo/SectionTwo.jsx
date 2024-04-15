@@ -50,7 +50,7 @@ const SectionTwo = () => {
     <Box
       sx={{
         flexGrow: 1,
-        background: '#DFDFDF',
+        background: '#540000',
         width: '100%',
         height: '100%',
         paddingTop: '15px',
@@ -90,7 +90,7 @@ const SectionTwo = () => {
                 sx={{
                   fontFamily: 'Inter , sans-serif',
                   fontWeight: '700',
-                  color: '#000',
+                  color: '#fff',
                   fontSize: ['23px', '30px'],
                   mb: 2
                 }}
@@ -101,7 +101,7 @@ const SectionTwo = () => {
                 sx={{
                   fontFamily: 'Inter , sans-serif',
                   fontWeight: '700',
-                  color: '#000',
+                  color: '#fff',
                   fontSize: ['25px', '44px']
                 }}
               >
@@ -111,7 +111,7 @@ const SectionTwo = () => {
                 sx={{
                   fontFamily: 'Inter , sans-serif',
                   fontWeight: '700',
-                  color: '#000',
+                  color: '#fff',
                   fontSize: ['25px', '44px'],
                   mb: 2
                 }}
@@ -122,7 +122,7 @@ const SectionTwo = () => {
                 sx={{
                   fontFamily: 'Inter',
                   fontWeight: '500',
-                  color: '#000',
+                  color: '#fff',
                   fontSize: ['14px', '17px'],
                   lineHeight: ['30px', '40px'],
                   display: 'flex',
@@ -137,7 +137,7 @@ const SectionTwo = () => {
                 sx={{
                   fontFamily: 'Inter',
                   fontWeight: '500',
-                  color: '#000',
+                  color: '#fff',
                   fontSize: ['14px', '17px'],
                   lineHeight: ['30px', '35px'],
                   display: 'flex',
@@ -153,7 +153,7 @@ const SectionTwo = () => {
                 sx={{
                   fontFamily: 'Inter',
                   fontWeight: '500',
-                  color: '#000',
+                  color: '#fff',
                   fontSize: ['14px', '17px'],
                   lineHeight: ['30px', '35px'],
                   display: 'flex',
@@ -169,7 +169,7 @@ const SectionTwo = () => {
                 sx={{
                   fontFamily: 'Inter',
                   fontWeight: '500',
-                  color: '#000',
+                  color: '#fff',
                   fontSize: ['14px', '17px'],
                   lineHeight: ['30px', '35px'],
                   display: 'flex',

@@ -34,7 +34,7 @@ const SectionOne = () => {
                 height: '100%',
                 // paddingTop: '5px',
                 // pt: '10px',
-                // background: '#9A0000',
+                background: '#420000',
                 // backgroundSize: 'cover', // or 'contain' depending on your needs
                 // backgroundRepeat: 'no-repeat',
             }}
@@ -79,7 +79,7 @@ const SectionOne = () => {
                                             sx={{
                                                 fontFamily: 'Inter , sans-serif',
                                                 fontWeight: '700',
-                                                color: '#000',
+                                                color: '#fff',
                                                 fontSize: mobile ? '35px' : '24px',
                                             }}
                                         >
@@ -89,7 +89,7 @@ const SectionOne = () => {
                                             sx={{
                                                 fontFamily: 'Inter , sans-serif',
                                                 fontWeight: '700',
-                                                color: '#000',
+                                                color: '#fff',
                                                 fontSize: mobile ? '35px' : '24px',
                                                 pb: '20px'
                                             }}
@@ -100,7 +100,7 @@ const SectionOne = () => {
                                             sx={{
                                                 fontFamily: 'Inter',
                                                 fontWeight: '500',
-                                                color: '#000',
+                                                color: '#fff',
                                                 fontSize: '17px',
                                                 lineHeight: '36px',
                                                 display: 'flex',
@@ -115,7 +115,7 @@ const SectionOne = () => {
                                             sx={{
                                                 fontFamily: 'Inter',
                                                 fontWeight: '500',
-                                                color: '#000',
+                                                color: '#fff',
                                                 fontSize: '17px',
                                                 lineHeight: '36px',
                                                 display: 'flex',
@@ -130,7 +130,7 @@ const SectionOne = () => {
                                             sx={{
                                                 fontFamily: 'Inter',
                                                 fontWeight: '500',
-                                                color: '#000',
+                                                color: '#fff',
                                                 fontSize: '14px',
                                                 lineHeight: ['24px', '36px'],
                                                 display: 'flex',
@@ -146,8 +146,8 @@ const SectionOne = () => {
                                             sx={{
                                                 fontFamily: 'Inter',
                                                 fontWeight: 'bolder',
-                                                color: '#000',
-                                                fontSize: '14px',
+                                                color: '#fff',
+                                                fontSize: '18px',
                                                 lineHeight: ['24px', '36px'],
                                                 display: 'flex',
                                                 justifyContent: 'flex-start',
@@ -162,7 +162,7 @@ const SectionOne = () => {
                                             sx={{
                                                 fontFamily: 'Inter',
                                                 fontWeight: '500',
-                                                color: '#000',
+                                                color: '#fff',
                                                 fontSize: '14px',
                                                 lineHeight: ['24px', '36px'],
                                                 display: 'flex',
@@ -178,7 +178,7 @@ const SectionOne = () => {
                                             sx={{
                                                 fontFamily: 'Inter',
                                                 fontWeight: '500',
-                                                color: '#000',
+                                                color: '#fff',
                                                 fontSize: '14px',
                                                 lineHeight: ['24px', '36px'],
                                                 display: 'flex',

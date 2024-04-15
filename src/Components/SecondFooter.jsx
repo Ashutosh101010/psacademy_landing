@@ -43,7 +43,7 @@ const SecondFooter = () => {
     };
 
     return (
-        <Box sx={{ flexGrow: 1, background: '#C9C7C7' }}>
+        <Box sx={{ flexGrow: 1, background: '#540000' }}>
             <Grid container spacing={2}>
                 <Grid item xs={12} sm={8} md={8} padding={'25px 15px 15px 25px'}>
                     <Box pb={3} pl={[1, 10]}>
@@ -51,7 +51,7 @@ const SecondFooter = () => {
                             fontSize={'20px'}
                             fontWeight={'700'}
                             fontFamily={'Inter'}
-                            color={'#000'}
+                            color={'#fff'}
                             lineHeight={'24px'}
                             textAlign={isMobile ? "start" : "center"}
                         >
@@ -61,27 +61,27 @@ const SecondFooter = () => {
                             fontSize={'15px'}
                             fontWeight={'400'}
                             fontFamily={'Inter'}
-                            color={'#000'}
+                            color={'#fff'}
                             lineHeight={'14px'}
                             display={['grid', 'flex']}
                             justifyContent={'flex-start'}
                             alignItems={'baseline'}
                             textAlign={isMobile ? "start" : "center"}
                         >
-                            <p style={{ color: '#000', fontFamily: 'Inter', fontWeight: '400', fontSize: '15px', width: isMobile ? '8%' : '100%' }}>Centre 1 :</p>G-10, Veda Business Park, Bhawarkua Square, Indore, Madhya Pradesh 452014
+                            <p style={{ color: '#fff', fontFamily: 'Inter', fontWeight: '400', fontSize: '15px', width: isMobile ? '8%' : '100%' }}>Centre 1 :</p>G-10, Veda Business Park, Bhawarkua Square, Indore, Madhya Pradesh 452014
                         </Typography>
                         <Typography
                             fontSize={'15px'}
                             fontWeight={'400'}
                             fontFamily={'Inter'}
-                            color={'#000'}
+                            color={'#fff'}
                             lineHeight={'14px'}
                             display={['grid', 'flex']}
                             justifyContent={'flex-start'}
                             alignItems={'baseline'}
                             textAlign={isMobile ? "start" : "center"}
                         >
-                            <p style={{ color: '#000', fontFamily: 'Inter', fontWeight: '400', fontSize: '15px', width: isMobile ? '8%' : '100%' }}>Centre 2 :</p>206, Ranawat Trade Centre, Bhawarkuan Square, Indore, Madhya Pradesh 452001
+                            <p style={{ color: '#fff', fontFamily: 'Inter', fontWeight: '400', fontSize: '15px', width: isMobile ? '8%' : '100%' }}>Centre 2 :</p>206, Ranawat Trade Centre, Bhawarkuan Square, Indore, Madhya Pradesh 452001
                         </Typography>
                     </Box>
                     <Box pl={[0.5, 10]}>
@@ -89,7 +89,7 @@ const SecondFooter = () => {
                             fontSize={'20px'}
                             fontWeight={'700'}
                             fontFamily={'Inter'}
-                            color={'#000'}
+                            color={'#fff'}
                             lineHeight={'24px'}
                             pb={2}
                             width={['100%', '68%']}
@@ -121,7 +121,7 @@ const SecondFooter = () => {
                                     src={emailLogo} />
                                 <Typography
                                     sx={{
-                                        color: '#000',
+                                        color: '#fff',
                                         // display: ['none', 'flex'],
                                         cursor: 'pointer',
                                         fontSize: '15px'
@@ -148,7 +148,7 @@ const SecondFooter = () => {
                                 />
                                 <Typography
                                     sx={{
-                                        color: '#000',
+                                        color: '#fff',
                                         display: 'flex',
                                         cursor: 'pointer',
                                         fontSize: '14px'
@@ -162,7 +162,7 @@ const SecondFooter = () => {
                             fontSize={'15px'}
                             fontWeight={'500'}
                             fontFamily={'Inter'}
-                            color={'#000'}
+                            color={'#fff'}
                             lineHeight={'24px'}
                             width={['100%', '68%']}
                             textAlign={['center', 'start']}
@@ -202,7 +202,7 @@ const SecondFooter = () => {
                         justifyContent={['center', 'start']}
                     >
                         <Typography
-                            color={'#000'}
+                            color={'#fff'}
                             fontFamily={'Inter'}
                             fontSize={['11px', '16px']}
                             fontWeight={'400'}
@@ -215,7 +215,7 @@ const SecondFooter = () => {
                             Privacy Policy  |
                         </Typography>
                         <Typography
-                            color={'#000'}
+                            color={'#fff'}
                             fontFamily={'Inter'}
                             fontSize={['11px', '16px']}
                             fontWeight={'400'}
@@ -228,7 +228,7 @@ const SecondFooter = () => {
                             Terms and Conditions |
                         </Typography>
                         <Typography
-                            color={'#000'}
+                            color={'#fff'}
                             fontFamily={'Inter'}
                             fontSize={['11px', '16px']}
                             fontWeight={'400'}

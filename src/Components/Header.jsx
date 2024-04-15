@@ -11,7 +11,7 @@ const Header = () => {
         <>
             <Grid container spacing={1}
                 sx={{
-                    background: '#FE9805',
+                    background: '#fff',
                     py: 2,
                     display: 'flex',
                     justifyContent: 'center',
