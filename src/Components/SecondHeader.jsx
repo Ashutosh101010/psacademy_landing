@@ -139,9 +139,9 @@ const SecondHeader = () => {
           justifyContent={'center'}
           alignItems={'center'}
         >
-          <img style={{ cursor: 'pointer' }} onClick={handleComingSoon} width={'20%'} alt='' src={appleStore} />
           <img style={{ cursor: 'pointer' }} onClick={handlePlayStore} width={'25%'} alt='' src={playStore} />
-          <img style={{ cursor: 'pointer' }} onClick={handleComingSoon} width={'20%'} alt='' src={windowsStore} />
+          <img style={{ cursor: 'pointer' }} onClick={handleComingSoon} width={'20%'} alt='' src={appleStore} />
+          <img style={{ cursor: 'pointer', marginLeft: '8px' }} onClick={handleComingSoon} width={'22%'} alt='' src={windowsStore} />
         </Grid>
       </Grid>
       <hr />

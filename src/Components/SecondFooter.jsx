@@ -95,7 +95,7 @@ const SecondFooter = () => {
                             width={['100%', '68%']}
                             textAlign={['center', 'start']}
                         >
-                            PS Academy
+                            PS Academy Contact Us
                         </Typography>
                         <Box
                             sx={{
@@ -177,8 +177,8 @@ const SecondFooter = () => {
                             gap={'10px'}
                             mt={2}
                         >
-                            <img style={{ cursor: 'pointer' }} onClick={handleComingSoon} width={isMobile ? '12%' : '30%'} alt='' src={appleStore} />
                             <img style={{ cursor: 'pointer' }} onClick={handlePlayStore} width={isMobile ? '14.5%' : '35%'} alt='' src={playStore} />
+                            <img style={{ cursor: 'pointer' }} onClick={handleComingSoon} width={isMobile ? '12%' : '30%'} alt='' src={appleStore} />
                             <img style={{ cursor: 'pointer' }} onClick={handleComingSoon} width={isMobile ? '13%' : '32%'} alt='' src={windowsStore} />
                         </Box>
                     </Box>
@@ -195,52 +195,6 @@ const SecondFooter = () => {
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen
                     ></iframe>
-                    <Box
-                        display={'flex'}
-                        gap={'10px'}
-                        padding={'5px'}
-                        justifyContent={['center', 'start']}
-                    >
-                        <Typography
-                            color={'#fff'}
-                            fontFamily={'Inter'}
-                            fontSize={['11px', '16px']}
-                            fontWeight={'400'}
-                            lineHeight={'24px'}
-                            onClick={handleNavigatePolicy}
-                            sx={{
-                                cursor: 'pointer'
-                            }}
-                        >
-                            Privacy Policy  |
-                        </Typography>
-                        <Typography
-                            color={'#fff'}
-                            fontFamily={'Inter'}
-                            fontSize={['11px', '16px']}
-                            fontWeight={'400'}
-                            lineHeight={'24px'}
-                            onClick={handleNavigateTerm}
-                            sx={{
-                                cursor: 'pointer'
-                            }}
-                        >
-                            Terms and Conditions |
-                        </Typography>
-                        <Typography
-                            color={'#fff'}
-                            fontFamily={'Inter'}
-                            fontSize={['11px', '16px']}
-                            fontWeight={'400'}
-                            lineHeight={'24px'}
-                            onClick={handleNavigateRefund}
-                            sx={{
-                                cursor: 'pointer'
-                            }}
-                        >
-                            Refund Policy
-                        </Typography>
-                    </Box>
                 </Grid>
             </Grid>
         </Box>

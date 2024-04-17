@@ -1,5 +1,31 @@
 import React from 'react';
 import { Box, Button, Grid, Typography } from '@mui/material'
+import { keyframes } from '@emotion/react';
+
+// Define the shaking animation
+const shakeAnimation = keyframes`
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30% {
+        transform: translateX(-3px);
+    }
+    20%, 40% {
+        transform: translateX(3px);
+    }
+    50%, 70% {
+        transform: translateX(-2px);
+    }
+    60%, 80% {
+        transform: translateX(2px);
+    }
+    90% {
+        transform: translateX(-1px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+`;
 
 const Header = () => {
 
@@ -18,12 +44,12 @@ const Header = () => {
                     alignItems: 'baseline',
                 }}
             >
-                <Grid item xs={12} sm={6} md={6} textAlign={['center', 'end']}>
+                <Grid item xs={12} sm={6} md={6} textAlign={['center', 'end']} display={'flex'} justifyContent={'end'}>
                     <Typography fontWeight={'700'}>
                         Registration Open for Scholarship Program
                     </Typography>
                 </Grid>
-                <Grid item xs={12} sm={6} md={6} display={'flex'} justifyContent={['center', 'start']}>
+                <Grid item xs={12} sm={6} md={6} justifyContent={['center', 'start']} display={'flex'}>
                     <Button
                         onClick={handlePlayStore}
                         sx={{
@@ -36,8 +62,9 @@ const Header = () => {
                             border: '1px solid #9D0009',
                             width: ['50%', '15%'],
                             '&:hover': {
-                                backgroundColor: '#ECE2E2', // Change to desired hover background color
+                                backgroundColor: '#ECE2E2',
                             },
+                            animation: `${shakeAnimation} 1s infinite ease-in-out`,
                         }}
                     >
                         Register Now

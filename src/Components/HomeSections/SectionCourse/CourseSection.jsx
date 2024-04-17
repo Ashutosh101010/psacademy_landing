@@ -37,7 +37,7 @@ const CourseSection = () => {
     const getIframe = async () => {
         const response = await CourseNetwrok.fetchIFrame(iframeIdss);
         setIframeData(response.iFrame);
-        console.log('response.iFrame', response.iFrame);
+        // console.log('response.iFrame', response.iFrame);
     };
 
     const handleBuyCourse = (item) => {
@@ -90,8 +90,7 @@ const CourseSection = () => {
                                                     {tags.tag}
                                                 </Typography>
                                                 : ""}
-                                            <div className='slide-boxes' style={{ width: '100%', overflowX: 'auto', padding: '0.5rem', display: 'flex' }}
-                                            >
+                                            <div className='slide-boxes' style={{ width: '100%', overflowX: 'auto', padding: '0.5rem', display: 'flex' }}>
                                                 <div style={{
                                                     display: 'flex', gap: '20px',
                                                     transition: 'transform 0.5s',

@@ -58,12 +58,6 @@ const Home = () => {
 
     return (
         <div>
-            <Dialog sx={{ zIndex: 200000000000000 }} open={showLandingImage} onClose={(e) => setShowLandingImage(false)}>
-                <div className="landing-image-modal">
-                    <CloseIcon sx={{ position: 'absolute', top: 10, right: 10 }} onClick={handleCloseModal} />
-                    <img width={'100%'} height={'650px'} src={landingImage} alt='' />
-                </div>
-            </Dialog>
             <Header />
             <SecondHeader />
             <Navbar />
@@ -74,7 +68,7 @@ const Home = () => {
             <BannerSection />
             <Box px={'0rem'} py={2} display={'flex'} justifyContent={'center'} onClick={handleWhatsapp}>
                 {
-                    isMobile ? <img width={'80%'} alt='' src={webView} /> : <img width={'100%'} alt='' src={mobile} />
+                    isMobile ? <img style={{ zIndex: '1' }} width={'80%'} alt='' src={webView} /> : <img style={{ zIndex: '1' }} width={'100%'} alt='' src={mobile} />
                 }
             </Box>
             <CourseSection />
@@ -104,7 +98,23 @@ const Home = () => {
                     WhatsApp Us
                 </Button>
             </div>
-
+            <Dialog open={showLandingImage} onClose={(e) => setShowLandingImage(false)}
+                sx={{
+                    "& .MuiDialog-container": {
+                        "& .MuiPaper-root": {
+                            width: "100%",
+                            maxWidth: "400px",
+                        },
+                    },
+                    // zIndex: 10
+                }}
+            >
+                <div className="landing-image-modal">
+                    {/* <CloseIcon sx={{ position: 'absolute', top: 10, right: 10 }} onClick={handleCloseModal} /> */}
+                    {/* <img width={'100%'} height={'650px'} src={landingImage} alt='' /> */}
+                    <iframe style={{ width: '100%', height: '100%', border: 'none' }} src='https://forms.classiolabs.com/?instituteid=94' />
+                </div>
+            </Dialog>
         </div>
     )
 }
