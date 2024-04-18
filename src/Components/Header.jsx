@@ -64,7 +64,7 @@ const Header = () => {
                             '&:hover': {
                                 backgroundColor: '#ECE2E2',
                             },
-                            animation: `${shakeAnimation} 1s infinite ease-in-out`,
+                            animation: `${shakeAnimation} 2s infinite ease-in-out`,
                         }}
                     >
                         Register Now

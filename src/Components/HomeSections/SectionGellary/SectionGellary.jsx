@@ -44,6 +44,7 @@ const SectionGellary = () => {
     }, []);
 
     const handleOpenPhoto = (e, item) => {
+        console.log('item', item);
         setOpenPhooto(true);
         setSelectPhoto(item);
     };
@@ -95,11 +96,17 @@ const SectionGellary = () => {
         const isFirstItemVisible = visibility.items[0]?.isVisible; // Check if the first item is visible
 
         return (
-            <ArrowBackIosIcon
-                disabled={!isFirstItemVisible}
-                onClick={() => visibility.scrollPrev()}
-                className="left"
-            />
+            <Box
+                display={'flex'}
+                justifyContent={'center'}
+                alignItems={'center'}
+            >
+                <ArrowBackIosIcon
+                    disabled={!isFirstItemVisible}
+                    onClick={() => visibility.scrollPrev()}
+                    className="left"
+                />
+            </Box>
         );
     };
 
@@ -108,13 +115,46 @@ const SectionGellary = () => {
         const isLastItemVisible = visibility.items[visibility.items.length - 1]?.isVisible; // Check if the last item is visible
 
         return (
-            <ArrowForwardIosIcon
-                disabled={!isLastItemVisible}
-                onClick={() => visibility.scrollNext()}
-                className="right"
-            />
+            <Box
+                display={'flex'}
+                justifyContent={'center'}
+                alignItems={'center'}
+            >
+                <ArrowForwardIosIcon
+                    disabled={!isLastItemVisible}
+                    onClick={() => visibility.scrollNext()}
+                    className="right"
+                />
+            </Box>
         );
     };
+
+    function Cardsss({ onClick, selected, title, itemId, item }) {
+        const visibility = useContext > VisibilityContext;
+        // const visible = visibility.useIsVisible(itemId, true);
+
+        return (
+            <div
+                onClick={() => onClick(visibility)}
+                // style={{
+                //     width: '20px',
+                // }}
+                tabIndex={0}
+            >
+                <div onClick={(e) => handleOpenPhoto(e, item)} style={{ marginRight: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    {/* <div>{title}</div> */}
+                    {/* <div>visible: {JSON.stringify(visible)}</div> */}
+                    {/* <div>selected: {JSON.stringify(!!selected)}</div> */}
+                    <img width={'250px'} alt='' height={'250px'} src={item} />
+                </div>
+                {/* <div
+                    style={{
+                        height: '200px',
+                    }}
+                /> */}
+            </div>
+        );
+    }
 
     return (
         <Box m={'20px'}>
@@ -175,38 +215,11 @@ const SectionGellary = () => {
 
             <Dialog maxWidth='xl' open={openPhoto} onClose={(e) => setOpenPhooto(false)}>
                 <Box>
-                    <img style={{ width: '100%', height: isMobile ? '555px' : '100%' }} alt='' src={Endpoints.mediaBaseUrl + selectPhoto} />
+                    <img style={{ width: '100%', height: isMobile ? '555px' : '100%' }} alt='' src={selectPhoto} />
                 </Box>
             </Dialog>
         </Box>
     )
-}
-
-function Cardsss({ onClick, selected, title, itemId, item }) {
-    const visibility = useContext > VisibilityContext;
-    // const visible = visibility.useIsVisible(itemId, true);
-
-    return (
-        <div
-            onClick={() => onClick(visibility)}
-            // style={{
-            //     width: '20px',
-            // }}
-            tabIndex={0}
-        >
-            <div style={{ marginRight: '10px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                {/* <div>{title}</div> */}
-                {/* <div>visible: {JSON.stringify(visible)}</div> */}
-                {/* <div>selected: {JSON.stringify(!!selected)}</div> */}
-                <img width={'250px'} alt='' height={'250px'} src={item} />
-            </div>
-            {/* <div
-                style={{
-                    height: '200px',
-                }}
-            /> */}
-        </div>
-    );
 }
 
 export default SectionGellary

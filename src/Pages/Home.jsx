@@ -17,6 +17,7 @@ import landingImage from '../../images/landingImage.jpeg'
 import CloseIcon from '@mui/icons-material/Close';
 import webView from '../../images/Group1000001629.svg'
 import mobile from '../../images/Group1000001623mobile1.svg'
+import ContentSectionOne from '../Components/ContentSections/ContentSectionOne/ContentSectionOne'
 
 const Home = () => {
 
@@ -73,6 +74,7 @@ const Home = () => {
             </Box>
             <CourseSection />
             <SectionTwo />
+            <ContentSectionOne />
             <SectionThree />
             <SectionFourth />
             <SectionGellary />

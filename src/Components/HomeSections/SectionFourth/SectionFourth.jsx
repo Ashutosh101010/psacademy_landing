@@ -108,108 +108,114 @@ const SectionFourth = () => {
                 </Grid>
             </Grid>
             <Grid container spacing={2} p={4}>
-                {showAll
-                    ? faqs && faqs.map((data, index) => {
-                        const first10Words = data?.post_content
-                            .replace(/<[^>]*>/g, ' ')
-                            .split(/\s+/)
-                            .slice(0, 4)
-                            .join(' ');
-                        const first10WordsTitle = data?.post_title
-                            .replace(/<[^>]*>/g, ' ')
-                            .split(/\s+/)
-                            .slice(0, 2)
-                            .join(' ');
-                        return (
-                            <Grid item xs={12} sm={3} md={3} key={data.id}>
-                                <a className='anchor' href={`/faq/${data?.ID}`}>
-                                    <Card sx={{ width: ['100%', '75%'], height: 'fit-content' }}>
-                                        <img style={{ width: '100%', height: '100%' }} alt='' src={data?.guid} />
-                                        <CardContent>
-                                            <Typography textAlign={'left'} fontWeight={'bold'} lineHeight={'24px'} fontSize={'20px'}>
-                                                {parse(first10WordsTitle)}...
-                                            </Typography>
-                                            <Typography textAlign={'left'} fontWeight={'600'} color={'#00000080'} lineHeight={'24px'} fontSize={'14px'}>
-                                                {parse(first10Words)}...
-                                            </Typography>
-                                        </CardContent>
-                                        <CardActions sx={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
-                                            <Typography textAlign={'left'} fontWeight={'600'} color={'#00000080'} lineHeight={'24px'} fontSize={'12px'}>
-                                                {moment(data?.post_date).format('MMMM Do YYYY')}
-                                            </Typography>
-                                            <Button
-                                                // onClick={(e) => handleReadMoreFaq(e, data)}
-                                                sx={{
-                                                    padding: '16px 32px',
-                                                    alignItems: 'end',
-                                                    gap: '10px',
-                                                    borderRadius: '15px',
-                                                    textTransform: 'none',
-                                                    fontSize: '12px',
-                                                    fontWeight: '700',
-                                                    color: "#8976FD"
-                                                }}
-                                            >
-                                                Read More
-                                            </Button>
-                                        </CardActions>
-                                    </Card>
-                                </a>
-                            </Grid>
-                        )
-                    })
-                    : faqs.slice(index, index + 4).map((data) => {
-                        const first10Words = data?.post_content
-                            .replace(/<[^>]*>/g, ' ')
-                            .split(/\s+/)
-                            .slice(0, 4)
-                            .join(' ');
-                        const first10WordsTitle = data?.post_title
-                            .replace(/<[^>]*>/g, ' ')
-                            .split(/\s+/)
-                            .slice(0, 2)
-                            .join(' ');
-                        return (
-                            <Grid item xs={12} sm={3} md={3} key={data.id}>
-                                <a className='anchor' href={`/faq/${data?.ID}`}>
-                                    <Card sx={{ width: ['100%', '75%'], height: 'fit-content' }}>
-                                        <img style={{ width: '100%', height: '100%' }} alt='' src={data?.guid} />
-                                        <CardContent>
-                                            <Typography textAlign={'left'} fontWeight={'bold'} lineHeight={'24px'} fontSize={'20px'}>
-                                                {parse(first10WordsTitle)}...
-                                            </Typography>
-                                            <Typography textAlign={'left'} fontWeight={'600'} color={'#00000080'} lineHeight={'24px'} fontSize={'14px'}>
-                                                {parse(first10Words)}...
-                                            </Typography>
-                                        </CardContent>
-                                        <CardActions sx={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
-                                            <Typography textAlign={'left'} fontWeight={'600'} color={'#00000080'} lineHeight={'24px'} fontSize={'12px'}>
-                                                {moment(data?.post_date).format('MMMM Do YYYY')}
-                                            </Typography>
-                                            <Button
-                                                // onClick={(e) => handleReadMoreFaq(e, data)}
-                                                sx={{
-                                                    // background: '#F6E9FF',
-                                                    padding: '16px 32px',
-                                                    alignItems: 'flex-end',
-                                                    gap: '10px',
-                                                    borderRadius: '15px',
-                                                    textTransform: 'none',
-                                                    fontSize: '12px',
-                                                    fontWeight: '700',
-                                                    color: "#8976FD"
-                                                }}
-                                            >
-                                                Read More
-                                            </Button>
-                                        </CardActions>
-                                    </Card>
-                                </a>
-                            </Grid>
-                        )
-                    }
-                    )}
-
+                {
+                    showAll
+                        ? faqs
+                            .sort((a, b) => new Date(b.post_date) - new Date(a.post_date))
+                            .map((data, index) => {
+                                const first10Words = data?.post_content
+                                    .replace(/<[^>]*>/g, ' ')
+                                    .split(/\s+/)
+                                    .slice(0, 4)
+                                    .join(' ');
+                                const first10WordsTitle = data?.post_title
+                                    .replace(/<[^>]*>/g, ' ')
+                                    .split(/\s+/)
+                                    .slice(0, 2)
+                                    .join(' ');
+                                return (
+                                    <Grid item xs={12} sm={3} md={3} key={data.id}>
+                                        <a className='anchor' href={`/faq/${data?.ID}`}>
+                                            <Card sx={{ width: ['100%', '75%'], height: 'fit-content' }}>
+                                                <img style={{ width: '100%', height: '100%' }} alt='' src={data?.guid} />
+                                                <CardContent>
+                                                    <Typography textAlign={'left'} fontWeight={'bold'} lineHeight={'24px'} fontSize={'20px'}>
+                                                        {parse(first10WordsTitle)}...
+                                                    </Typography>
+                                                    <Typography textAlign={'left'} fontWeight={'600'} color={'#00000080'} lineHeight={'24px'} fontSize={'14px'}>
+                                                        {parse(first10Words)}...
+                                                    </Typography>
+                                                </CardContent>
+                                                <CardActions sx={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
+                                                    <Typography textAlign={'left'} fontWeight={'600'} color={'#00000080'} lineHeight={'24px'} fontSize={'12px'}>
+                                                        {moment(data?.post_date).format('MMMM Do YYYY')}
+                                                    </Typography>
+                                                    <Button
+                                                        // onClick={(e) => handleReadMoreFaq(e, data)}
+                                                        sx={{
+                                                            padding: '16px 32px',
+                                                            alignItems: 'end',
+                                                            gap: '10px',
+                                                            borderRadius: '15px',
+                                                            textTransform: 'none',
+                                                            fontSize: '12px',
+                                                            fontWeight: '700',
+                                                            color: "#8976FD"
+                                                        }}
+                                                    >
+                                                        Read More
+                                                    </Button>
+                                                </CardActions>
+                                            </Card>
+                                        </a>
+                                    </Grid>
+                                )
+                            })
+                        : faqs
+                            .sort((a, b) => new Date(b.post_date) - new Date(a.post_date))
+                            .slice(index, index + 4)
+                            .map((data) => {
+                                const first10Words = data?.post_content
+                                    .replace(/<[^>]*>/g, ' ')
+                                    .split(/\s+/)
+                                    .slice(0, 4)
+                                    .join(' ');
+                                const first10WordsTitle = data?.post_title
+                                    .replace(/<[^>]*>/g, ' ')
+                                    .split(/\s+/)
+                                    .slice(0, 2)
+                                    .join(' ');
+                                return (
+                                    <Grid item xs={12} sm={3} md={3} key={data.id}>
+                                        <a className='anchor' href={`/faq/${data?.ID}`}>
+                                            <Card sx={{ width: ['100%', '75%'], height: 'fit-content' }}>
+                                                <img style={{ width: '100%', height: '100%' }} alt='' src={data?.guid} />
+                                                <CardContent>
+                                                    <Typography textAlign={'left'} fontWeight={'bold'} lineHeight={'24px'} fontSize={'20px'}>
+                                                        {parse(first10WordsTitle)}...
+                                                    </Typography>
+                                                    <Typography textAlign={'left'} fontWeight={'600'} color={'#00000080'} lineHeight={'24px'} fontSize={'14px'}>
+                                                        {parse(first10Words)}...
+                                                    </Typography>
+                                                </CardContent>
+                                                <CardActions sx={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
+                                                    <Typography textAlign={'left'} fontWeight={'600'} color={'#00000080'} lineHeight={'24px'} fontSize={'12px'}>
+                                                        {moment(data?.post_date).format('MMMM Do YYYY')}
+                                                    </Typography>
+                                                    <Button
+                                                        // onClick={(e) => handleReadMoreFaq(e, data)}
+                                                        sx={{
+                                                            // background: '#F6E9FF',
+                                                            padding: '16px 32px',
+                                                            alignItems: 'flex-end',
+                                                            gap: '10px',
+                                                            borderRadius: '15px',
+                                                            textTransform: 'none',
+                                                            fontSize: '12px',
+                                                            fontWeight: '700',
+                                                            color: "#8976FD"
+                                                        }}
+                                                    >
+                                                        Read More
+                                                    </Button>
+                                                </CardActions>
+                                            </Card>
+                                        </a>
+                                    </Grid>
+                                )
+                            }
+                            )
+                }
                 {/* {cardData.slice(index, index + 4).map((data, dataIndex) => {
                     return (
                         <Grid item xs={12} sm={4} md={3}>
