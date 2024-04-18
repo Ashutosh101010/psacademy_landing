@@ -34,6 +34,7 @@ const SectionOne = () => {
                 height: '100%',
                 // paddingTop: '5px',
                 // pt: '10px',
+                marginTop: '-10px',
                 background: '#420000',
                 // backgroundSize: 'cover', // or 'contain' depending on your needs
                 // backgroundRepeat: 'no-repeat',
@@ -137,7 +138,7 @@ const SectionOne = () => {
                                                 justifyContent: 'flex-start',
                                                 alignItem: 'center',
                                                 gap: '8px',
-                                                py:0.3
+                                                py: 0.3
                                             }}
                                         >
                                             <img alt='' style={{ position: 'relative', bottom: mobile ? '0px' : '10px' }} src={checkBoxsvg} />   Guidance from Esteemed Mentor, Pradeep Srivastava Sir.
@@ -153,7 +154,7 @@ const SectionOne = () => {
                                                 justifyContent: 'flex-start',
                                                 alignItem: 'center',
                                                 gap: '8px',
-                                                py:0.3
+                                                py: 0.3
                                             }}
                                         >
                                             <img alt='' style={{ position: 'relative', bottom: mobile ? '0px' : '0px' }} src={checkBoxsvg} /> First ever PSC Career Assessment Test ®
@@ -169,7 +170,7 @@ const SectionOne = () => {
                                                 justifyContent: 'flex-start',
                                                 alignItem: 'center',
                                                 gap: '8px',
-                                                py:0.3
+                                                py: 0.3
                                             }}
                                         >
                                             <img alt='' style={{ position: 'relative', bottom: mobile ? '0px' : '10px' }} src={checkBoxsvg} /> Exhaustive Mock Test Series and revision classes.
@@ -185,7 +186,7 @@ const SectionOne = () => {
                                                 justifyContent: 'flex-start',
                                                 alignItem: 'center',
                                                 gap: '8px',
-                                                py:0.3
+                                                py: 0.3
                                             }}
                                         >
                                             <img alt='' style={{ position: 'relative', bottom: mobile ? '0px' : '10px' }} src={checkBoxsvg} />   Hybrid module – Offline and Recorded Lectures
