@@ -1,5 +1,5 @@
 import { Box, Grid, Typography, useMediaQuery } from '@mui/material'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import contactsvg from '../../images/contactIcon.svg'
 import emailLogo from '../../images/emailIcon.svg'
@@ -11,6 +11,20 @@ const SecondFooter = () => {
 
     const isMobile = useMediaQuery("(min-width:600px)");
     const navigate = useNavigate();
+    const [windowsUrl, setWindowsUrl] = useState([]);
+
+    const getInstituteList = async () => {
+      const response = await CourseNetwrok.fetchInstitute(instId);
+      setWindowsUrl(response?.institute?.instituteAppSettingsModals);
+    };
+  
+    useEffect(() => {
+      getInstituteList();
+    }, []);
+
+    const handleWindowsUrl = () => {
+        window.location.href = `${windowsUrl?.windowsUrl}`
+      };
 
     const handleNavigatePolicy = (event) => {
         event.stopPropagation();
@@ -179,7 +193,7 @@ const SecondFooter = () => {
                         >
                             <img style={{ cursor: 'pointer' }} onClick={handlePlayStore} width={isMobile ? '14.5%' : '35%'} alt='' src={playStore} />
                             <img style={{ cursor: 'pointer' }} onClick={handleComingSoon} width={isMobile ? '12%' : '30%'} alt='' src={appleStore} />
-                            <img style={{ cursor: 'pointer' }} onClick={handleComingSoon} width={isMobile ? '13%' : '32%'} alt='' src={windowsStore} />
+                            <img style={{ cursor: 'pointer' }} onClick={handleWindowsUrl} width={isMobile ? '13%' : '32%'} alt='' src={windowsStore} />
                         </Box>
                     </Box>
                 </Grid>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 // import { MapPinIcon, EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline';
 import facebookLogo from '../../images/facebooksvg.svg'
 import instagramLogo from '../../images/instagramsvg.svg'
@@ -10,37 +10,49 @@ import appleStore from '../../images/applestoresvg.svg'
 import playStore from '../../images/playstoresvg.svg'
 import windowsStore from '../../images/windowsstoresvg.svg'
 import { Box, Grid, Typography, useMediaQuery } from '@mui/material';
+import CourseNetwrok from '../Network'
 
 const SecondHeader = () => {
 
   const isMobile = useMediaQuery("(min-width:600px)");
+  const [windowsUrl, setWindowsUrl] = useState([]);
+
+  const getInstituteList = async () => {
+    const response = await CourseNetwrok.fetchInstitute(instId);
+    setWindowsUrl(response?.institute?.instituteAppSettingsModals);
+  };
+
+  useEffect(() => {
+    getInstituteList();
+  }, []);
 
   const handleClick = () => {
     window.location.href = 'mailto:academyps123@gmail.com';
   };
-
   const handleClickPhone = () => {
     window.location.href = 'tel:0731-4001178'
-  }
-
+  };
   const handlePlayStore = () => {
     window.location.href = 'https://play.google.com/store/apps/details?id=com.classiolabs.psacademy&pcampaignid=web_share'
-  }
+  };
   const handleFacebook = () => {
     window.location.href = 'https://www.facebook.com/psacademy?mibextid=rS40aB7S9Ucbxw6v'
   }
   const handleYouTube = () => {
     window.location.href = 'https://www.youtube.com/@psacademy1998'
-  }
+  };
   const handleInstagram = () => {
     window.location.href = 'https://www.instagram.com/ps__academy'
-  }
+  };
   const handleTelegram = () => {
     window.location.href = 'https://t.me/ps_academy'
-  }
+  };
+  const handleWindowsUrl = () => {
+    window.location.href = `${windowsUrl?.windowsUrl}`
+  };
   const handleComingSoon = () => {
 
-  }
+  };
 
   return (
     <Box sx={{ background: '#540000', py: 0 }}>
@@ -141,7 +153,7 @@ const SecondHeader = () => {
         >
           <img style={{ cursor: 'pointer' }} onClick={handlePlayStore} width={'25%'} alt='' src={playStore} />
           <img style={{ cursor: 'pointer' }} onClick={handleComingSoon} width={'20%'} alt='' src={appleStore} />
-          <img style={{ cursor: 'pointer', marginLeft: '8px' }} onClick={handleComingSoon} width={'22%'} alt='' src={windowsStore} />
+          <img style={{ cursor: 'pointer', marginLeft: '8px' }} onClick={handleWindowsUrl} width={'22%'} alt='' src={windowsStore} />
         </Grid>
       </Grid>
       <hr />

@@ -44,7 +44,7 @@ const Header = () => {
                     alignItems: 'baseline',
                 }}
             >
-                <Grid item xs={12} sm={6} md={6} textAlign={['center', 'end']} display={'flex'} justifyContent={'end'}>
+                <Grid item xs={12} sm={6} md={6} textAlign={['center', 'end']} display={'flex'} justifyContent={['center', 'end']}>
                     <Typography fontWeight={'700'}>
                         Registration Open for Scholarship Program
                     </Typography>
