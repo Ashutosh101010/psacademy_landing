@@ -1,5 +1,5 @@
 import { Alert, Box, Card, CardActions, CardContent, CardMedia, Dialog, Grid, Paper, Stack, Tooltip, Typography, useMediaQuery } from '@mui/material'
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import phoneSvg2 from './Images/psss.png'
 import phoneSvg from './Images/phonecover.svg'
 import phonebg from './Images/phonebg.svg'
@@ -10,6 +10,7 @@ import playStoreButton from './Images/playStoreButton.svg'
 import appleStoreButton from './Images/appleStoreButton.svg'
 import windowsStoreButton from './Images/windowsStoreButton.svg'
 import { useSnackbar } from 'notistack';
+import CourseNetwrok from '../../../Network';
 
 const ContentSectionOne = () => {
 
@@ -25,6 +26,18 @@ const ContentSectionOne = () => {
     const handleClickDesktop = () => {
         setOpenDesktopModal(true);
     }
+
+    const [windowsUrl, setWindowsUrl] = useState([]);
+    const instId = 94;
+
+    const getInstituteList = async () => {
+        const response = await CourseNetwrok.fetchInstitute(instId);
+        setWindowsUrl(response?.institute?.instituteAppSettingsModals);
+    };
+
+    useEffect(() => {
+        getInstituteList();
+    }, []);
 
     // if (response.errorCode !== 0) {
     //     enqueueSnackbar(`${response.errorDescription}`, { variant: 'error', autoHideDuration: 3000 })

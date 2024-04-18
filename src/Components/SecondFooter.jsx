@@ -19,8 +19,6 @@ const SecondFooter = () => {
         const response = await CourseNetwrok.fetchInstitute(instId);
         setWindowsUrl(response?.institute?.instituteAppSettingsModals);
     };
-    console.log('windowsUrl', windowsUrl);
-
     useEffect(() => {
         getInstituteList();
     }, []);
