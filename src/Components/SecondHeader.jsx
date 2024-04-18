@@ -16,11 +16,13 @@ const SecondHeader = () => {
 
   const isMobile = useMediaQuery("(min-width:600px)");
   const [windowsUrl, setWindowsUrl] = useState([]);
+  const instId = 94;
 
   const getInstituteList = async () => {
     const response = await CourseNetwrok.fetchInstitute(instId);
     setWindowsUrl(response?.institute?.instituteAppSettingsModals);
   };
+ 
 
   useEffect(() => {
     getInstituteList();

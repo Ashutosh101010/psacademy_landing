@@ -6,25 +6,28 @@ import emailLogo from '../../images/emailIcon.svg'
 import appleStore from '../../images/applestoresvg.svg'
 import playStore from '../../images/playstoresvg.svg'
 import windowsStore from '../../images/windowsstoresvg.svg'
+import CourseNetwrok from '../Network';
 
 const SecondFooter = () => {
 
     const isMobile = useMediaQuery("(min-width:600px)");
     const navigate = useNavigate();
     const [windowsUrl, setWindowsUrl] = useState([]);
+    const instId = 94;
 
     const getInstituteList = async () => {
-      const response = await CourseNetwrok.fetchInstitute(instId);
-      setWindowsUrl(response?.institute?.instituteAppSettingsModals);
+        const response = await CourseNetwrok.fetchInstitute(instId);
+        setWindowsUrl(response?.institute?.instituteAppSettingsModals);
     };
-  
+    console.log('windowsUrl', windowsUrl);
+
     useEffect(() => {
-      getInstituteList();
+        getInstituteList();
     }, []);
 
     const handleWindowsUrl = () => {
         window.location.href = `${windowsUrl?.windowsUrl}`
-      };
+    };
 
     const handleNavigatePolicy = (event) => {
         event.stopPropagation();
