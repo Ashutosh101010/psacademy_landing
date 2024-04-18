@@ -80,25 +80,27 @@ const Home = () => {
             <SectionGellary />
             <SecondFooter />
             <Footer />
-            <div style={{ position: 'fixed', left: '-45px', top: '95%', transform: 'translateY(-50%)', padding: '10px', width: '100%', display: 'flex', justifyContent: 'end', alignItems: 'center' }}>
-                <Button variant="contained" color="primary"
-                    onClick={handleWhatsapp}
-                    sx={{
-                        textTransform: 'none',
-                        background: '#28B71D',
-                        boxShadow: '0px 3px 8px 0px rgba(0, 0, 0, 0.24)',
-                        borderRadius: '40px',
-                        gap: '5px',
-                        fontWeight: '600',
-                        fontSize: '14px',
-                        '&:hover': {
+            <div style={{position: 'absolute', width: 'fit-content'}}>
+                <div style={{ position: 'fixed', left: '-45px', top: '92%', transform: 'translateY(-50%)', padding: '10px', width: '100%', display: 'flex', justifyContent: 'end', alignItems: 'center' }}>
+                    <Button variant="contained" color="primary"
+                        onClick={handleWhatsapp}
+                        sx={{
+                            textTransform: 'none',
                             background: '#28B71D',
-                        },
-                    }}
-                >
-                    <img alt='' width={'15%'} src={whatsAppSvg} />
-                    WhatsApp Us
-                </Button>
+                            boxShadow: '0px 3px 8px 0px rgba(0, 0, 0, 0.24)',
+                            borderRadius: '40px',
+                            gap: '5px',
+                            fontWeight: '600',
+                            fontSize: '14px',
+                            '&:hover': {
+                                background: '#28B71D',
+                            },
+                        }}
+                    >
+                        <img alt='' width={'15%'} src={whatsAppSvg} />
+                        WhatsApp Us
+                    </Button>
+                </div>
             </div>
             <Dialog open={showLandingImage} onClose={(e) => setShowLandingImage(false)}
                 sx={{
