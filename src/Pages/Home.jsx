@@ -80,7 +80,7 @@ const Home = () => {
             <SectionGellary />
             <SecondFooter />
             <Footer />
-            <div style={{position: 'absolute', width: 'fit-content'}}>
+            <div style={{ position: 'absolute', width: 'fit-content' }}>
                 <div style={{ position: 'fixed', left: '-45px', top: '92%', transform: 'translateY(-50%)', padding: '10px', width: '100%', display: 'flex', justifyContent: 'end', alignItems: 'center' }}>
                     <Button variant="contained" color="primary"
                         onClick={handleWhatsapp}
@@ -113,8 +113,10 @@ const Home = () => {
                     // zIndex: 10
                 }}
             >
+                <div style={{display: 'flex', justifyContent: 'end'}}>
+                    <CloseIcon sx={{ position: 'relative', top: isMobile ? 10 : 20, right: 10 }} onClick={handleCloseModal} />
+                </div>
                 <div className="landing-image-modal">
-                    {/* <CloseIcon sx={{ position: 'absolute', top: 10, right: 10 }} onClick={handleCloseModal} /> */}
                     {/* <img width={'100%'} height={'650px'} src={landingImage} alt='' /> */}
                     <iframe style={{ width: '100%', height: '100%', border: 'none' }} src='https://forms.classiolabs.com/?instituteid=94' />
                 </div>

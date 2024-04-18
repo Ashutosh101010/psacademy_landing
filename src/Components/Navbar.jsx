@@ -47,6 +47,16 @@ const Navbar = () => {
     const [message, setMessage] = React.useState('I am interested in the Scholarship Test, Kindly guide me with that.');
     // const [showCoursesSubMenu, setShowCoursesSubMenu] = React.useState(false);
     // const [showFreeResourcesSubMenu, setShowFreeResourcesSubMenu] = React.useState(false);
+    const [windowsUrl, setWindowsUrl] = useState([]);
+
+    const getInstituteList = async () => {
+        const response = await CourseNetwrok.fetchInstitute(instId);
+        setWindowsUrl(response?.institute?.instituteAppSettingsModals);
+    };
+
+    useEffect(() => {
+        getInstituteList();
+    }, []);
 
     // const handleOpenNavMenu = (event) => {
     //     setAnchorElNav(event.currentTarget);
@@ -75,6 +85,10 @@ const Navbar = () => {
     // const handleCloseUserMenu = () => {
     //     setAnchorElUser(null);
     // };
+
+    const handleWindowsUrl = () => {
+        window.location.href = `${windowsUrl?.windowsUrl}`
+    };
 
     const getAllCourses = async () => {
         const response = await CourseNetwrok.fetchCourses(instId);
@@ -332,7 +346,7 @@ const Navbar = () => {
                         justifyContent: 'center'
                     }}
                 >
-                    <img width={'90%'} alt='' src={windowsStore} />
+                    <img onClick={handleWindowsUrl} width={'90%'} alt='' src={windowsStore} />
                 </ListItem>
             </List>
         </Box>
