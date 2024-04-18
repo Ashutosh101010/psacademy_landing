@@ -83,7 +83,7 @@ const SectionOne = () => {
                                                 fontSize: mobile ? '35px' : '24px',
                                             }}
                                         >
-                                            Best <Typewriter text="UPSC Coaching" delay={100} />
+                                            Best <Typewriter text1="UPSC Coaching" text2="MPPSC Coaching" delay={100} />
                                         </Typography>
                                         <Typography
                                             sx={{
