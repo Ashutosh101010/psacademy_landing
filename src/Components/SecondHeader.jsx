@@ -22,7 +22,6 @@ const SecondHeader = () => {
     const response = await CourseNetwrok.fetchInstitute(instId);
     setWindowsUrl(response?.institute?.instituteAppSettingsModals);
   };
- 
 
   useEffect(() => {
     getInstituteList();

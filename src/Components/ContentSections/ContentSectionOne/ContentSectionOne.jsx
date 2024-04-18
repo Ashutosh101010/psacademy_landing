@@ -39,6 +39,10 @@ const ContentSectionOne = () => {
         getInstituteList();
     }, []);
 
+    const handleWindowsUrl = () => {
+        window.location.href = `${windowsUrl?.windowsUrl}`
+    };
+
     // if (response.errorCode !== 0) {
     //     enqueueSnackbar(`${response.errorDescription}`, { variant: 'error', autoHideDuration: 3000 })
     // } else if (response.errorCode === 0) {
@@ -183,9 +187,9 @@ const ContentSectionOne = () => {
                             </Tooltip>
                         </Grid>
                         <Grid item xs={4} sm={4} md={4}>
-                            <Tooltip title="Coming Soon">
-                                <img alt='' width={'100%'} src={windowsStoreButton} />
-                            </Tooltip>
+                            {/* <Tooltip title="Coming Soon"> */}
+                            <img onClick={handleWindowsUrl} alt='' width={'100%'} src={windowsStoreButton} />
+                            {/* </Tooltip> */}
                         </Grid>
                     </Grid>
                 </Grid>
