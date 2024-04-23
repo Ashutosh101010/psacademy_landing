@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Button, Grid, Typography } from '@mui/material'
 import { keyframes } from '@emotion/react';
+import '../index.css'
 
 // Define the shaking animation
 const shakeAnimation = keyframes`
@@ -51,6 +52,7 @@ const Header = () => {
                 </Grid>
                 <Grid item xs={12} sm={6} md={6} justifyContent={['center', 'start']} display={'flex'}>
                     <Button
+                        className='zoom-in-zoom-out'
                         onClick={handlePlayStore}
                         sx={{
                             background: '#ECE2E2',
@@ -64,7 +66,8 @@ const Header = () => {
                             '&:hover': {
                                 backgroundColor: '#ECE2E2',
                             },
-                            animation: `${shakeAnimation} 2s infinite ease-in-out`,
+                            boxShadow: '3px 3px 14px -3px #d89393'
+                            // animation: `${shakeAnimation} 2s infinite ease-in-out`,
                         }}
                     >
                         Register Now

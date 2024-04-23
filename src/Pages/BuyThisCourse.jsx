@@ -97,32 +97,34 @@ const BuyThisCourse = () => {
         <>
             {/* <Header />
             <SecondHeader /> */}
-            <Navbar />
+            {isSticky === false && <Navbar />}
             <div style={{ position: 'fixed', width: '100%', zIndex: 100000, top: isSticky ? '0' : 'auto' }}>
                 {isSticky && <Navbar />}
             </div>
             <Box width={'100%'} height={'100%'} pb={2.9} >
                 <iframe style={{ border: 'none' }} src={`https://iframe.classiolabs.com/buyCourseDetails/?iframeId=${iframeId}&courseId=${courseId}&folderId=${0}&on-click=${onClick}`} width={'100%'} height={'100%'} />
             </Box>
-            <div style={{ position: 'fixed', left: '-45px', top: '95%', transform: 'translateY(-50%)', padding: '10px', width: '100%', display: 'flex', justifyContent: 'end', alignItems: 'center' }}>
-                <Button variant="contained" color="primary"
-                    onClick={handleWhatsapp}
-                    sx={{
-                        textTransform: 'none',
-                        background: '#28B71D',
-                        boxShadow: '0px 3px 8px 0px rgba(0, 0, 0, 0.24)',
-                        borderRadius: '40px',
-                        gap: '5px',
-                        fontWeight: '600',
-                        fontSize: '14px',
-                        '&:hover': {
+            <div style={{ position: 'absolute', width: 'fit-content' }}>
+                <div style={{ position: 'fixed', left: '-45px', top: '92%', transform: 'translateY(-50%)', padding: '10px', width: '100%', display: 'flex', justifyContent: 'end', alignItems: 'center' }}>
+                    <Button variant="contained" color="primary"
+                        onClick={handleWhatsapp}
+                        sx={{
+                            textTransform: 'none',
                             background: '#28B71D',
-                        },
-                    }}
-                >
-                    <img alt='' width={'15%'} src={whatsAppSvg} />
-                    WhatsApp Us
-                </Button>
+                            boxShadow: '0px 3px 8px 0px rgba(0, 0, 0, 0.24)',
+                            borderRadius: '40px',
+                            gap: '5px',
+                            fontWeight: '600',
+                            fontSize: '14px',
+                            '&:hover': {
+                                background: '#28B71D',
+                            },
+                        }}
+                    >
+                        <img alt='' width={'15%'} src={whatsAppSvg} />
+                        WhatsApp Us
+                    </Button>
+                </div>
             </div>
             {/* <source  /> */}
             {/* </iframe> */}

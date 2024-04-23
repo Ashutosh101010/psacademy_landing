@@ -150,7 +150,7 @@ const SecondFooter = () => {
                                     display: 'flex',
                                     justifyContent: 'flex-start',
                                     alignItems: 'center',
-                                    gap: '10px'
+                                    gap: '10px',
                                 }}
                             >
                                 <img
@@ -169,7 +169,7 @@ const SecondFooter = () => {
                                         fontSize: '14px'
                                     }}
                                 >
-                                    0731-4001178 / 9826063466
+                                    0731-4001178 / 9826063466 / 9926576466
                                 </Typography>
                             </Box>
                         </Box>

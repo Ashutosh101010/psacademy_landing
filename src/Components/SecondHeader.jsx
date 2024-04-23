@@ -92,7 +92,8 @@ const SecondHeader = () => {
             sx={{
               color: 'white',
               display: ['none', 'flex'],
-              cursor: 'pointer'
+              cursor: 'pointer',
+              fontSize: '14px'
             }}
           >
             academyps123@gmail.com
@@ -121,10 +122,11 @@ const SecondHeader = () => {
             sx={{
               color: 'white',
               display: ['none', 'flex'],
-              cursor: 'pointer'
+              cursor: 'pointer',
+              fontSize: '14px'
             }}
           >
-            0731-4001178 / 9826063466
+            0731-4001178 / 9826063466 / 9926576466
           </Typography>
           {/* </Box> */}
         </Grid>
@@ -152,9 +154,9 @@ const SecondHeader = () => {
           justifyContent={'center'}
           alignItems={'center'}
         >
-          <img style={{ cursor: 'pointer' }} onClick={handlePlayStore} width={'25%'} alt='' src={playStore} />
-          <img style={{ cursor: 'pointer' }} onClick={handleComingSoon} width={'20%'} alt='' src={appleStore} />
-          <img style={{ cursor: 'pointer', marginLeft: '8px' }} onClick={handleWindowsUrl} width={'22%'} alt='' src={windowsStore} />
+          <img style={{ cursor: 'pointer' }} onClick={handlePlayStore} width={'20%'} alt='' src={playStore} />
+          <img style={{ cursor: 'pointer' }} onClick={handleComingSoon} width={'16%'} alt='' src={appleStore} />
+          <img style={{ cursor: 'pointer', marginLeft: '8px' }} onClick={handleWindowsUrl} width={'19%'} alt='' src={windowsStore} />
         </Grid>
       </Grid>
       <hr />

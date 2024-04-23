@@ -61,7 +61,7 @@ const Home = () => {
         <div>
             <Header />
             <SecondHeader />
-            <Navbar />
+            {isSticky === false && <Navbar />}
             <div style={{ position: 'fixed', width: '100%', zIndex: 100000, top: isSticky ? '0' : 'auto' }}>
                 {isSticky && <Navbar />}
             </div>
@@ -74,7 +74,7 @@ const Home = () => {
             </Box>
             <CourseSection />
             <SectionTwo />
-            <ContentSectionOne />
+            {/* <ContentSectionOne /> */}
             <SectionThree />
             <SectionFourth />
             <SectionGellary />
@@ -113,7 +113,7 @@ const Home = () => {
                     // zIndex: 10
                 }}
             >
-                <div style={{display: 'flex', justifyContent: 'end'}}>
+                <div style={{ display: 'flex', justifyContent: 'end' }}>
                     <CloseIcon sx={{ position: 'relative', top: isMobile ? 10 : 20, right: 10 }} onClick={handleCloseModal} />
                 </div>
                 <div className="landing-image-modal">

@@ -58,41 +58,42 @@ const PSCAssessment = () => {
     return (
         <div>
             <Dialog sx={{ zIndex: 200000000000000 }} open={showLandingImage} onClose={(e) => setShowLandingImage(false)}>
-                <div className="landing-image-modal">
+                <div className="landing-image-modal"  style={{ maxHeight: '650px', overflowY: 'auto' }}>
                     <CloseIcon sx={{ position: 'absolute', top: 10, right: 10 }} onClick={handleCloseModal} />
                     <img width={'100%'} height={'650px'} src={landingImage} alt='' />
                 </div>
             </Dialog>
             <Header />
             <SecondHeader />
-            <Navbar />
+            {isSticky === false && <Navbar />}
             <div style={{ position: 'fixed', width: '100%', zIndex: 100000, top: isSticky ? '0' : 'auto' }}>
                 {isSticky && <Navbar />}
             </div>
             <AssementTest />
             <SecondFooter />
             <Footer />
-            <div style={{ position: 'fixed', left: '-45px', top: '95%', transform: 'translateY(-50%)', padding: '10px', width: '100%', display: 'flex', justifyContent: 'end', alignItems: 'center' }}>
-                <Button variant="contained" color="primary"
-                    onClick={handleWhatsapp}
-                    sx={{
-                        textTransform: 'none',
-                        background: '#28B71D',
-                        boxShadow: '0px 3px 8px 0px rgba(0, 0, 0, 0.24)',
-                        borderRadius: '40px',
-                        gap: '5px',
-                        fontWeight: '600',
-                        fontSize: '14px',
-                        '&:hover': {
+            <div style={{ position: 'absolute', width: 'fit-content' }}>
+                <div style={{ position: 'fixed', left: '-45px', top: '92%', transform: 'translateY(-50%)', padding: '10px', width: '100%', display: 'flex', justifyContent: 'end', alignItems: 'center' }}>
+                    <Button variant="contained" color="primary"
+                        onClick={handleWhatsapp}
+                        sx={{
+                            textTransform: 'none',
                             background: '#28B71D',
-                        },
-                    }}
-                >
-                    <img alt='' width={'15%'} src={whatsAppSvg} />
-                    WhatsApp Us
-                </Button>
+                            boxShadow: '0px 3px 8px 0px rgba(0, 0, 0, 0.24)',
+                            borderRadius: '40px',
+                            gap: '5px',
+                            fontWeight: '600',
+                            fontSize: '14px',
+                            '&:hover': {
+                                background: '#28B71D',
+                            },
+                        }}
+                    >
+                        <img alt='' width={'15%'} src={whatsAppSvg} />
+                        WhatsApp Us
+                    </Button>
+                </div>
             </div>
-
         </div>
     )
 }
