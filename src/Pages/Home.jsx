@@ -103,21 +103,18 @@ const Home = () => {
                 </div>
             </div>
             <Dialog open={showLandingImage} onClose={(e) => setShowLandingImage(false)}
-                sx={{
-                    "& .MuiDialog-container": {
-                        "& .MuiPaper-root": {
-                            width: "100%",
-                            maxWidth: "400px",
-                        },
-                    },
-                    // zIndex: 10
-                }}
+                // sx={{
+                //     "& .MuiDialog-container": {
+                //         "& .MuiPaper-root": {
+                //             width: "100%",
+                //             maxWidth: "400px",
+                //         },
+                //     },
+                //     // zIndex: 10
+                // }}
             >
-                <div style={{ display: 'flex', justifyContent: 'end' }}>
-                    <CloseIcon sx={{ position: 'relative', top: isMobile ? 10 : 20, right: 10 }} onClick={handleCloseModal} />
-                </div>
-                <div className="landing-image-modal">
-                    {/* <img width={'100%'} height={'650px'} src={landingImage} alt='' /> */}
+                <div className="landing-image-modal" style={{ maxHeight: '650px', overflowY: 'auto' }}>
+                    <CloseIcon sx={{ position: 'absolute', top: 10, right: 10 }} onClick={handleCloseModal} />
                     <iframe style={{ width: '100%', height: '100%', border: 'none' }} src='https://forms.classiolabs.com/?instituteid=94' />
                 </div>
             </Dialog>

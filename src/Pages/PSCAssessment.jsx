@@ -58,9 +58,9 @@ const PSCAssessment = () => {
     return (
         <div>
             <Dialog sx={{ zIndex: 200000000000000 }} open={showLandingImage} onClose={(e) => setShowLandingImage(false)}>
-                <div className="landing-image-modal"  style={{ maxHeight: '650px', overflowY: 'auto' }}>
+                <div className="landing-image-modal" style={{ maxHeight: '650px', overflowY: 'auto' }}>
                     <CloseIcon sx={{ position: 'absolute', top: 10, right: 10 }} onClick={handleCloseModal} />
-                    <img width={'100%'} height={'650px'} src={landingImage} alt='' />
+                    <iframe style={{ width: '100%', height: '100%', border: 'none' }} src='https://forms.classiolabs.com/?instituteid=94' />
                 </div>
             </Dialog>
             <Header />
