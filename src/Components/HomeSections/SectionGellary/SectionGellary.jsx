@@ -172,7 +172,6 @@ const SectionGellary = () => {
                     </Typography>
                 </Grid>
             </Grid>
-
             <Box mt={2}>
                 <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}  >
                     {

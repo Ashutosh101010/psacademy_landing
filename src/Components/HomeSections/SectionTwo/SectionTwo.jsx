@@ -46,6 +46,8 @@ const SectionTwo = () => {
   //   setCoursesData(templist);
   // }, [coursesData]);
 
+  const dots = "&#x2022;"
+
   return (
     <Box
       sx={{
@@ -124,14 +126,14 @@ const SectionTwo = () => {
                   fontWeight: '500',
                   color: '#fff',
                   fontSize: ['14px', '17px'],
-                  lineHeight: ['30px', '40px'],
+                  lineHeight: ['30px', '30px'],
                   display: 'flex',
                   justifyContent: 'flex-start',
                   alignItem: 'center',
-                  gap: '8px'
+                  gap: '8px',
                 }}
               >
-                <img alt='' style={{ position: 'relative', bottom: mobile ? '18px' : '28px' }} src={checkBoxsvg} />Track Record of Success: Many students exceled in MPPSC and UPSC exams under our guidance.
+                1. Motto: "We Rise by Lifting Others" :
               </Typography>
               <Typography
                 sx={{
@@ -139,15 +141,15 @@ const SectionTwo = () => {
                   fontWeight: '500',
                   color: '#fff',
                   fontSize: ['14px', '17px'],
-                  lineHeight: ['30px', '35px'],
+                  lineHeight: ['30px', '30px'],
                   display: 'flex',
-                  justifyContent: 'flex-start',
+                  // justifyContent: 'flex-start',
                   alignItem: 'center',
                   gap: '8px',
-                  width: ['100%', '75%']
+                  ml: 1
                 }}
               >
-                <img alt='' style={{ position: 'relative', bottom: mobile ? '17px' : '28px' }} src={checkBoxsvg} />Expert Guidance: Learn from instructors who have achieved success in these exams themselves.
+                &#9679; Our core belief: Success is our collective journey.
               </Typography>
               <Typography
                 sx={{
@@ -155,15 +157,14 @@ const SectionTwo = () => {
                   fontWeight: '500',
                   color: '#fff',
                   fontSize: ['14px', '17px'],
-                  lineHeight: ['30px', '35px'],
+                  lineHeight: ['30px', '30px'],
                   display: 'flex',
-                  justifyContent: 'flex-start',
+                  // justifyContent: 'flex-start',
                   alignItem: 'center',
                   gap: '8px',
-                  width: ['100%', '75%']
                 }}
               >
-                <img alt='' style={{ position: 'relative', bottom: mobile ? '17px' : '28px' }} src={checkBoxsvg} />Trusted Reputation: Legacy of being consistent with selections in MPPSC and UPSC over the past 28 years
+                2. Foundation Course: Comprehensive Preparation
               </Typography>
               <Typography
                 sx={{
@@ -171,15 +172,139 @@ const SectionTwo = () => {
                   fontWeight: '500',
                   color: '#fff',
                   fontSize: ['14px', '17px'],
-                  lineHeight: ['30px', '35px'],
+                  lineHeight: ['30px', '30px'],
                   display: 'flex',
-                  justifyContent: 'flex-start',
+                  // justifyContent: 'flex-start',
                   alignItem: 'center',
                   gap: '8px',
-                  width: ['100%', '73%']
+                  ml: 1
                 }}
               >
-                <img alt='' style={{ position: 'relative', bottom: mobile ? '17px' : '14px' }} src={checkBoxsvg} />Personalized Support: Receive individualized strategies tailored to your exam preparation.
+                &#9679; Our faculty covers everything from basics to advanced concepts, ensuring a strong foundation.
+              </Typography>
+              <Typography
+                sx={{
+                  fontFamily: 'Inter',
+                  fontWeight: '500',
+                  color: '#fff',
+                  fontSize: ['14px', '17px'],
+                  lineHeight: ['30px', '30px'],
+                  display: 'flex',
+                  // justifyContent: 'flex-start',
+                  alignItem: 'center',
+                  gap: '8px',
+                }}
+              >
+                3. Over 3 Decades of Experience with Pradeep Shrivastava Sir
+              </Typography>
+              <Typography
+                sx={{
+                  fontFamily: 'Inter',
+                  fontWeight: '500',
+                  color: '#fff',
+                  fontSize: ['14px', '17px'],
+                  lineHeight: ['30px', '30px'],
+                  display: 'flex',
+                  // justifyContent: 'flex-start',
+                  alignItem: 'center',
+                  gap: '8px',
+                  ml: 1
+                }}
+              >
+                &#9679; Benefit from the expertise of Pradeep Shrivastava Sir, known for his mastery in answer writing and bureaucratic insight.
+              </Typography>
+              <Typography
+                sx={{
+                  fontFamily: 'Inter',
+                  fontWeight: '500',
+                  color: '#fff',
+                  fontSize: ['14px', '17px'],
+                  lineHeight: ['30px', '30px'],
+                  display: 'flex',
+                  // justifyContent: 'flex-start',
+                  alignItem: 'center',
+                  gap: '8px',
+                }}
+              >
+                4. Officer Mindset Development
+              </Typography>
+              <Typography
+                sx={{
+                  fontFamily: 'Inter',
+                  fontWeight: '500',
+                  color: '#fff',
+                  fontSize: ['14px', '17px'],
+                  lineHeight: ['30px', '30px'],
+                  display: 'flex',
+                  // justifyContent: 'flex-start',
+                  alignItem: 'center',
+                  gap: '8px',
+                  ml: 1
+                }}
+              >
+                &#9679; Develop the skills to approach challenges with the confidence and composure of an officer.
+              </Typography>
+              <Typography
+                sx={{
+                  fontFamily: 'Inter',
+                  fontWeight: '500',
+                  color: '#fff',
+                  fontSize: ['14px', '17px'],
+                  lineHeight: ['30px', '30px'],
+                  display: 'flex',
+                  // justifyContent: 'flex-start',
+                  alignItem: 'center',
+                  gap: '8px',
+                }}
+              >
+                5. Personalized Support for Success
+              </Typography>
+              <Typography
+                sx={{
+                  fontFamily: 'Inter',
+                  fontWeight: '500',
+                  color: '#fff',
+                  fontSize: ['14px', '17px'],
+                  lineHeight: ['30px', '30px'],
+                  display: 'flex',
+                  // justifyContent: 'flex-start',
+                  alignItem: 'center',
+                  gap: '8px',
+                  ml: 1
+                }}
+              >
+                &#9679; Receive tailored strategies and individualized guidance for a successful exam preparation journey.
+              </Typography>
+              <Typography
+                sx={{
+                  fontFamily: 'Inter',
+                  fontWeight: '500',
+                  color: '#fff',
+                  fontSize: ['14px', '17px'],
+                  lineHeight: ['30px', '30px'],
+                  display: 'flex',
+                  // justifyContent: 'flex-start',
+                  alignItem: 'center',
+                  gap: '8px',
+                }}
+              >
+                5. Focus on Classroom Notes and Syllabus Completion
+              </Typography>
+              <Typography
+                sx={{
+                  fontFamily: 'Inter',
+                  fontWeight: '500',
+                  color: '#fff',
+                  fontSize: ['14px', '17px'],
+                  lineHeight: ['30px', '30px'],
+                  display: 'flex',
+                  // justifyContent: 'flex-start',
+                  alignItem: 'center',
+                  gap: '8px',
+                  ml: 1
+                }}
+              >
+                &#9679; Apart from printed notes, we prioritize class notes and ensure full syllabus coverage.
               </Typography>
             </Box>
             {/* </Grid> */}

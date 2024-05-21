@@ -15,7 +15,7 @@
     content="Best MPPSC, UPSC exam preparation coaching institute in Indore with highest selection rate in government exam. PS academy provide separate batches for Hindi medium and English medium." />
 </head>
 
-<!-- <script>
+<script>
   document.addEventListener("DOMContentLoaded", function () {
     // Function to parse query parameters from URL
     function getQueryParams() {
@@ -23,30 +23,24 @@
       var queryString = window.location.search.substring(1);
       var params = queryString.split('&');
 
-
       for (var i = 0; i < params.length; i++) {
         var pair = params[i].split('=');
         var key = decodeURIComponent(pair[0]);
         var value = decodeURIComponent(pair[1]);
 
-
         queryParams[key] = value;
       }
 
-
       return queryParams;
     }
-
 
     // Function to add query parameters to iframe src
     function addQueryParamsToIframes() {
       var queryParams = getQueryParams();
       var iframes = document.querySelectorAll('iframe');
 
-
       iframes.forEach(function (iframe) {
         var src = iframe.src;
-
 
         if (src.indexOf('?') === -1) {
           src += '?';
@@ -54,27 +48,21 @@
           src += '&';
         }
 
-
         for (var key in queryParams) {
           src += encodeURIComponent(key) + '=' + encodeURIComponent(queryParams[key]) + '&';
         }
 
-
         // Remove trailing '&' character
         src = src.slice(0, -1);
-
 
         iframe.src = src;
       });
     }
 
-
     // Call the function to add query parameters to iframes when the page loads
     addQueryParamsToIframes();
   });
-
-
-</script> -->
+</script>
 
 <body>
   <div id="root"></div>
