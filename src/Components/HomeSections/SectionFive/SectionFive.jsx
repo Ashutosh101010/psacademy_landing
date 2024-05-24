@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material'
+import { Box, Typography, useMediaQuery } from '@mui/material'
 import React from 'react';
 import testimonial1 from './Image/testimonial1.svg'
 import testimonial2 from './Image/testimonial2.svg'
@@ -9,6 +9,8 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 const SectionFive = () => {
+
+    const isMobile = useMediaQuery("(min-width:600px)");
 
     const imageData = [
         {
@@ -37,17 +39,17 @@ const SectionFive = () => {
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
             items: 2,
-            slidesToSlide: 2 // optional, default to 1.
+            slidesToSlide: 2
         },
         tablet: {
             breakpoint: { max: 1024, min: 464 },
             items: 2,
-            slidesToSlide: 2 // optional, default to 1.
+            slidesToSlide: 2
         },
         mobile: {
             breakpoint: { max: 464, min: 0 },
             items: 1,
-            slidesToSlide: 1 // optional, default to 1.
+            slidesToSlide: 1
         }
     };
 
@@ -99,8 +101,8 @@ const SectionFive = () => {
                     {
                         imageData.map((data, index) => {
                             return (
-                                <Box display={'flex'} justifyContent={'center'}>
-                                    <img alt='' width={'90%'} src={data.image} />
+                                <Box display={'flex'} justifyContent={'center'} gap={2}>
+                                    <img alt='' style={{ width: isMobile ? '90%' : '100%' }} src={data.image} />
                                 </Box>
                             )
                         })

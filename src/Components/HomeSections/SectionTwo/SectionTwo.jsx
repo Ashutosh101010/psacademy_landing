@@ -288,7 +288,7 @@ const SectionTwo = () => {
                   gap: '8px',
                 }}
               >
-                5. Focus on Classroom Notes and Syllabus Completion
+                6. Focus on Classroom Notes and Syllabus Completion
               </Typography>
               <Typography
                 sx={{
