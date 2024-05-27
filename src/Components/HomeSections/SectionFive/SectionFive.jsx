@@ -1,6 +1,6 @@
 import { Box, Typography, useMediaQuery } from '@mui/material'
 import React from 'react';
-import testimonial1 from './Image/testimonial1.svg'
+import testimonial1 from './Image/testimonial11.svg'
 import testimonial2 from './Image/testimonial2.svg'
 import testimonial3 from './Image/testimonial33.svg'
 import testimonial4 from './Image/testimonial44.svg'
@@ -43,8 +43,8 @@ const SectionFive = () => {
         },
         tablet: {
             breakpoint: { max: 1024, min: 464 },
-            items: 2,
-            slidesToSlide: 2
+            items: 1,
+            slidesToSlide: 1
         },
         mobile: {
             breakpoint: { max: 464, min: 0 },
@@ -57,7 +57,7 @@ const SectionFive = () => {
         <Box m={'20px'} padding={'15px'} >
             <Typography
                 sx={{
-                    color: '#E68149',
+                    color: '#540000',
                     fontSize: '30px',
                     textAlign: 'center',
                     fontWeight: '500'
@@ -73,7 +73,7 @@ const SectionFive = () => {
                     fontWeight: '500'
                 }}
             >
-                What Toppers are saying about PS Academy
+                What Toppers have to say about PS Acadey
             </Typography>
             <Box
                 py={5}
@@ -87,7 +87,7 @@ const SectionFive = () => {
                     infinite={true}
                     autoPlay={true}
                     autoPlaySpeed={2000}
-                    keyBoardControl={false}
+                    keyBoardControl={true}
                     // customTransition="all 3"
                     transitionDuration={5000}
                     containerClass="carousel-container"
@@ -95,7 +95,7 @@ const SectionFive = () => {
                     // deviceType={this.props.deviceType}
                     dotListClass="custom-dot-list-style"
                     itemClass="carousel-item-padding-40-px"
-                    arrows={false}
+                    arrows={true}
                     renderButtonGroupOutside={true}
                 >
                     {

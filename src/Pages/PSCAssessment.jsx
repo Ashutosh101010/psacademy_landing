@@ -57,7 +57,7 @@ const PSCAssessment = () => {
 
     return (
         <div>
-            <Dialog
+            {/* <Dialog
                 sx={{
                     "& .MuiDialog-container": {
                         "& .MuiPaper-root": {
@@ -72,7 +72,7 @@ const PSCAssessment = () => {
                     <CloseIcon sx={{ position: 'absolute', top: 10, right: 10 }} onClick={handleCloseModal} />
                     <iframe style={{ width: '100%', height: '100%', border: 'none' }} src='https://forms.classiolabs.com/?instituteid=94' />
                 </div>
-            </Dialog>
+            </Dialog> */}
             <Header />
             <SecondHeader />
             {isSticky === false && <Navbar />}

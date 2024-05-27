@@ -68,12 +68,12 @@ const SectionTwo = () => {
             <Grid item xs={12} sm={6} md={6}
               sx={{
                 display: 'flex',
-                justifyContent: 'center',
+                justifyContent: 'start',
                 position: 'relative',
-                left: ['0px', '15px']
+                left: ['0px', '-20px']
               }}
             >
-              <img alt='' style={{ width: mobile ? '35%' : '80%' }} src={appLogo} />
+              <img alt='' style={{ width: mobile ? '50%' : '80%' }} src={appLogo} />
             </Grid>
             <Grid item xs={12} sm={6} md={6}>
 
@@ -97,7 +97,7 @@ const SectionTwo = () => {
                   mb: 2
                 }}
               >
-                Here are the reasons, why you should join, PS Academy ?
+                Here are the reasons, why you should join PS Academy ?
               </Typography>
               {/* <Typography
                 sx={{
@@ -449,7 +449,7 @@ const SectionTwo = () => {
             </CardActions> */}
           {/* // </Card> */}
           <Box maxWidth={800}>
-            <iframe style={{ width: '100%', height: mobile ? '110vh' : '120vh', border: 'none' }} src='https://forms.classiolabs.com/?instituteid=94' />
+            <iframe style={{ width: '100%', height: mobile ? '82vh' : '105vh', border: 'none' }} src='https://forms.classiolabs.com/?instituteid=94' />
           </Box>
         </Grid>
       </Grid>

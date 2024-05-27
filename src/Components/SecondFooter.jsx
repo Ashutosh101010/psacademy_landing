@@ -110,7 +110,7 @@ const SecondFooter = () => {
                             width={['100%', '68%']}
                             textAlign={['center', 'start']}
                         >
-                            PS Academy Contact Us
+                            Contact Us
                         </Typography>
                         <Box
                             sx={{
@@ -135,6 +135,7 @@ const SecondFooter = () => {
                                     }}
                                     src={emailLogo} />
                                 <Typography
+                                    onClick={handleClick}
                                     sx={{
                                         color: '#fff',
                                         // display: ['none', 'flex'],
@@ -162,6 +163,7 @@ const SecondFooter = () => {
                                     src={contactsvg}
                                 />
                                 <Typography
+                                    onClick={handleClickPhone}
                                     sx={{
                                         color: '#fff',
                                         display: 'flex',

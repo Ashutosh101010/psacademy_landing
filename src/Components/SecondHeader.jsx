@@ -95,6 +95,7 @@ const SecondHeader = () => {
               cursor: 'pointer',
               fontSize: '14px'
             }}
+            onClick={handleClick}
           >
             academyps123@gmail.com
           </Typography>
@@ -125,6 +126,7 @@ const SecondHeader = () => {
               cursor: 'pointer',
               fontSize: '14px'
             }}
+            onClick={handleClickPhone}
           >
             0731-4001178 / 9826063466 / 9926576466
           </Typography>

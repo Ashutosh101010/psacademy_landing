@@ -540,6 +540,9 @@ const Navbar = () => {
                             MenuListProps={{
                                 'aria-labelledby': 'long-button',
                             }}
+                            sx={{
+                                marginTop: '25px'
+                            }}
                             anchorEl={anchorElM}
                             open={openM}
                             onClose={handleCloseM}
@@ -558,7 +561,7 @@ const Navbar = () => {
                                     <MenuItem
                                         key={index}
                                         // sx={{
-                                        //     margin: '5px'
+                                        //     marginTop: '15px'
                                         // }}
                                         // onClick={handleCloseM}
                                         onClick={() => handleBuyCourse(filteredCourse)}
