@@ -17,15 +17,15 @@ const BuyThisCourse = () => {
     const iframeId = queryParam.get("iframeId");
     const courseId = queryParam.get("courseId");
     const onClick = queryParam.get("on-click");
-    const totalCoursePrice = queryParam.get("totalCoursePrice");
-    const campaignId = queryParam.get("campaignId");
+    // const totalCoursePrice = queryParam.get("totalCoursePrice");
+    // const campaignId = queryParam.get("campaignId");
     const [courseIdData, setCourseIdData] = useState([]);
     const [iFrameInstId, setIFrameInstId] = useState([]);
     const [colorPaletteId, setColorPaletteId] = useState(null);
     const [suggestedLength, setSuggestedLength] = useState([]);
     const [courses, setCourses] = useState([]);
-    const [totalPrice, setTotalPrice] = useState(0);
-    const [selectedIds, setSelectedIds] = useState([Number(courseId)]);
+    // const [totalPrice, setTotalPrice] = useState(0);
+    // const [selectedIds, setSelectedIds] = useState([Number(courseId)]);
 
     const [message, setMessage] = React.useState('PS Team');
 
@@ -52,7 +52,7 @@ const BuyThisCourse = () => {
     }, []);
 
     const getAllCourses = async () => {
-        const response = await CourseNetwrok.fetchCourses(iFrameInstId?.instId);
+        const response = await CourseNetwrok.fetchCourses(94);
         setCourses(response.courses);
     };
 
@@ -68,11 +68,17 @@ const BuyThisCourse = () => {
         };
     }, [courses]);
 
+    // useEffect(() => {
+    //     if (iFrameInstId && iFrameInstId.instId) {
+    //         getAllCourses();
+    //     };
+    // }, [iFrameInstId]);
+
     useEffect(() => {
-        if (iFrameInstId && iFrameInstId.instId) {
+        // if (iFrameInstId && iFrameInstId.instId) {
             getAllCourses();
-        };
-    }, [iFrameInstId]);
+        // };
+    }, []);
 
     const [isSticky, setIsSticky] = useState(false);
 
@@ -97,11 +103,11 @@ const BuyThisCourse = () => {
         <>
             {/* <Header />
             <SecondHeader /> */}
-            {isSticky === false && <Navbar />}
+            {/* {isSticky === false && <Navbar />}
             <div style={{ position: 'fixed', width: '100%', zIndex: 100000, top: isSticky ? '0' : 'auto' }}>
                 {isSticky && <Navbar />}
-            </div>
-            <Box width={'100%'} height={'100%'} pb={2.9} >
+            </div> */}
+            <Box width={'100%'} height={'100%'} pb={[0,2.9]} >
                 <iframe style={{ border: 'none' }} src={`https://course.classiolabs.com/buyCourseDetails/?iframeId=${iframeId}&courseId=${courseId}&folderId=${0}&on-click=${onClick}`} width={'100%'} height={'100%'} />
             </Box>
             <div style={{ position: 'absolute', width: 'fit-content' }}>

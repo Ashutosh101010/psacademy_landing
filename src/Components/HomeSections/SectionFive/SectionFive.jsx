@@ -73,7 +73,7 @@ const SectionFive = () => {
                     fontWeight: '500'
                 }}
             >
-                What Toppers have to say about PS Acadey
+                What Toppers have to say about PS Academy
             </Typography>
             <Box
                 py={5}
@@ -94,15 +94,15 @@ const SectionFive = () => {
                     removeArrowOnDeviceType={["tablet", "mobile"]}
                     // deviceType={this.props.deviceType}
                     dotListClass="custom-dot-list-style"
-                    itemClass="carousel-item-padding-40-px"
+                    itemClass="carousel-item-padding-10-px"
                     arrows={true}
                     renderButtonGroupOutside={true}
                 >
                     {
                         imageData.map((data, index) => {
                             return (
-                                <Box display={'flex'} justifyContent={'center'} gap={2}>
-                                    <img alt='' style={{ width: isMobile ? '90%' : '100%' }} src={data.image} />
+                                <Box display={'flex'} justifyContent={'center'} gap={0} sx={{width: '100%'}}>
+                                    <img alt='' style={{ width: isMobile ? '70%' : '100%' }} src={data.image} />
                                 </Box>
                             )
                         })

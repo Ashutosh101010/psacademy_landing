@@ -115,9 +115,10 @@ const Home = () => {
                     // zIndex: 10
                 }}
             >
-                <div className="landing-image-modal" style={{ maxHeight: '830px', overflowY: 'auto' }}>
+                <div className="landing-image-modal" style={{ maxHeight: '770px', overflowY: 'auto' }}>
                     <CloseIcon sx={{ position: 'absolute', top: 10, right: 10 }} onClick={handleCloseModal} />
-                    <iframe style={{ width: '100%', height: '100%', border: 'none' }} src='http://localhost:5175/?instituteid=94' />
+                    <iframe style={{ width: '100%', height: '100%', border: 'none' }} src='https://forms.classiolabs.com/?instituteid=94' />
+                    {/* <iframe style={{ width: '100%', height: '100%', border: 'none' }} src='http://192.168.1.13:5175/?instituteid=94' /> */}
                 </div>
             </Dialog>
         </div>
