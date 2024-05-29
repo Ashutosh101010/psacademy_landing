@@ -48,3 +48,8 @@ body {
     padding-right: 0px !important;
     overflow: auto !important;
 }
+
+span.MuiBadge-badge.MuiBadge-standard.MuiBadge-anchorOriginTopRight.MuiBadge-anchorOriginTopRightRectangular.MuiBadge-overlapRectangular.MuiBadge-colorError.css-imxc6v-MuiBadge-badge {
+    position: relative;
+    right: 18px;
+}

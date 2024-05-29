@@ -83,7 +83,7 @@ const Home = () => {
             <SecondFooter />
             <Footer />
             <div style={{ position: 'absolute', width: 'fit-content' }}>
-                <div style={{ position: 'fixed', left: '-45px', top: '92%', transform: 'translateY(-50%)', padding: '10px', width: '100%', display: 'flex', justifyContent: 'end', alignItems: 'center' }}>
+                <div style={{ position: 'fixed', left: '-45px', top: '88%', transform: 'translateY(-50%)', padding: '10px', width: '100%', display: 'flex', justifyContent: 'end', alignItems: 'center' }}>
                     <Button variant="contained" color="primary"
                         onClick={handleWhatsapp}
                         sx={{
