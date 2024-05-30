@@ -30,8 +30,17 @@ const SecondHeader = () => {
   const handleClick = () => {
     window.location.href = 'mailto:academyps123@gmail.com';
   };
+
   const handleClickPhone = () => {
     window.location.href = 'tel:0731-4001178'
+  };
+
+  const handleClickPhone1 = () => {
+    window.location.href = 'tel:9826-063466'
+  };
+
+  const handleClickPhone2 = () => {
+    window.location.href = 'tel:9926-576466'
   };
   const handlePlayStore = () => {
     window.location.href = 'https://play.google.com/store/apps/details?id=com.classiolabs.psacademy&pcampaignid=web_share'
@@ -123,12 +132,13 @@ const SecondHeader = () => {
             sx={{
               color: 'white',
               display: ['none', 'flex'],
-              cursor: 'pointer',
-              fontSize: '14px'
+              fontSize: '14px',
+              gap: 0.5
             }}
-            onClick={handleClickPhone}
           >
-            0731-4001178 / 9826063466 / 9926576466
+            <span style={{ cursor: 'pointer'}} onClick={handleClickPhone}>0731-4001178</span> /
+            <span style={{ cursor: 'pointer'}} onClick={handleClickPhone1}>9826063466</span>  /
+            <span style={{ cursor: 'pointer'}} onClick={handleClickPhone2}>9926576466</span>
           </Typography>
           {/* </Box> */}
         </Grid>

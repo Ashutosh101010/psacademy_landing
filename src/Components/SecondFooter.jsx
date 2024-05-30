@@ -49,6 +49,14 @@ const SecondFooter = () => {
         window.location.href = 'tel:0731-4001178'
     };
 
+    const handleClickPhone1 = () => {
+        window.location.href = 'tel:9826-063466'
+    };
+
+    const handleClickPhone2 = () => {
+        window.location.href = 'tel:9926-576466'
+    };
+
     const handlePlayStore = () => {
         window.location.href = 'https://play.google.com/store/apps/details?id=com.classiolabs.psacademy&pcampaignid=web_share'
     };
@@ -131,7 +139,7 @@ const SecondFooter = () => {
                                 <img alt=''
                                     onClick={handleClick}
                                     style={{
-                                        width: isMobile ? '7.5%' : '10%'
+                                        width: isMobile ? '7.5%' : '5.5%'
                                     }}
                                     src={emailLogo} />
                                 <Typography
@@ -158,20 +166,22 @@ const SecondFooter = () => {
                                     alt=''
                                     onClick={handleClickPhone}
                                     style={{
-                                        width: isMobile ? '6.5%' : '9.3%'
+                                        width: isMobile ? '6.5%' : '9.8%'
                                     }}
                                     src={contactsvg}
                                 />
                                 <Typography
-                                    onClick={handleClickPhone}
                                     sx={{
                                         color: '#fff',
                                         display: 'flex',
-                                        cursor: 'pointer',
-                                        fontSize: '14px'
+                                        // cursor: 'pointer',
+                                        fontSize: '14px',
+                                        gap:'5px'
                                     }}
                                 >
-                                    0731-4001178 / 9826063466 / 9926576466
+                                    <span style={{ cursor: 'pointer', }} onClick={handleClickPhone} >07314001178</span>
+                                    / <span style={{ cursor: 'pointer', }} onClick={handleClickPhone1} >9826063466</span>
+                                    /<span style={{ cursor: 'pointer', }} onClick={handleClickPhone2}>9926576466</span>
                                 </Typography>
                             </Box>
                         </Box>
