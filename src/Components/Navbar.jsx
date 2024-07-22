@@ -21,7 +21,7 @@ import pdf from '../MPPSC_syllabus_23feb.pdf'
 import { useEffect } from 'react';
 import { useState } from 'react';
 
-const pages = [`Topper's Strategy`];
+// const pages = [`Topper's Strategy`];
 const ITEM_HEIGHT = 48;
 
 const Navbar = () => {
@@ -291,31 +291,19 @@ const Navbar = () => {
                     </Typography>
                     {/* </Badge> */}
                 </ListItem>
-
-                {pages.map((text, index) => (
-                    <ListItem key={text} disablePadding>
-                        <ListItemButton>
-                            <Typography
-                                variant="body1"
-                                style={{ fontSize: '1rem', cursor: 'pointer' }}
-                                onClick={() => handleMenuChange(text)} // Trigger handleMenuChange on text click
-                            >
-                                {text}
-                            </Typography>
-                            {/* {text === 'Answer Writing Program' && (
-                                <Badge
-                                    badgeContent={'Soon'}
-                                    color='error'
-                                    // overlap="circular"
-                                    style={{ cursor: 'pointer' }} // Ensure the badge is clickable
-                                >
-                                    {/* Badge content */}
-                            {/* </Badge>
-                            )} */}
-                        </ListItemButton>
-                    </ListItem>
-                ))}
-
+                <ListItem sx={{ display: 'flex', justifyContent: 'start' }}>
+                    {/* <Badge
+                        badgeContent={'Soon'}
+                        color='error'
+                        // overlap="circular"
+                        // onClick={handleNavigateAssessment}
+                        sx={{ cursor: 'pointer' }}
+                    > */}
+                    <Typography onClick={handlePlayStore} variant="body1" style={{ fontSize: '1rem', cursor: 'pointer' }}>
+                        Topper's Strategy
+                    </Typography>
+                    {/* </Badge> */}
+                </ListItem>
                 <ListItem>
                     <Button
                         onClick={handlePlayStore}
