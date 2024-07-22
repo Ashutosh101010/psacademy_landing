@@ -21,7 +21,7 @@ import pdf from '../MPPSC_syllabus_23feb.pdf'
 import { useEffect } from 'react';
 import { useState } from 'react';
 
-const pages = ['Free-Resources', `Topper's Strategy`];
+const pages = [`Topper's Strategy`];
 const ITEM_HEIGHT = 48;
 
 const Navbar = () => {
@@ -277,6 +277,19 @@ const Navbar = () => {
                             Answer Writing Program
                         </Typography>
                     </Badge>
+                </ListItem>
+                <ListItem sx={{ display: 'flex', justifyContent: 'start' }}>
+                    {/* <Badge
+                        badgeContent={'Soon'}
+                        color='error'
+                        // overlap="circular"
+                        // onClick={handleNavigateAssessment}
+                        sx={{ cursor: 'pointer' }}
+                    > */}
+                    <Typography onClick={handleFreeResources} variant="body1" style={{ fontSize: '1rem', cursor: 'pointer' }}>
+                        Free-Resources
+                    </Typography>
+                    {/* </Badge> */}
                 </ListItem>
 
                 {pages.map((text, index) => (
