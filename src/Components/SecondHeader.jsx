@@ -28,7 +28,7 @@ const SecondHeader = () => {
   }, []);
 
   const handleClick = () => {
-    window.location.href = 'mailto:academyps123@gmail.com';
+    window.location.href = 'mailto:indorepsacademy@gmail.com';
   };
 
   const handleClickPhone = () => {
@@ -106,7 +106,7 @@ const SecondHeader = () => {
             }}
             onClick={handleClick}
           >
-            academyps123@gmail.com
+            indorepsacademy@gmail.com
           </Typography>
           {/* </Box> */}
           {/* <Box

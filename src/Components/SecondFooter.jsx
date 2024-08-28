@@ -42,7 +42,7 @@ const SecondFooter = () => {
     };
 
     const handleClick = () => {
-        window.location.href = 'mailto:academyps123@gmail.com';
+        window.location.href = 'mailto:indorepsacademy@gmail.com';
     };
 
     const handleClickPhone = () => {
@@ -151,7 +151,7 @@ const SecondFooter = () => {
                                         fontSize: '15px'
                                     }}
                                 >
-                                    academyps123@gmail.com
+                                    indorepsacademy@gmail.com
                                 </Typography>
                             </Box>
                             <Box
