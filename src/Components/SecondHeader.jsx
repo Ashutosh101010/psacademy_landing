@@ -166,7 +166,7 @@ const SecondHeader = () => {
           justifyContent={'center'}
           alignItems={'center'}
         >
-          <img style={{ cursor: 'pointer' }} onClick={handlePlayStore} width={'25%'} alt='' src={playStore} />
+          <img style={{ cursor: 'pointer' }} onClick={handlePlayStore} width={'35%'} alt='' src={playStore} />
         </Grid>
       </Grid>
       <hr />

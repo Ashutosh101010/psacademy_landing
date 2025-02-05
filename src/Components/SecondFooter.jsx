@@ -208,7 +208,7 @@ const SecondFooter = () => {
                             gap={'10px'}
                             mt={2}
                         >
-                            <img style={{ cursor: 'pointer' }} onClick={handlePlayStore} width={isMobile ? '20%' : '35%'} alt='' src={playStore} />
+                            <img style={{ cursor: 'pointer' }} onClick={handlePlayStore} width={isMobile ? '25%' : '35%'} alt='' src={playStore} />
                             {/* <img style={{ cursor: 'pointer' }} onClick={handleComingSoon} width={isMobile ? '12%' : '30%'} alt='' src={appleStore} />
                             <img style={{ cursor: 'pointer' }} onClick={handleWindowsUrl} width={isMobile ? '13%' : '32%'} alt='' src={windowsStore} /> */}
                         </Box>
