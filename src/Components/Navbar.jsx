@@ -287,7 +287,7 @@ const Navbar = () => {
                         sx={{ cursor: 'pointer' }}
                     > */}
                     <Typography onClick={handleFreeResources} variant="body1" style={{ fontSize: '1rem', cursor: 'pointer' }}>
-                        Free-Resources
+                        Downloads
                     </Typography>
                     {/* </Badge> */}
                 </ListItem>
@@ -597,7 +597,7 @@ const Navbar = () => {
                                 ml: 2
                             }}
                         >
-                            Free-Resources
+                            Downloads
                             {/* {openF === true ?
                                 <img alt="" src={upArrow} />
                                 :

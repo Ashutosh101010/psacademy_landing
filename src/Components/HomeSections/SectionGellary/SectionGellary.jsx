@@ -26,9 +26,14 @@ const SectionGellary = () => {
     const [selectPhoto, setSelectPhoto] = useState([]);
 
     const getInstituteList = async () => {
-        const response = await CourseNetwrok.fetchInstitute(instId);
-        setGalleryList(response?.institute?.gallery);
-        Endpoints.mediaBaseUrl = response.instituteTechSettingModals.mediaUrl;
+        try {
+            const response = await CourseNetwrok.fetchInstitute(instId);
+            setGalleryList(response?.institute?.gallery);
+            Endpoints.mediaBaseUrl = response.instituteTechSettingModals.mediaUrl;
+        } catch (error) {
+            console.log(error);
+
+        };
     };
 
     function srcset(image, size, rows = 1, cols = 1) {

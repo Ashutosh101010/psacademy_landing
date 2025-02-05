@@ -136,9 +136,9 @@ const SecondHeader = () => {
               gap: 0.5
             }}
           >
-            <span style={{ cursor: 'pointer'}} onClick={handleClickPhone}>0731-4001178</span> /
-            <span style={{ cursor: 'pointer'}} onClick={handleClickPhone1}>9826063466</span>  /
-            <span style={{ cursor: 'pointer'}} onClick={handleClickPhone2}>9926576466</span>
+            <span style={{ cursor: 'pointer' }} onClick={handleClickPhone}>0731-4001178</span> /
+            <span style={{ cursor: 'pointer' }} onClick={handleClickPhone1}>9826063466</span>  /
+            <span style={{ cursor: 'pointer' }} onClick={handleClickPhone2}>9926576466</span>
           </Typography>
           {/* </Box> */}
         </Grid>
@@ -166,9 +166,7 @@ const SecondHeader = () => {
           justifyContent={'center'}
           alignItems={'center'}
         >
-          <img style={{ cursor: 'pointer' }} onClick={handlePlayStore} width={'20%'} alt='' src={playStore} />
-          <img style={{ cursor: 'pointer' }} onClick={handleComingSoon} width={'16%'} alt='' src={appleStore} />
-          <img style={{ cursor: 'pointer', marginLeft: '8px' }} onClick={handleWindowsUrl} width={'19%'} alt='' src={windowsStore} />
+          <img style={{ cursor: 'pointer' }} onClick={handlePlayStore} width={'25%'} alt='' src={playStore} />
         </Grid>
       </Grid>
       <hr />

@@ -16,8 +16,12 @@ const SecondFooter = () => {
     const instId = 94;
 
     const getInstituteList = async () => {
-        const response = await CourseNetwrok.fetchInstitute(instId);
-        setWindowsUrl(response?.institute?.instituteAppSettingsModals);
+        try {
+            const response = await CourseNetwrok.fetchInstitute(instId);
+            setWindowsUrl(response?.institute?.instituteAppSettingsModals);
+        } catch (error) {
+            console.log(error)
+        }
     };
     useEffect(() => {
         getInstituteList();
@@ -176,7 +180,7 @@ const SecondFooter = () => {
                                         display: 'flex',
                                         // cursor: 'pointer',
                                         fontSize: '14px',
-                                        gap:'5px'
+                                        gap: '5px'
                                     }}
                                 >
                                     <span style={{ cursor: 'pointer', }} onClick={handleClickPhone} >07314001178</span>
@@ -204,9 +208,9 @@ const SecondFooter = () => {
                             gap={'10px'}
                             mt={2}
                         >
-                            <img style={{ cursor: 'pointer' }} onClick={handlePlayStore} width={isMobile ? '14.5%' : '35%'} alt='' src={playStore} />
-                            <img style={{ cursor: 'pointer' }} onClick={handleComingSoon} width={isMobile ? '12%' : '30%'} alt='' src={appleStore} />
-                            <img style={{ cursor: 'pointer' }} onClick={handleWindowsUrl} width={isMobile ? '13%' : '32%'} alt='' src={windowsStore} />
+                            <img style={{ cursor: 'pointer' }} onClick={handlePlayStore} width={isMobile ? '20%' : '35%'} alt='' src={playStore} />
+                            {/* <img style={{ cursor: 'pointer' }} onClick={handleComingSoon} width={isMobile ? '12%' : '30%'} alt='' src={appleStore} />
+                            <img style={{ cursor: 'pointer' }} onClick={handleWindowsUrl} width={isMobile ? '13%' : '32%'} alt='' src={windowsStore} /> */}
                         </Box>
                     </Box>
                 </Grid>

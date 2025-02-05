@@ -68,7 +68,7 @@ const SectionFourth = () => {
                         lineHeight={'38px'}
                         ml={'30px'}
                     >
-                        FAQ'S
+                        Blog's
                     </Typography>
                 </Grid>
                 <Grid item xs={6} sm={6} md={6} display={['none', 'flex']} justifyContent={'flex-end'}>
